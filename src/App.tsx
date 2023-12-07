@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import NavBar from './components/NavBar';
+import { ThemeType } from './types/appTypes';
 
 function App() {
+
+  const [themeMode, setThemeMode] = useState(true)
+
+  function handleChangeTheme() {
+    setThemeMode(!themeMode)
+    console.log(themeMode)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={themeMode ? 'bg-gray-800' : 'bg-slate-50' } >
+      <NavBar changeTheme={handleChangeTheme} />
+      <h1 className={themeMode ? 'text-gray-500' : 'text-inherit' } > yesss </h1>
+      <h1 className={themeMode ? 'text-inherit' : 'text-gray-500' } > Noooo </h1>
     </div>
   );
 }
