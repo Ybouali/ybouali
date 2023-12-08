@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
-import { ThemeType } from './types/appTypes';
 
 function App() {
 
@@ -9,14 +8,14 @@ function App() {
 
   function handleChangeTheme() {
     setThemeMode(!themeMode)
-    console.log(themeMode)
   }
-
+ 
   return (
-    <div className={themeMode ? 'bg-gray-800' : 'bg-slate-50' } >
-      <NavBar changeTheme={handleChangeTheme} />
-      <h1 className={themeMode ? 'text-gray-500' : 'text-inherit' } > yesss </h1>
-      <h1 className={themeMode ? 'text-inherit' : 'text-gray-500' } > Noooo </h1>
+    <div className={themeMode ? 'bg-blue-900 min-h-screen px-20' : 'bg-indigo-100 min-h-screen px-20' } >
+      <NavBar mode={themeMode} changeTheme={handleChangeTheme} />
+      <p>--------------------------------------------------------------------------------------------</p>
+      <h1 className={themeMode ? 'text-gray-100' : 'text-slate-950' } > yesss </h1>
+      <h1 className={themeMode ? 'text-gray-100' : 'text-slate-950' } > Noooo </h1>
     </div>
   );
 }
