@@ -1,4 +1,4 @@
-export interface NavBarType {
+export interface ThemeType {
     mode: boolean;
-    changeTheme: () => void;
+    changeTheme?: () => void;
 }

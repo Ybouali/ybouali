@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('./fonts/RobotoMono-Bold.ttf') format('woff2'),
+         url('./fonts/RobotoMono-Thin.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'RobotoMono', sans-serif;
+}

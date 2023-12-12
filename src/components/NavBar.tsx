@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavBarType } from '../types/navBarTypes';
+import { ThemeType } from '../types/navBarTypes';
 import { IoMoonOutline } from 'react-icons/io5';
 import { WiDaySunny } from 'react-icons/wi';
 import { FaXTwitter } from 'react-icons/fa6';
@@ -10,7 +10,21 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
 
-const NavLinks = (props: NavBarType) => {
+const NavLinks = (props: ThemeType) => {
+
+
+    const openLinkedin = () => {
+        window.open('https://www.linkedin.com/in/ybouali/', '_blank');
+    }
+
+    const openInstagram = () => {
+        window.open('https://www.instagram.com/yassine_bouali_ya', '_blank');
+    }
+    
+    const openTwitter = () => {
+        window.open('https://twitter.com/YassineBouali6', '_blank');
+    }
+
     return (
         <>
             <div className="flex justify-between items-center">
@@ -18,8 +32,8 @@ const NavLinks = (props: NavBarType) => {
                     <li
                         className={
                             props.mode
-                                ? 'text-gray-100 hover:text-xl duration-700'
-                                : 'text-slate-950 hover:text-xl duration-700'
+                                ? 'text-gray-100 hover:line-through duration-700'
+                                : 'text-slate-950 hover:line-through duration-700'
                         }
                     >
                         <Link to="/"> Whoami </Link>
@@ -27,8 +41,8 @@ const NavLinks = (props: NavBarType) => {
                     <li
                         className={
                             props.mode
-                                ? 'text-gray-100 hover:text-xl duration-700'
-                                : 'text-slate-950 hover:text-xl duration-700'
+                                ? 'text-gray-100 hover:line-through duration-700'
+                                : 'text-slate-950 hover:line-through duration-700'
                         }
                     >
                         <Link to="/projects"> Projects </Link>
@@ -36,8 +50,8 @@ const NavLinks = (props: NavBarType) => {
                     <li
                         className={
                             props.mode
-                                ? 'text-gray-100 hover:text-bold duration-700'
-                                : 'text-slate-950 hover:text-bold duration-700'
+                                ? 'text-gray-100 hover:line-through duration-700'
+                                : 'text-slate-950 hover:line-through duration-700'
                         }
                     >
                         <Link to="/contactme"> Contact Me </Link>
@@ -46,15 +60,9 @@ const NavLinks = (props: NavBarType) => {
             </div>
 
             <div className="flex items-center gap-4 mt-9 md:-mt-0">
-                <FaXTwitter
-                    className={
-                        props.mode
-                            ? 'text-gray-100 hover:rotate-12 duration-150'
-                            : 'text-slate-950 hover:rotate-12 duration-150'
-                    }
-                    size={30}
-                />
+                
                 <CiLinkedin
+                    onClick={openLinkedin}
                     className={
                         props.mode
                             ? 'text-gray-100 hover:rotate-12 duration-150'
@@ -63,6 +71,7 @@ const NavLinks = (props: NavBarType) => {
                     size={30}
                 />
                 <CiInstagram
+                    onClick={openInstagram}
                     className={
                         props.mode
                             ? 'text-gray-100 hover:rotate-12 duration-150'
@@ -70,12 +79,22 @@ const NavLinks = (props: NavBarType) => {
                     }
                     size={30}
                 />
+                <FaXTwitter
+                    onClick={openTwitter}
+                    className={
+                        props.mode
+                            ? 'text-gray-100 hover:rotate-12 duration-150'
+                            : 'text-slate-950 hover:rotate-12 duration-150'
+                    }
+                    size={30}
+                />
+
             </div>
         </>
     );
 };
 
-function NavBar(props: NavBarType) {
+function NavBar(props: ThemeType) {
     const [isOpen, setIsOpen] = useState(true);
 
     const handleClick = () => {
