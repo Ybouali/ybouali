@@ -65,8 +65,8 @@ const NavLinks = (props: ThemeType) => {
                     onClick={openLinkedin}
                     className={
                         props.mode
-                            ? 'text-gray-100 hover:rotate-12 duration-150'
-                            : 'text-slate-950 hover:rotate-12 duration-150'
+                            ? 'text-gray-100 hover:rotate-12 duration-700'
+                            : 'text-slate-950 hover:rotate-12 duration-700'
                     }
                     size={30}
                 />
@@ -74,8 +74,8 @@ const NavLinks = (props: ThemeType) => {
                     onClick={openInstagram}
                     className={
                         props.mode
-                            ? 'text-gray-100 hover:rotate-12 duration-150'
-                            : 'text-slate-950 hover:rotate-12 duration-150'
+                            ? 'text-gray-100 hover:rotate-12 duration-700'
+                            : 'text-slate-950 hover:rotate-12 duration-700'
                     }
                     size={30}
                 />
@@ -83,8 +83,8 @@ const NavLinks = (props: ThemeType) => {
                     onClick={openTwitter}
                     className={
                         props.mode
-                            ? 'text-gray-100 hover:rotate-12 duration-150'
-                            : 'text-slate-950 hover:rotate-12 duration-150'
+                            ? 'text-gray-100 hover:rotate-12 duration-700'
+                            : 'text-slate-950 hover:rotate-12 duration-700'
                     }
                     size={30}
                 />

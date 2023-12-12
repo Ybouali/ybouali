@@ -3,7 +3,11 @@ module.exports = {
   content: [ "./src/**/*.{js,jsx,ts,tsx}" ],
   mode: "jit",
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'default': '500ms',
+      }
+    },
   },
   plugins: [],
 }

@@ -26,7 +26,7 @@ function App() {
                 <NavBar mode={themeMode} changeTheme={handleChangeTheme} />
                 <Routes>
                     <Route path="/" element={<Whoiam mode={themeMode} />} />
-                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/projects" element={<Projects mode={themeMode} />} />
                     <Route path="/contactme" element={<ContactMe />} />
                 </Routes>
             </Router>

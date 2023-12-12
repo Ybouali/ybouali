@@ -8,7 +8,7 @@ function Footer(props: ThemeType) {
 
   return (
     <div className='flex items-center mx-auto' >
-      <p className={props.mode ? 'font-semibold text-xl text-gray-100' : 'font-semibold text-xl text-slate-950'}>
+      <p className={props.mode ? 'font-semibold text-xl text-gray-100 duration-700' : 'font-semibold text-xl text-slate-950 duration-700'}>
         © {currentYear} Yassine Bouali | All Rights Reserved | Made In Morrocco
       </p>
     </div>
