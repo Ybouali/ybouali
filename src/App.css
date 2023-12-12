@@ -13,3 +13,10 @@
 body {
     font-family: 'RobotoMono', sans-serif;
 }
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 4; 
+  }

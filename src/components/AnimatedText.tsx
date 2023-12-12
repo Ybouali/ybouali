@@ -38,9 +38,14 @@ function AnimatedText(props: AnimatedTextType) {
 
 
   return (
-    <motion.div style={{ overflow: "hidden", display: "flex" }} variants={container} initial="hidden" animate="visible" className='font-semibold' >
+    <motion.div
+      style={{ overflow: "hidden", display: "flex" }}
+      variants={container}
+      initial="hidden"
+      animate="visible"
+    >
       {words.map((word, index) => (
-        <motion.span variants={child} className={props.mode ? 'mr-2 text-gray-100' : 'mr-2 text-slate-950'} key={index} >
+        <motion.span variants={child} className={props.mode ? 'mr-2 text-gray-100 font-semibold text-sm' : 'mr-2 text-slate-950 font-semibold text-sm'} key={index} >
           {word}
         </motion.span>
       ))}

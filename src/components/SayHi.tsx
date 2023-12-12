@@ -11,7 +11,7 @@ function SayHi() {
 
 
   return (
-    <Lottie {...animationData} className='animate-bounce h-32 w-32' />
+    <Lottie {...animationData} className='h-28 w-28' />
   )
 }
 

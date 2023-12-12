@@ -32,7 +32,9 @@ function Whoiam(props: ThemeType) {
                         />
                     </h1>
                 </div>
-                <SayHi />
+                <div className='flex items-center' >
+                    <SayHi />
+                </div>
             </div>
             <div className='flex items-center justify-between md:w-1/2 p-1 m-6'> 
                 <p className={props.mode ? 'animate-pulse font-semibold text-gray-100' : 'animate-pulse font-semibold text-slate-950'}>
