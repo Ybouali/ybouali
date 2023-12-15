@@ -3,6 +3,7 @@ import SayHi from '../components/SayHi';
 import { TypeAnimation } from 'react-type-animation'
 import { ThemeType } from '../types/navBarTypes';
 import AnimatedText from '../components/AnimatedText';
+import Footer from '../components/Footer';
 
 function Whoiam(props: ThemeType) {
 

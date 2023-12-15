@@ -18,8 +18,8 @@ function App() {
         <div
             className={
                 themeMode
-                    ? 'bg-blue-950 min-h-screen md:px-20'
-                    : 'bg-indigo-100 min-h-screen md:px-20'
+                    ? 'bg-blue-950 md:px-20 min-h-screen'
+                    : 'bg-indigo-100 md:px-20 min-h-screen'
             }
         >
             <Router>
@@ -27,7 +27,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Whoiam mode={themeMode} />} />
                     <Route path="/projects" element={<Projects mode={themeMode} />} />
-                    <Route path="/contactme" element={<ContactMe />} />
+                    <Route path="/contactme" element={<ContactMe mode={themeMode} />} />
                 </Routes>
             </Router>
             <Footer mode={themeMode} />
