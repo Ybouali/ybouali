@@ -6,9 +6,6 @@ import AnimatedText from '../components/AnimatedText';
 
 function Whoiam(props: ThemeType) {
 
-    const text: string = "Put me on the chaos i'll found the solution ( except my own 😣 ) ."
-    
-
     return (
         <div className='flex items-center justify-center min-h-screen mx-5 -mt-36 md:mx-20 flex-col' >
             <div className='flex items-center justify-between gap-6 p-3' >
@@ -41,11 +38,11 @@ function Whoiam(props: ThemeType) {
                     A self-taught web developer, crafting digital wonders basis with code. Building dreams one pixel at a time, all while chasing the elusive bug that dared to challenge my brilliance.
                 </p>
             </div>
-            <div className='flex items-center justify-between mx-auto md:w-1/2 m-1 flex-col' >
+            <div className='flex items-center justify-between mx-auto md:w-1/2 flex-col gap-y-3' >
                 <h1 className={props.mode ? 'font-bold text-xl text-gray-100' : 'font-bold text-xl text-slate-950'}>
                     In other words
                 </h1>
-                <AnimatedText text={text} mode={props.mode} />
+                <AnimatedText text="Put me on the chaos i'll found the solution 😣 ." mode={props.mode} />
             </div>
         </div>
     );

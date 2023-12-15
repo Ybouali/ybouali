@@ -3,6 +3,7 @@ import ProjectCard from '../components/ProjectCard';
 import { ThemeType } from '../types/navBarTypes';
 import { FaHandPointRight } from "react-icons/fa";
 import { ProjectType } from '../types/ProjectCard';
+import { motion } from 'framer-motion';
 
 
 function Projects(props: ThemeType) {
@@ -97,32 +98,83 @@ function Projects(props: ThemeType) {
         
     ]
 
+
+    const container = {
+        hidden: { opacity: 0 },
+        visible: (i = 1) => ({
+          opacity: 1,
+          transition: { staggerChildren: 0.12, delayChildren: 0.04 * i },
+        })
+    };
+    
+    const child = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                damping: 12,
+                stiffness: 100,
+            }
+        },
+        hidden: {
+            opacity: 0,
+            y: 20,
+            transition: {
+                type: "spring",
+                damping: 12,
+                stiffness: 100,
+            }
+        },
+    }
+
     return (
         <>
-            <div className='grid md:grid-cols-3 gap-5 m-1 p-2'>
+
+            <motion.div
+                variants={container}
+                initial="hidden"
+                animate="visible"
+                className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 m-1 p-2'
+            >
 
                 {
+                    
                     dataProjects.map((project, index) => (
-                        <ProjectCard
-                            data={project}
-                            mode={props.mode}
-                            key={index}  
-                        />
+
+                        <motion.div
+                            variants={child}
+                            key={index}
+                        >
+
+                            <ProjectCard
+                                data={project}
+                                mode={props.mode}
+                                key={index}  
+                            />
+
+                        </motion.div>
 
                     ))
+
                 }
 
+            </motion.div>
 
-            </div>
             <div className='flex items-center justify-between m-2 p-2' >
+
                 <p className='font-semibold text-lg text-orange-600' >
                     You can find more project's 
                 </p>
+
                 <FaHandPointRight className='h-10 w-10 text-orange-600' />
+
                 <p className='cursor-pointer font-bold text-xl text-orange-600' onClick={openMyGithubProject}>
                     github/ybouali
                 </p>
+
             </div>
+
         </>
         
     );

@@ -102,7 +102,8 @@ function NavBar(props: ThemeType) {
     };
 
     return (
-        <nav className="flex justify-between items-center sticky top-0 mx-auto p-10 flex-wrap z-[20]">
+        <nav className="flex justify-between items-center mx-auto p-10 flex-wrap">
+
             <div>
                 {!props.mode && (
                     <IoMoonOutline

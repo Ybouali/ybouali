@@ -14,6 +14,8 @@ import { FaDocker } from "react-icons/fa6";
 import { FaReact } from "react-icons/fa";
 import { SiNginx } from "react-icons/si";
 import { SiFlutter } from "react-icons/si";
+import { FaCopyright } from "react-icons/fa";
+import { TbBrandCpp } from "react-icons/tb";
 
 function ProjectCard(props: ProjectCardType) {
 
@@ -97,9 +99,16 @@ function ProjectCard(props: ProjectCardType) {
             <FiLink className='cursor-pointer' onClick={handleClickLink} size={25} />
           </div>
         </div>
-        <div className='flex items-center h-3/6' >
+        <div className='flex items-center' >
           
-          <p className={props.mode ? 'text-blue-950 font-light text-sm duration-700 p-3' : 'text-indigo-100 font-light text-sm duration-700 p-3'}>
+          <p className=
+            {
+              props.mode ?
+                'text-blue-950 font-light text-sm duration-700 p-2 '
+              :
+                'text-indigo-100 font-light text-sm duration-700 p-2 '
+            }
+          >
             {descriptionProject}
           </p>
         </div>
@@ -107,11 +116,8 @@ function ProjectCard(props: ProjectCardType) {
       <div className='flex flex-col -mt-10  ' >
         <AnimatedText text='Technology Or Language ( used )' mode={props.mode} />
         <div className={props.mode ? 'flex items-start justify-between gap-3 text-blue-950 duration-700 m-1 ' : 'flex items-start justify-between gap-3 text-indigo-100 duration-700 m-1' }>
-        {/* languageC?: boolean;
-    languageCPP?: boolean; */}
-
-          {/* { props.data.Icons.languageC &&  <Clogo />}
-          { props.data.Icons.languageCPP &&  <CppLogo />} */}
+          { props.data.Icons.languageCPP &&  <TbBrandCpp size={20} onClick={handleClickCpp} />}
+          { props.data.Icons.languageC &&  <FaCopyright size={20} onClick={handleClickC} /> }
           { props.data.Icons.flutterTec &&  <SiFlutter size={20} onClick={handleClickFlutter} />}
           { props.data.Icons.nginx &&  <SiNginx size={20} onClick={handleClickNginx} />}
           { props.data.Icons.react &&  <FaReact size={20} onClick={handleClickReact} />}
