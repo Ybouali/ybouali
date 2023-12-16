@@ -1,5 +1,5 @@
 export interface FormTypeData {
-    email: string;
+    to: string;
     subject: string;
-    message: string;
+    text: string;
 }

@@ -1,15 +1,21 @@
 import React, { FormEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import InputCard from '../components/InputCard';
 import { ThemeType } from '../types/navBarTypes';
 import { motion } from 'framer-motion';
 import { FormTypeData } from '../types/FormTypeData';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function ContactMe(props: ThemeType) {
 
+    const navigate = useNavigate();
+
     const [dataForm, setDataForm] = useState<FormTypeData>({
-        email: '',
+        to: '',
         subject: '',
-        message: ''
+        text: ''
     });
 
     const handleChangeData = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -21,12 +27,79 @@ function ContactMe(props: ThemeType) {
         }))
     }
 
-    const sendEmail = (e: FormEvent) => {
+    function isValidEmail(email: string) {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+
+    const sendEmail = async (e: FormEvent) => {
 
         e.preventDefault();
-        
+        if (dataForm.to === '') {
+            toast('There is no email !', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "dark",
+                type: "error",
+            });
+            return;
+        }
 
-        // TODO: start checking for the error 
+        if (dataForm.subject === '') {
+            toast('There is no subject !', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "dark",
+                type: "error",
+            });
+            return;
+        }
+
+        if (dataForm.text === '') {
+            toast('There is no message !', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "dark",
+                type: "error",
+            });
+        }
+
+        if (!isValidEmail(dataForm.to)) {
+            toast('Email is not valid !', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "dark",
+                type: "error",
+            });
+            return;
+        }
+
+        console.log({
+            dataForm
+        })
+
+        // return;
+        setDataForm({
+            to: '',
+            text: '',
+            subject: '',
+        })
+        navigate("/")
     }
 
     const container = {
@@ -81,10 +154,10 @@ function ContactMe(props: ThemeType) {
                         <div className="flex items-center justify-between">
                             <InputCard 
                                 onChanged={handleChangeData}
-                                value={dataForm.email}
+                                value={dataForm.to}
                                 mode={props.mode}
                                 type='email'
-                                name='email'
+                                name='to'
                                 placeholder='Email'
                             />
                         </div>
@@ -108,7 +181,7 @@ function ContactMe(props: ThemeType) {
                     >
                         <textarea
                             onChange={handleChangeData}
-                            name='message'
+                            name='text'
                             className={
                                 props.mode
                                     ?
@@ -135,6 +208,7 @@ function ContactMe(props: ThemeType) {
                     </motion.button>
                 </motion.form>
             </div>
+            <ToastContainer />
         </div>
     );
 }

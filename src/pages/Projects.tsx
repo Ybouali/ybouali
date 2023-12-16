@@ -4,7 +4,6 @@ import { ThemeType } from '../types/navBarTypes';
 import { FaHandPointRight } from "react-icons/fa";
 import { ProjectType } from '../types/ProjectCard';
 import { motion } from 'framer-motion';
-import Footer from '../components/Footer';
 
 
 function Projects(props: ThemeType) {
