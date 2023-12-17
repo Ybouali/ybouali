@@ -1,21 +1,22 @@
-import React, { FormEvent, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { FormEvent, useRef, useState } from 'react';
 import InputCard from '../components/InputCard';
 import { ThemeType } from '../types/navBarTypes';
 import { motion } from 'framer-motion';
 import { FormTypeData } from '../types/FormTypeData';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import emailjs from '@emailjs/browser';
+import { ProcessEnv } from '../types/ProcessEnv';
 
 
 function ContactMe(props: ThemeType) {
 
-    const navigate = useNavigate();
+    const form = useRef<HTMLFormElement>(null);
 
     const [dataForm, setDataForm] = useState<FormTypeData>({
-        to: '',
+        from_email: '',
         subject: '',
-        text: ''
+        message: ''
     });
 
     const handleChangeData = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -31,10 +32,18 @@ function ContactMe(props: ThemeType) {
         return /\S+@\S+\.\S+/.test(email);
     }
 
+    const resetForm = () => {
+        setDataForm({
+            from_email: '',
+            subject: '',
+            message: '',
+        })
+    }
+
     const sendEmail = async (e: FormEvent) => {
 
         e.preventDefault();
-        if (dataForm.to === '') {
+        if (dataForm.from_email === '') {
             toast('There is no email !', {
                 position: "top-right",
                 autoClose: 5000,
@@ -62,7 +71,7 @@ function ContactMe(props: ThemeType) {
             return;
         }
 
-        if (dataForm.text === '') {
+        if (dataForm.message === '') {
             toast('There is no message !', {
                 position: "top-right",
                 autoClose: 5000,
@@ -75,7 +84,7 @@ function ContactMe(props: ThemeType) {
             });
         }
 
-        if (!isValidEmail(dataForm.to)) {
+        if (!isValidEmail(dataForm.from_email)) {
             toast('Email is not valid !', {
                 position: "top-right",
                 autoClose: 5000,
@@ -89,17 +98,34 @@ function ContactMe(props: ThemeType) {
             return;
         }
 
-        console.log({
-            dataForm
-        })
+        const curr: HTMLFormElement | null = form.current;
+        
+        const dataEnvs: ProcessEnv = {
+            EMAILJS_SERVICE_ID: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+            EMAILJS_TEMPLATE_ID: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+            EMAILJS_PUBLIC_KEY: process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        }
 
-        // return;
-        setDataForm({
-            to: '',
-            text: '',
-            subject: '',
-        })
-        navigate("/")
+        if (curr && dataEnvs.EMAILJS_SERVICE_ID && dataEnvs.EMAILJS_TEMPLATE_ID && dataEnvs.EMAILJS_PUBLIC_KEY) {
+            emailjs.sendForm(dataEnvs.EMAILJS_SERVICE_ID, dataEnvs.EMAILJS_TEMPLATE_ID, curr, dataEnvs.EMAILJS_PUBLIC_KEY)
+            .then((result) => {
+                toast(`Thank u so much for ur email i'll awnser u as soon as posible`, {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    theme: "dark",
+                    type: "info",
+                });
+            }, (error) => {
+                
+            });
+        }
+
+        resetForm()
+        
     }
 
     const container = {
@@ -145,6 +171,7 @@ function ContactMe(props: ThemeType) {
                     variants={container}
                     initial="hidden"
                     animate="visible"
+                    ref={form}
                     className='flex items-center justify-between flex-col mt-7 gap-y-10'
                 >
                     <motion.div
@@ -154,10 +181,10 @@ function ContactMe(props: ThemeType) {
                         <div className="flex items-center justify-between">
                             <InputCard 
                                 onChanged={handleChangeData}
-                                value={dataForm.to}
+                                value={dataForm.from_email}
                                 mode={props.mode}
                                 type='email'
-                                name='to'
+                                name='from_email'
                                 placeholder='Email'
                             />
                         </div>
@@ -181,7 +208,8 @@ function ContactMe(props: ThemeType) {
                     >
                         <textarea
                             onChange={handleChangeData}
-                            name='text'
+                            name='message'
+                            value={dataForm.message}
                             className={
                                 props.mode
                                     ?

@@ -4,7 +4,7 @@ import { InputCardType } from '../types/InputCardType'
 function InputCard(props: InputCardType) {
   return (
     <input
-        defaultValue={props.value}
+        value={props.value}
         type={props.type}
         placeholder={props.placeholder}
         onChange={props.onChanged}

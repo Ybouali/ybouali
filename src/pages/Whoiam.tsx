@@ -42,7 +42,7 @@ function Whoiam(props: ThemeType) {
                 <h1 className={props.mode ? 'font-bold text-xl text-gray-100' : 'font-bold text-xl text-slate-950'}>
                     In other words
                 </h1>
-                <AnimatedText text="Put me on the chaos i'll found the solution 😣 ." mode={props.mode} />
+                <AnimatedText text="Put me on the chaos. I'll found the solution 😣 ." mode={props.mode} />
             </div>
         </div>
     );
