@@ -9,3 +9,5 @@ Typescript: a strongly typed Object-Oriented open source programming language th
 Tailwind CSS: A utility-first CSS framework for styling the front end.
 
 Framer Motion: Used for adding animations and transitions to the user interface.
+
+EmailJs: Used for sending email
