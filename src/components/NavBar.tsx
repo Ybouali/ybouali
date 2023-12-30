@@ -18,7 +18,7 @@ const NavLinks = (props: ThemeType) => {
     }
 
     const openInstagram = () => {
-        window.open('https://www.instagram.com/yassine_bouali_ya', '_blank');
+        window.open('https://www.instagram.com/yassineboualino', '_blank');
     }
     
     const openTwitter = () => {
