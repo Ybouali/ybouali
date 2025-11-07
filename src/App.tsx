@@ -6,7 +6,7 @@ import Whoiam from './pages/Whoiam';
 import Projects from './pages/Projects';
 import ContactMe from './pages/ContactMe';
 import Footer from './components/Footer';
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
     const [themeMode, setThemeMode] = useState(true);
@@ -24,12 +24,18 @@ function App() {
             }
         >
             <SpeedInsights />
-            <Router>
+            <Router basename="/ybouali">
                 <NavBar mode={themeMode} changeTheme={handleChangeTheme} />
                 <Routes>
                     <Route path="/" element={<Whoiam mode={themeMode} />} />
-                    <Route path="/projects" element={<Projects mode={themeMode} />} />
-                    <Route path="/contactme" element={<ContactMe mode={themeMode} />} />
+                    <Route
+                        path="/projects"
+                        element={<Projects mode={themeMode} />}
+                    />
+                    <Route
+                        path="/contactme"
+                        element={<ContactMe mode={themeMode} />}
+                    />
                 </Routes>
             </Router>
             <Footer mode={themeMode} />
