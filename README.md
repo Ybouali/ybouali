@@ -1,35 +1,35 @@
 # Hi there, I'm Yassine Bouali 👋
 
-![Banner](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Yassine%20Bouali&fontSize=50&fontColor=white)
+![Banner](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Yassine%20Bouali&fontSize=50&fontColor=white&animation=fadeIn)
 
-**Full-Stack Developer | React Native & React | Django Expert**  
-*Building scalable web and mobile solutions from Casablanca, Morocco*
+**Full-Stack Developer | React Native • React • Django**  
+*From Casablanca, Morocco* 🇲🇦  
+`yassine.bouali.bo@gmail.com` • [linkedin.com/in/ybouali](https://linkedin.com/in/ybouali) • [+212 650 027 073](tel:+212650027073)
 
 ---
 
 ## 🚀 About Me
 
-- 🔭 **Full-Stack Developer Intern** at **Koolskools** (Jul 2025 – Present)  
-  → Developing **React Native mobile app** + **web ticketing platform** with Django/Python + PostgreSQL  
-  → Integrated **AWS S3**, **FCM push notifications**, and **Google Maps API**  
-  → Deployed with **Docker + Docker Compose**
+- **Currently interning at Koolskools** (Jul 2025 – Present)  
+  → Building **React Native mobile app** + **web ticketing system**  
+  → **Django + PostgreSQL** backend with **AWS S3**, **FCM**, **Google Maps API**  
+  → Full **Docker + Docker Compose** deployment pipeline
 
-- 💼 Previously: **Full-Stack Web Intern** at **ORMVA/TF** (Jan–May 2025)  
-  → Built offer creation workflow app with role-based UIs & legacy data migration
+- **Previously at ORMVA/TF** (Jan–May 2025)  
+  → Full-stack workflow app with role-based UIs & legacy data migration
 
-- 🎓 **1337 School** (2021–Present) – Peer-learning coding school (42 Network)
-
-- ⚡ Passionate about **clean code**, **performance**, and **production-grade deployments**
+- **1337 School (42 Network)** – Peer-driven coding school in Ben Guerir  
+  → Hands-on C, systems programming, algorithms, and full-stack projects
 
 ---
 
 ## 🛠️ Tech Stack
 
 ```text
-Frontend           Backend              Mobile              DevOps & Tools
-──────────────     ───────────────      ───────────────     ─────────────────
-React (Vite+TS)    Django / DRF         React Native        Docker / Compose
-React Native       Python               Expo                Nginx
-Tailwind CSS       PostgreSQL           Redux Toolkit       AWS S3
-Zod + RHF          REST APIs            TypeScript          Firebase FCM
-ShadCN/UI          Celery               Axios               Google Maps API
+Frontend           Backend              Mobile              DevOps
+──────────────     ───────────────      ───────────────     ──────────────
+React + Vite       Django / DRF         React Native        Docker
+TypeScript         PostgreSQL           Expo                Nginx
+Tailwind CSS       REST APIs            Redux Toolkit       AWS S3
+Zod + RHF          Celery               Axios               Firebase FCM
+ShadCN/UI          JWT Auth             Google Maps API     Git & GitHub
