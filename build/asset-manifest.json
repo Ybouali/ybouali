@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ybouali/static/css/main.0d41c951.css",
+    "main.js": "/ybouali/static/js/main.1157d997.js",
+    "static/media/RobotoMono-Thin.ttf": "/ybouali/static/media/RobotoMono-Thin.b54395e68207fbc88b36.ttf",
+    "static/media/RobotoMono-Bold.ttf": "/ybouali/static/media/RobotoMono-Bold.7211ab61a8b83177865a.ttf",
+    "index.html": "/ybouali/index.html",
+    "main.0d41c951.css.map": "/ybouali/static/css/main.0d41c951.css.map",
+    "main.1157d997.js.map": "/ybouali/static/js/main.1157d997.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0d41c951.css",
+    "static/js/main.1157d997.js"
+  ]
+}
