@@ -1,21 +1,36 @@
+# Hi there, I'm Yassine Bouali 👋
+
+![Banner](https://capsule-render.vercel.app/api?type=waving&color=0:1e40af,1:1e3a8a&height=220&section=header&text=Yassine%20Bouali&fontSize=52&fontColor=ffffff&animation=twinkling&fontAlign=70&fontAlignY=38)
+
+**Full-Stack Developer | React Native • React • Django • Flutter**  
+*From Casablanca, Morocco* 🇲🇦  
+`yassine.bouali.bo@gmail.com` • [linkedin.com/in/ybouali](https://www.linkedin.com/in/ybouali) • [+212 650 027 073](tel:+212650027073)
 
 ---
 
-### Final Steps to Activate Your Profile README:
+## 🚀 About Me
 
-1. **Create a new repository** named exactly:  
-   → `https://github.com/ybouali/ybouali`
+- **Full-Stack Developer Intern** @ **Koolskools** *(Jul 2025 – Present)*  
+  → Building **React Native mobile app** + **web ticketing platform**  
+  → **Django + PostgreSQL** backend with **AWS S3**, **FCM**, **Google Maps API**  
+  → Full **Docker + Docker Compose** deployment
 
-2. **Add this file as `README.md`** in the root
+- **Full-Stack Web Intern** @ **ORMVA/TF** *(Jan–May 2025)*  
+  → Developed offer creation workflow with role-based UIs & legacy data migration
 
-3. **Go to GitHub Settings → "Pages"** and enable **"Add a README to your profile"**
-
-4. *(Optional)* Add a real banner image:
-   - Upload to your repo: `assets/banner.jpg`
-   - Replace the capsule link with: `![Banner](./assets/banner.jpg)`
+- **1337 School (42 Network)** – *2021 – Present*  
+  → Peer-learning, C, algorithms, systems programming, full-stack projects
 
 ---
 
-**Result**: Your GitHub profile will now look **clean, professional, and 100% aligned with your CV** — perfect for recruiters, open-source, and networking!  
+## 🛠️ Tech Stack
 
-Let me know when it's live — I’ll help you add animations, dark mode toggle, or a personal site link! 🚀
+```text
+Frontend           Backend              Mobile              DevOps
+──────────────     ───────────────      ───────────────     ──────────────
+React + Vite       Django / DRF         React Native        Docker
+TypeScript         PostgreSQL           Flutter             Nginx
+Tailwind CSS       REST APIs            Expo                AWS S3
+JavaScript         Celery               Redux Toolkit       Firebase FCM
+Node.js            JWT Auth             Axios               Google Maps API
+Express.js         MongoDB              Shell Scripting     Git & GitHub
