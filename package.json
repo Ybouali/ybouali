@@ -1,5 +1,5 @@
 {
-    "name": "ybouali",
+    "name": "noone",
     "version": "0.1.0",
     "private": true,
     "homepage": "https://ybouali.github.io",
@@ -53,7 +53,9 @@
         ]
     },
     "devDependencies": {
+        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
         "file-loader": "^6.2.0",
+        "gh-pages": "^6.1.1",
         "react-router-dom": "^6.20.1",
         "svg-inline-loader": "^0.8.2",
         "tailwindcss": "^3.3.6"
