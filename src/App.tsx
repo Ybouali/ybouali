@@ -6,7 +6,6 @@ import Whoiam from './pages/Whoiam';
 import Projects from './pages/Projects';
 import ContactMe from './pages/ContactMe';
 import Footer from './components/Footer';
-import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
     const [themeMode, setThemeMode] = useState(true);
@@ -23,7 +22,6 @@ function App() {
                     : 'bg-indigo-100 md:px-20 min-h-screen'
             }
         >
-            <SpeedInsights />
             <Router basename="/ybouali">
                 <NavBar mode={themeMode} changeTheme={handleChangeTheme} />
                 <Routes>

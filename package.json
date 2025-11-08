@@ -2,7 +2,7 @@
     "name": "noone",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://ybouali.github.io/ybouali",
+    "homepage": "https://Ybouali.github.io/Ybouali",
     "dependencies": {
         "@emailjs/browser": "^3.11.0",
         "@testing-library/jest-dom": "^5.17.0",
@@ -12,7 +12,6 @@
         "@types/node": "^16.18.68",
         "@types/react": "^18.2.42",
         "@types/react-dom": "^18.2.17",
-        "@vercel/speed-insights": "^1.0.2",
         "framer-motion": "^10.16.16",
         "lottie-react": "^2.4.0",
         "os-browserify": "^0.3.0",
