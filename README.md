@@ -1,6 +1,6 @@
-<details open>
+<details close>
 <summary style="font-size:1.4rem; font-weight:600; cursor:pointer;">
-🧠 **Yassine Bouali** – Software Engineer who *thinks a lot*
+🧠 **Yassine Bouali** – Software Engineer 
 </summary>
 
 
