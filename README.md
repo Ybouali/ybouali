@@ -1,10 +1,11 @@
-
-<details open>
+---
 <div align="center">
 <summary align="center" style="font-size:1.4rem; font-weight:600; cursor:pointer;">
 🧠 <b>Yassine Bouali</b> – Software Engineer
 </summary>
 </div>
+---
+<details close>
 
 <img alt="Banner" src="https://capsule-render.vercel.app/api?type=waving&color=0:1e40af,1:1e3a8a&height=220&section=header&text=Yassine%20Bouali&fontSize=52&fontColor=ffffff&animation=twinkling&fontAlign=70&fontAlignY=38" />
 
