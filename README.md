@@ -4,7 +4,7 @@
 </summary>
 
 
-[https://github.com/user-attachments/assets/e14fe57f-ece0-4b2c-b266-711c349ecbc1](https://github.com/user-attachments/assets/fa7171b5-8c8d-4387-902d-19a41ef5062c)
+![Banner](https://capsule-render.vercel.app/api?type=waving&color=0:1e40af,1:1e3a8a&height=220&section=header&text=Yassine%20Bouali&fontSize=52&fontColor=ffffff&animation=twinkling&fontAlign=70&fontAlignY=38)
 
 ---
 
