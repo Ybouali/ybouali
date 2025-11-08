@@ -3,9 +3,10 @@
 🧠 **Yassine Bouali** – Software Engineer who *thinks a lot*
 </summary>
 
----
 
-![Thinking Engineer Banner](https://capsule-render.vercel.app/api?type=waving&color=0:1e3a8a,1:2563eb&height=180&section=header&text=Software%20Engineer%20Who%20Thinks%20A%20Lot&fontSize=38&fontColor=ffffff&animation=twinkling&fontAlign=70&fontAlignY=38)
+https://github.com/user-attachments/assets/e14fe57f-ece0-4b2c-b266-711c349ecbc1
+
+---
 
 **Full‑Stack Developer | React Native • React • Django • Flutter**  
 _From Casablanca, Morocco_ 🇲🇦  
