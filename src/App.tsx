@@ -1,9 +1,12 @@
 import './App.css';
+import { TopHeader } from './components';
+import Pages from './pages';
 
 function App() {
     return (
-        <div className="flex flex-row justify-center items-center h-screen bg-gray-900 ">
-            <h1 className="text-3xl font-bold">Hello World</h1>
+        <div className="h-screen w-screen overflow-hidden grid grid-rows-[auto_1fr_auto] grid-cols-[auto_1fr]">
+            <TopHeader />
+            <Pages />
         </div>
     );
 }
