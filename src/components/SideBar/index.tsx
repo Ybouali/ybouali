@@ -6,7 +6,7 @@ import ItemSideBar from './ItemSideBar';
 
 function SideBar() {
     const [open, setOpen] = useState(true);
-    const { pages } = useAppContext();
+    const { pages, addPageToNavbar } = useAppContext();
 
     const containerVariants = {
         hidden: { opacity: 0, height: 0 },
@@ -38,7 +38,7 @@ function SideBar() {
     };
 
     return (
-        <aside className="row-span-2 row-start-2 col-start-1 bg-[#1f1f1f] text-white w-64 fixed top-10 bottom-0 left-0 overflow-y-auto z-10">
+        <aside className="row-span-2 row-start-2 col-start-1 bg-[#242527] text-white w-64 fixed top-10 bottom-0 left-0 overflow-y-auto z-10">
             <nav>
                 <p className="font-semibold p-2 border-b border-gray-700">
                     EXPLORER
@@ -68,7 +68,9 @@ function SideBar() {
                                 <ItemSideBar
                                     key={page.page_name}
                                     page={page}
-                                    onClick={() => {}}
+                                    onClick={() => {
+                                        addPageToNavbar(page);
+                                    }}
                                     variants={itemVariants}
                                 />
                             ))}
