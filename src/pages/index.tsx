@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from 'framer-motion';
 import { PagesNavBar } from '../components';
 import { useAppContext } from '../context/AppContext';
 import Certificates from './certifitcates';
@@ -20,25 +21,43 @@ function Pages() {
             }}
         >
             <PagesNavBar />
-            {pagesInNavbar.length === 0 && <Main />}
-
-            {pagesInNavbar.length > 0 &&
-                pagesInNavbar.map((p) => {
-                    if (p.selected && p.page_name === 'who-am-i.tsx') {
-                        return <WhoIAm key={p.page_name} />;
-                    } else if (p.selected && p.page_name === 'projects.tsx') {
-                        return <Projects key={p.page_name} />;
-                    } else if (p.selected && p.page_name === 'education.tsx') {
-                        return <Educations key={p.page_name} />;
-                    } else if (
-                        p.selected &&
-                        p.page_name === 'certificates.tsx'
-                    ) {
-                        return <Certificates key={p.page_name} />;
-                    } else if (p.selected && p.page_name === 'contact-me.tsx') {
-                        return <ContactMe key={p.page_name} />;
-                    }
-                })}
+            <AnimatePresence mode="wait">
+                {pagesInNavbar.length === 0 ? (
+                    <motion.div
+                        key="main"
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -50 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <Main />
+                    </motion.div>
+                ) : (
+                    pagesInNavbar.map((p) =>
+                        p.selected ? (
+                            <motion.div
+                                key={p.page_name}
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -50 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                {p.page_name === 'who-am-i.tsx' && <WhoIAm />}
+                                {p.page_name === 'projects.tsx' && <Projects />}
+                                {p.page_name === 'education.tsx' && (
+                                    <Educations />
+                                )}
+                                {p.page_name === 'certificates.tsx' && (
+                                    <Certificates />
+                                )}
+                                {p.page_name === 'contact-me.tsx' && (
+                                    <ContactMe />
+                                )}
+                            </motion.div>
+                        ) : null
+                    )
+                )}
+            </AnimatePresence>
         </main>
     );
 }
