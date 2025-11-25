@@ -14,7 +14,7 @@ type ItemSideBarProps = {
     variants?: Variants | undefined;
 };
 
-const iconMap = {
+export const iconMap = {
     user: UserIcon,
     folder: FolderIcon,
     book: BookOpenIcon,
