@@ -1,5 +1,5 @@
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import { iconMap } from '../../components/SideBar/ItemSideBar';
+import { iconMap } from '../SideBar/ItemSideBar';
 import { useAppContext } from '../../context/AppContext';
 import type { Pages } from '../../types';
 import { motion } from 'framer-motion';
