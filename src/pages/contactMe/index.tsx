@@ -1,8 +1,23 @@
+import { DeveloperInfo, ImportDisplay } from '../../components';
+import ContactMeForm from './ContactMeForm';
+import SocecialContactMe from './SocecialContactMe';
+
 function ContactMe() {
     return (
-        <div className="text-white">
-            <h1>Contact Me</h1>
-            <p>This is the Contact Me page.</p>
+        <div className="flex flex-col justify-center items-center h-full gap-2">
+            <div className="w-2/3  flex flex-col items-start justify-center gap-4">
+                <DeveloperInfo
+                    labelOne="from"
+                    labelTwo="description"
+                    valueOne="contact-me.tsx"
+                    valueTwo="Get in touch via email or social media"
+                />
+                <ImportDisplay />
+                <div className="flex flex-row justify-between items-center w-full h-full gap-1">
+                    <ContactMeForm />
+                    <SocecialContactMe />
+                </div>
+            </div>
         </div>
     );
 }
