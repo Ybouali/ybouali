@@ -1,5 +1,5 @@
 import { motion, type Variants } from 'framer-motion';
-import type { Pages } from '../../types';
+import type { Page } from '../../types';
 import {
     BookOpenIcon,
     CheckBadgeIcon,
@@ -9,7 +9,7 @@ import {
 } from '@heroicons/react/24/solid';
 
 type ItemSideBarProps = {
-    page: Pages;
+    page: Page;
     onClick: (pageName: string) => void;
     variants?: Variants | undefined;
 };

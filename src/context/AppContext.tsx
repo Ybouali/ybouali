@@ -1,14 +1,14 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
-import type { Pages } from '../types';
+import type { Page } from '../types';
 
 type AppContextType = {
-    pages: Pages[];
-    setPages: React.Dispatch<React.SetStateAction<Pages[]>>;
+    pages: Page[];
+    setPages: React.Dispatch<React.SetStateAction<Page[]>>;
 
-    pagesInNavbar: Pages[];
-    setPagesInNavbar: React.Dispatch<React.SetStateAction<Pages[]>>;
+    pagesInNavbar: Page[];
+    setPagesInNavbar: React.Dispatch<React.SetStateAction<Page[]>>;
 
-    addPageToNavbar: (page: Pages) => void;
+    addPageToNavbar: (page: Page) => void;
 
     removePageFromNavbar: (pageName: string) => void;
 };
@@ -16,19 +16,40 @@ type AppContextType = {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export function AppProvider({ children }: { children: ReactNode }) {
-    const [pages, setPages] = useState<Pages[]>([
-        { page_name: 'who-am-i.tsx', selected: false, icon_name: 'user' },
-        { page_name: 'projects.tsx', selected: false, icon_name: 'folder' },
-        { page_name: 'education.tsx', selected: false, icon_name: 'book' },
+    const [pages, setPages] = useState<Page[]>([
+        {
+            page_name: 'who-am-i.tsx',
+            selected: false,
+            icon_name: 'user',
+            description: 'Personal bio, background, and CV',
+        },
+        {
+            page_name: 'projects.tsx',
+            selected: false,
+            icon_name: 'folder',
+            description: 'Overview of projects and work',
+        },
+        {
+            page_name: 'education.tsx',
+            selected: false,
+            icon_name: 'book',
+            description: 'Educational background and qualifications',
+        },
         {
             page_name: 'certificates.tsx',
             selected: false,
             icon_name: 'certificate',
+            description: 'List of earned certificates and achievements',
         },
-        { page_name: 'contact-me.tsx', selected: false, icon_name: 'envelope' },
+        {
+            page_name: 'contact-me.tsx',
+            selected: false,
+            icon_name: 'envelope',
+            description: 'Contact information and social links',
+        },
     ]);
 
-    const [pagesInNavbar, setPagesInNavbar] = useState<Pages[]>([]);
+    const [pagesInNavbar, setPagesInNavbar] = useState<Page[]>([]);
 
     const setSelectedPage = (pageName: string) => {
         setPages((prevPages) =>
@@ -48,7 +69,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         );
     };
 
-    const addPageToNavbar = (page: Pages) => {
+    const addPageToNavbar = (page: Page) => {
         setPagesInNavbar((prevPages) => {
             if (prevPages.find((p) => p.page_name === page.page_name)) {
                 return prevPages;
