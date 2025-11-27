@@ -5,3 +5,4 @@ export { default as PagesNavBar } from './PagesNavBar';
 export { default as DeveloperInfo } from './Cards/DeveloperInfo';
 export { default as Card } from './Cards/Card';
 export { default as TerminalIcon } from './Svg/TerminalIcon';
+export { default as CodeDisplay } from './Cards/CodeDisplay';

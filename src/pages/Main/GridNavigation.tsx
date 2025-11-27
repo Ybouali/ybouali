@@ -1,3 +1,4 @@
+import { CodeDisplay } from '../../components';
 import { useAppContext } from '../../context/AppContext';
 import ItemGrid from './ItemGrid';
 
@@ -11,6 +12,9 @@ function GridNavigation() {
                 {pages.map((page) => (
                     <ItemGrid key={page.page_name} page={page} />
                 ))}
+            </div>
+            <div className="w-full flex flex-col items-center justify-center mt-4">
+                <CodeDisplay />
             </div>
         </div>
     );
