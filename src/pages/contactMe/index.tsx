@@ -1,4 +1,5 @@
 import { DeveloperInfo, ImportDisplay } from '../../components';
+import ExportDefault from '../../components/Cards/ExportDefault';
 import ContactMeForm from './ContactMeForm';
 import SocecialContactMe from './SocecialContactMe';
 
@@ -13,10 +14,11 @@ function ContactMe() {
                     valueTwo="Get in touch via email or social media"
                 />
                 <ImportDisplay />
-                <div className="flex flex-row justify-between items-center w-full h-full gap-1">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
                     <ContactMeForm />
                     <SocecialContactMe />
                 </div>
+                <ExportDefault moduleName="ContactMe" />
             </div>
         </div>
     );

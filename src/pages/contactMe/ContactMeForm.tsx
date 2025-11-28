@@ -1,4 +1,9 @@
-import { Card, CustomInput, CustomTextArea } from '../../components';
+import {
+    Card,
+    CustomInput,
+    CustomTextArea,
+    SendButton,
+} from '../../components';
 
 function ContactMeForm() {
     return (
@@ -11,6 +16,7 @@ function ContactMeForm() {
                 type="email"
             />
             <CustomTextArea label="Message" placeholder="Enter your message" />
+            <SendButton />
         </Card>
     );
 }

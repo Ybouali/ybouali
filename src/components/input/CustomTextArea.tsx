@@ -19,7 +19,7 @@ function CustomTextArea({ label, placeholder, value, onChange }: Props) {
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
-                rows={6}
+                rows={8}
                 className="text-white border border-[#4e6a40] p-2 rounded bg-[#3f3f43] focus:border-[#7cbf4a] focus:outline-none"
             />
         </div>
