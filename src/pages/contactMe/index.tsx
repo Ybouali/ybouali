@@ -1,12 +1,12 @@
-import { DeveloperInfo, ImportDisplay } from '../../components';
+import { DeveloperInfo, ImportDisplay, MainForScreen } from '../../components';
 import ExportDefault from '../../components/Cards/ExportDefault';
 import ContactMeForm from './ContactMeForm';
 import SocecialContactMe from './SocecialContactMe';
 
 function ContactMe() {
     return (
-        <div className="flex flex-col justify-center items-center h-full gap-2">
-            <div className="w-2/3  flex flex-col items-start justify-center gap-4">
+        <MainForScreen>
+            <div className="max-w-4xl mx-auto flex flex-col items-start gap-12">
                 <DeveloperInfo
                     labelOne="from"
                     labelTwo="description"
@@ -20,7 +20,7 @@ function ContactMe() {
                 </div>
                 <ExportDefault moduleName="ContactMe" />
             </div>
-        </div>
+        </MainForScreen>
     );
 }
 

@@ -1,21 +1,34 @@
-import { DeveloperInfo, ImportDisplay } from '../../components';
+import { DeveloperInfo, ImportDisplay, MainForScreen } from '../../components';
+import ExportDefault from '../../components/Cards/ExportDefault';
 import MainInfo from './MainInfo';
+import TechnicalSkills from './TechnicalSkills';
 
 function WhoIAm() {
     return (
-        <div className="flex flex-col justify-center items-center h-full gap-2">
-            <div className="w-2/3  flex flex-col items-start justify-center gap-4">
-                <DeveloperInfo
-                    labelOne="from"
-                    labelTwo="description"
-                    valueOne="who-i-am.tsx"
-                    valueTwo="Learn more about me and my background"
-                />
-                <ImportDisplay imports={['Portfolio']} fromPath="./developer" />
+        <MainForScreen>
+            <div className="w-full ">
+                <div className="mx-auto w-1/2 ">
+                    <div className="flex flex-col items-start pb-20 gap-3 ">
+                        <DeveloperInfo
+                            labelOne="from"
+                            labelTwo="description"
+                            valueOne="who-i-am.tsx"
+                            valueTwo="Learn more about me and my background"
+                        />
+                        <ImportDisplay
+                            imports={['Portfolio']}
+                            fromPath="./developer"
+                        />
 
-                <MainInfo />
+                        <MainInfo />
+
+                        <TechnicalSkills />
+
+                        <ExportDefault moduleName="WhoIAm" />
+                    </div>
+                </div>
             </div>
-        </div>
+        </MainForScreen>
     );
 }
 

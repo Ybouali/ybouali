@@ -2,7 +2,7 @@ import { Card, TerminalIcon } from '../../components';
 
 function TerminalInfo() {
     return (
-        <Card className="w-1/2 mt-1">
+        <Card className="w-full mt-1 ">
             <p className="text-lg font-semibold text-[#4e6a40] ">{`// Quick Navigation`}</p>
             <div className="flex flex-row gap-3">
                 <TerminalIcon height={32} width={32} />
