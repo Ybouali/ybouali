@@ -19,3 +19,5 @@ export { default as ButtonSocialMediaTwo } from './Buttons/ButtonSocialMediaTwo'
 export { default as ButtonSocecialMedia } from './Buttons/ButtonSocecialMedia';
 export { default as DownloadIcon } from './Svg/DownloadIcon';
 export { default as MainForScreen } from './Cards/MainForScreen';
+export { default as CodeArrayDisplay } from './Cards/CodeArrayDisplay';
+export { default as ExportDefault } from './Cards/ExportDefault';
