@@ -1,4 +1,4 @@
-import ItemEducation from './itemEdication';
+import ItemEducation from './ItemEdication';
 
 export type EducationType = {
     school: string;
