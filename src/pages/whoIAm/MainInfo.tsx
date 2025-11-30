@@ -14,13 +14,13 @@ import { motion } from 'framer-motion';
 
 function MainInfo() {
     return (
-        <Card className="flex flex-col-reverse md:flex-row w-full items-center justify-between gap-4 p-2 ">
-            <div className="flex flex-col items-center w-full  h-full md:w-2/6 justify-start gap-4 ">
-                <div className="relative w-50 h-50 rounded-lg overflow-hidden">
+        <Card className="flex flex-col-reverse md:flex-row w-full justify-between gap-4 p-2  ">
+            <div className="flex flex-col w-full  h-full justify-start gap-4 ">
+                <div className="relative w-50 h-50 rounded-lg overflow-hidden  ">
                     <motion.img
                         src={ProMeImage}
                         alt="yassine bouali"
-                        className="absolute inset-0 w-full h-full object-cover border border-[#404040]"
+                        className="absolute inset-0 top-0 left-0 w-full h-full object-cover border border-[#404040]"
                         initial={{ opacity: 1 }}
                         whileHover={{ opacity: 0 }}
                         transition={{ duration: 0.4 }}
@@ -28,7 +28,7 @@ function MainInfo() {
                     <motion.img
                         src={MeImage}
                         alt="hover"
-                        className="absolute inset-0 w-full h-full object-cover border border-[#404040]"
+                        className="absolute inset-0 top-0 left-0 w-full h-full object-cover border border-[#404040]"
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}
                         transition={{ duration: 0.4 }}
