@@ -15,6 +15,7 @@ function CodeArrayDisplay({
                         variableName.at(0)?.toUpperCase() +
                         variableName.slice(1)
                     } `}</span>
+                    <span className="text-white"> = </span>
                     <span className="text-yellow-600">[</span>
                 </code>
             </pre>

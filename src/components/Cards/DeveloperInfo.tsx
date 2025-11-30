@@ -14,7 +14,7 @@ function DeveloperInfo({
     className,
 }: DeveloperInfoProps) {
     return (
-        <div className={`flex flex-col items-start gap-1 ${className}`}>
+        <div className={`flex flex-col items-start ${className}`}>
             <pre className="text-xl text-[#4e6a40]">/**</pre>
             <pre className="text-xl">
                 <span className="text-[#4e6a40]">{`*  `}</span>
