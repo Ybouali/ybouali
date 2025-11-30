@@ -7,7 +7,7 @@ import { DeveloperInfo, SendButton } from '../../components';
 
 function Header({ openLiveProjects, setOpenLiveProjects }: HeaderProps) {
     return (
-        <div className="relative flex flex-row  items-center justify-between gap-3">
+        <div className="relative flex flex-row w-full  items-center justify-between gap-3">
             <DeveloperInfo
                 labelOne="from"
                 labelTwo="description"
