@@ -11,7 +11,7 @@ export interface CloseProject {
 }
 
 interface CloseProjectsListProps {
-    onProjectClick: (id: number) => void;
+    onProjectClick: (project: CloseProject) => void;
 }
 
 function CloseProjectsList({ onProjectClick }: CloseProjectsListProps) {

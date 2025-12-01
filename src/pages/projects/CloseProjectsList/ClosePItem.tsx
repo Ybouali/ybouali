@@ -4,7 +4,7 @@ import { Card } from '../../../components';
 
 interface ClosePItemProps {
     project: CloseProject;
-    onClick: (id: number) => void;
+    onClick: (project: CloseProject) => void;
 }
 
 const parentVariants = {
@@ -24,7 +24,7 @@ const iconVariants = {
 function ClosePItem({ project, onClick }: ClosePItemProps) {
     return (
         <Card
-            onClick={() => onClick(project.id)}
+            onClick={() => onClick(project)}
             className="flex items-center cursor-pointer"
         >
             <motion.div

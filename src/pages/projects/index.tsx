@@ -6,16 +6,16 @@ import {
     MainForScreen,
 } from '../../components';
 import Header from './Header';
-import CloseProjectsList from './CloseProjectsList';
+import CloseProjectsList, { type CloseProject } from './CloseProjectsList';
 import LiveProjectsList from './LiveProjectsList/LiveProjectsList';
 import { AnimatePresence, motion } from 'framer-motion';
+import ProjectDetail from './CloseProjectsList/ProjectDetails';
 
 function Projects() {
     const [openLiveProjects, setOpenLiveProjects] = useState(false);
 
-    const [openCloseProjects, setOpenCloseProjects] = useState<number | null>(
-        null
-    );
+    const [openCloseProjects, setOpenCloseProjects] =
+        useState<CloseProject | null>(null);
 
     return (
         <MainForScreen>
@@ -24,11 +24,22 @@ function Projects() {
                     <div className="flex flex-col items-start pb-20 gap-1 ">
                         <Header
                             openLiveProjects={openLiveProjects}
-                            setOpenLiveProjects={setOpenLiveProjects}
+                            openCloseProjects={openCloseProjects}
+                            setOpenLiveProjects={(value) => {
+                                if (openCloseProjects !== null) {
+                                    setOpenCloseProjects(null);
+                                } else {
+                                    setOpenLiveProjects(value);
+                                }
+                            }}
                         />
                         {openCloseProjects !== null && (
                             <ImportDisplay
-                                imports={['Name of the Project']}
+                                imports={[
+                                    `${openCloseProjects.name
+                                        .split(' ')
+                                        .join('_')}`,
+                                ]}
                                 fromPath={'./CloseProjectsList'}
                             />
                         )}
@@ -76,7 +87,9 @@ function Projects() {
                                     </motion.div>
                                 )}
                             </AnimatePresence>
-                        ) : null}
+                        ) : (
+                            <ProjectDetail project={openCloseProjects} />
+                        )}
 
                         {openCloseProjects === null && (
                             <span className="text-yellow-600">];</span>
@@ -85,7 +98,9 @@ function Projects() {
                         <ExportDefault
                             moduleName={
                                 openCloseProjects !== null
-                                    ? 'Name of the Project'
+                                    ? `${openCloseProjects.name
+                                          .split(' ')
+                                          .join('_')}`
                                     : openLiveProjects
                                     ? 'LiveProjectsList'
                                     : 'CloseProjectsList'
