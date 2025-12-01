@@ -1,3 +1,5 @@
+export interface LiveProjects {}
+
 function LiveProjectsList() {
     return (
         <div>
