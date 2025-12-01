@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import type { CloseProject } from './CloseProjectsList';
+import type { CloseProject } from '.';
 import { Card } from '../../../components';
 
 interface ClosePItemProps {

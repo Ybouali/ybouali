@@ -6,7 +6,7 @@ import {
     MainForScreen,
 } from '../../components';
 import Header from './Header';
-import CloseProjectsList from './CloseProjectsList/CloseProjectsList';
+import CloseProjectsList from './CloseProjectsList';
 import LiveProjectsList from './LiveProjectsList/LiveProjectsList';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -26,18 +26,22 @@ function Projects() {
                             openLiveProjects={openLiveProjects}
                             setOpenLiveProjects={setOpenLiveProjects}
                         />
-                        <ImportDisplay
-                            imports={['LiveProjectsList', 'CloseProjectsList']}
-                            fromPath="./projects"
-                        />
+                        {openCloseProjects !== null && (
+                            <ImportDisplay
+                                imports={['Name of the Project']}
+                                fromPath={'./CloseProjectsList'}
+                            />
+                        )}
 
-                        <CodeArrayDisplay
-                            variableName={
-                                openLiveProjects
-                                    ? 'liveProjects'
-                                    : 'closeProjects'
-                            }
-                        />
+                        {openCloseProjects === null && (
+                            <CodeArrayDisplay
+                                variableName={
+                                    openLiveProjects
+                                        ? 'liveProjects'
+                                        : 'closeProjects'
+                                }
+                            />
+                        )}
                         {openCloseProjects === null ? (
                             <AnimatePresence mode="wait">
                                 {openLiveProjects ? (
@@ -74,11 +78,15 @@ function Projects() {
                             </AnimatePresence>
                         ) : null}
 
-                        <span className="text-yellow-600">];</span>
+                        {openCloseProjects === null && (
+                            <span className="text-yellow-600">];</span>
+                        )}
                         <br />
                         <ExportDefault
                             moduleName={
-                                openLiveProjects
+                                openCloseProjects !== null
+                                    ? 'Name of the Project'
+                                    : openLiveProjects
                                     ? 'LiveProjectsList'
                                     : 'CloseProjectsList'
                             }
