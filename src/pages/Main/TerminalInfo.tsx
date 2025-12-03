@@ -10,17 +10,6 @@ function TerminalInfo() {
                     <pre className="text-xl text-[#569cd6]">
                         Terminal Command to Navigate:
                     </pre>
-                    <pre className="inline-block px-3 py-1.5 text-sm font-medium text-cyan-300 ">
-                        Press
-                        <kbd className="px-2 py-1 mx-1 text-xs font-mono bg-gray-800 rounded border border-gray-700">
-                            Ctrl
-                        </kbd>
-                        +
-                        <kbd className="px-2 py-1 mx-1 text-xs font-mono bg-gray-800 rounded border border-gray-700">
-                            `
-                        </kbd>
-                        to open terminal
-                    </pre>
                 </div>
             </div>
             <Card className="mt-1 bg-transparent p-1">
