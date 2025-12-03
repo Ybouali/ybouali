@@ -1,11 +1,11 @@
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { iconMap } from '../SideBar/ItemSideBar';
 import { useAppContext } from '../../context/AppContext';
-import type { Pages } from '../../types';
+import type { Page } from '../../types';
 import { motion } from 'framer-motion';
 
 type Props = {
-    page: Pages;
+    page: Page;
 };
 
 function ItemNavBar({ page }: Props) {

@@ -11,6 +11,9 @@ type AppContextType = {
     addPageToNavbar: (page: Page) => void;
 
     removePageFromNavbar: (pageName: string) => void;
+
+    openTerminal: boolean;
+    setOpenTerminal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -96,7 +99,17 @@ export function AppProvider({ children }: { children: ReactNode }) {
                 p.page_name === pageName ? { ...p, selected: false } : p
             )
         );
+
+        const n = pagesInNavbar.length;
+
+        if (n > 1) {
+            setSelectedPage(pagesInNavbar[n - 1 - 1]?.page_name);
+        }
+
+        // setSelectedPage(pagesInNavbar[0]?.page_name);
     };
+
+    const [openTerminal, setOpenTerminal] = useState<boolean>(false);
 
     return (
         <AppContext.Provider
@@ -107,6 +120,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
                 setPagesInNavbar,
                 addPageToNavbar,
                 removePageFromNavbar,
+                openTerminal,
+                setOpenTerminal,
             }}
         >
             {children}
