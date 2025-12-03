@@ -7,9 +7,9 @@ import {
 } from '../../components';
 import Header from './Header';
 import CloseProjectsList, { type CloseProject } from './CloseProjectsList';
-import LiveProjectsList from './LiveProjectsList/LiveProjectsList';
+import LiveProjectsList from './LiveProjectsList';
 import { AnimatePresence, motion } from 'framer-motion';
-import ProjectDetail from './CloseProjectsList/ProjectDetails';
+import ProjectDetail from './components/ProjectDetails';
 
 function Projects() {
     const [openLiveProjects, setOpenLiveProjects] = useState(false);
@@ -23,6 +23,7 @@ function Projects() {
                 <div className="mx-auto w-1/2 ">
                     <div className="flex flex-col items-start pb-20 gap-1 ">
                         <Header
+                            setOpenCloseProjects={setOpenCloseProjects}
                             openLiveProjects={openLiveProjects}
                             openCloseProjects={openCloseProjects}
                             setOpenLiveProjects={(value) => {
@@ -40,7 +41,11 @@ function Projects() {
                                         .split(' ')
                                         .join('_')}`,
                                 ]}
-                                fromPath={'./CloseProjectsList'}
+                                fromPath={
+                                    openLiveProjects
+                                        ? './LiveProjectsList'
+                                        : './CloseProjectsList'
+                                }
                             />
                         )}
 
@@ -66,7 +71,11 @@ function Projects() {
                                             ease: 'easeInOut',
                                         }}
                                     >
-                                        <LiveProjectsList />
+                                        <LiveProjectsList
+                                            onProjectClick={
+                                                setOpenCloseProjects
+                                            }
+                                        />
                                     </motion.div>
                                 ) : (
                                     <motion.div

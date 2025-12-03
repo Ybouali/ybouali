@@ -2,6 +2,7 @@ interface HeaderProps {
     openLiveProjects: boolean;
     setOpenLiveProjects: (open: boolean) => void;
     openCloseProjects: CloseProject | null;
+    setOpenCloseProjects: (project: CloseProject | null) => void;
 }
 
 import { DeveloperInfo, SendButton } from '../../components';
@@ -11,6 +12,7 @@ function Header({
     openLiveProjects,
     setOpenLiveProjects,
     openCloseProjects,
+    setOpenCloseProjects,
 }: HeaderProps) {
     return (
         <div className="relative flex flex-row w-full  items-center justify-between gap-3">
@@ -28,13 +30,21 @@ function Header({
                 <SendButton
                     label={
                         openCloseProjects !== null
-                            ? 'Back to Projects'
+                            ? `Back to ${
+                                  openLiveProjects ? 'Live' : 'Close'
+                              } Projects`
                             : openLiveProjects
-                            ? 'Live Projects'
-                            : 'Close Projects'
+                            ? 'Close Projects'
+                            : 'Live Projects'
                     }
                     showIcon={false}
-                    onClick={() => setOpenLiveProjects(!openLiveProjects)}
+                    onClick={() => {
+                        if (openCloseProjects !== null) {
+                            setOpenCloseProjects(null);
+                        } else {
+                            setOpenLiveProjects(!openLiveProjects);
+                        }
+                    }}
                 />
             </div>
         </div>

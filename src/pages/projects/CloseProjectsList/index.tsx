@@ -1,4 +1,4 @@
-import ClosePItem from './ClosePItem';
+import ClosePItem from '../components/ClosePItem';
 
 export interface CloseProject {
     id: number;
@@ -8,6 +8,7 @@ export interface CloseProject {
     projectUrl: string;
     tags: string[];
     details: string[];
+    liveUrl?: string;
 }
 
 interface CloseProjectsListProps {
