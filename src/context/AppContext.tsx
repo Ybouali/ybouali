@@ -50,6 +50,12 @@ export function AppProvider({ children }: { children: ReactNode }) {
             icon_name: 'envelope',
             description: 'Contact information and social links',
         },
+        {
+            page_name: 'blogs.tsx',
+            selected: false,
+            icon_name: 'document-text',
+            description: 'Blog posts and articles',
+        },
     ]);
 
     const [pagesInNavbar, setPagesInNavbar] = useState<Page[]>([]);
@@ -105,8 +111,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
         if (n > 1) {
             setSelectedPage(pagesInNavbar[n - 1 - 1]?.page_name);
         }
-
-        // setSelectedPage(pagesInNavbar[0]?.page_name);
     };
 
     const [openTerminal, setOpenTerminal] = useState<boolean>(false);

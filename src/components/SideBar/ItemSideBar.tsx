@@ -3,6 +3,7 @@ import type { Page } from '../../types';
 import {
     BookOpenIcon,
     CheckBadgeIcon,
+    DocumentTextIcon,
     EnvelopeIcon,
     FolderIcon,
     UserIcon,
@@ -20,6 +21,7 @@ export const iconMap = {
     book: BookOpenIcon,
     certificate: CheckBadgeIcon,
     envelope: EnvelopeIcon,
+    'document-text': DocumentTextIcon,
 };
 
 const ItemSideBar = ({ page, onClick, variants }: ItemSideBarProps) => {
@@ -29,13 +31,13 @@ const ItemSideBar = ({ page, onClick, variants }: ItemSideBarProps) => {
         <motion.li
             key={page.page_name}
             variants={variants}
-            className={`p-1 pl-10 hover:underline cursor-pointer ${
+            className={`py-1 pl-10 hover:underline cursor-pointer ${
                 page.selected ? 'underline' : ''
             }`}
             onClick={() => onClick(page.page_name)}
         >
             {IconComponent && (
-                <IconComponent className="h-4 w-4 inline-block mr-2 text-gray-400" />
+                <IconComponent className="h-4 w-4 inline-block mr-1 text-gray-400" />
             )}
             <span>{page.page_name}</span>
         </motion.li>

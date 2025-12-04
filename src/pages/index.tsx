@@ -7,6 +7,7 @@ import Educations from './educations';
 import Main from './Main';
 import Projects from './projects';
 import WhoIAm from './whoIAm';
+import Blogs from './blogs';
 
 function Pages() {
     const { pagesInNavbar } = useAppContext();
@@ -53,6 +54,7 @@ function Pages() {
                                 {p.page_name === 'contact-me.tsx' && (
                                     <ContactMe />
                                 )}
+                                {p.page_name === 'blogs.tsx' && <Blogs />}
                             </motion.div>
                         ) : null
                     )
