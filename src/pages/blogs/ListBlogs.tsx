@@ -10,6 +10,7 @@ export interface BlogPost {
     author?: string;
     tags?: string[];
     imageUrl?: string;
+    codeExample?: string[];
 }
 
 type ListBlogsProps = {
