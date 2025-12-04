@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import type { BlogPost } from './ListBlogs';
 import { Card } from '../../components';
+import { useEffect, useState } from 'react';
 
 function BlogDetails({
     title,
@@ -12,6 +13,19 @@ function BlogDetails({
     imageUrl,
     codeExample,
 }: BlogPost) {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const imageCount = imageUrl?.length || 0;
+
+        if (imageCount > 0) {
+            const timer = setInterval(() => {
+                setCurrentIndex((prev) => (prev + 1) % imageCount);
+            }, 3000);
+
+            return () => clearInterval(timer);
+        }
+    }, [imageUrl]);
     return (
         <Card>
             <motion.article
@@ -19,16 +33,21 @@ function BlogDetails({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
             >
-                {imageUrl && (
-                    <motion.img
-                        src={imageUrl}
-                        alt={title}
-                        className="w-full h-64 object-cover rounded-t-lg mb-4"
-                        initial={{ scale: 0.95 }}
-                        animate={{ scale: 1 }}
-                        transition={{ duration: 0.3 }}
-                    />
-                )}
+                <div className="relative w-full h-64">
+                    {imageUrl?.map((url, index) => (
+                        <motion.img
+                            key={index}
+                            src={url}
+                            alt={`Slide ${index}`}
+                            className="absolute top-0 left-0 w-full h-full object-cover"
+                            initial={{ opacity: 0 }}
+                            animate={{
+                                opacity: index === currentIndex ? 1 : 0,
+                            }}
+                            transition={{ duration: 0.5, ease: 'easeInOut' }}
+                        />
+                    ))}
+                </div>
                 <header className="mb-4">
                     <motion.h1
                         className="text-3xl font-bold text-blue-400"

@@ -35,7 +35,7 @@ function BlogItem({ blog, onClick }: BlogItemProps) {
                 className="group flex items-center gap-4 cursor-pointer transition-colors duration-700 ease-in-out  w-full "
             >
                 <img
-                    src={blog.imageUrl}
+                    src={blog.avatartUrl}
                     alt={blog.title}
                     className="w-20 h-20 object-cover rounded border border-[#333333]"
                 />

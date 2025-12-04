@@ -9,7 +9,8 @@ export interface BlogPost {
     date?: string;
     author?: string;
     tags?: string[];
-    imageUrl?: string;
+    imageUrl?: string[];
+    avatartUrl?: string;
     codeExample?: string[];
 }
 
