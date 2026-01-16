@@ -4,16 +4,19 @@ interface Props {
     onClick?: () => void;
     label?: string;
     showIcon?: boolean;
+    disabled?: boolean;
 }
 
 function SendButton({
     onClick,
     label = 'Send Message',
     showIcon = true,
+    disabled = false,
 }: Props) {
     return (
         <div className="w-full flex justify-center items-center  cursor-pointer ">
             <button
+                disabled={disabled}
                 onClick={onClick}
                 className="flex justify-center items-center cursor-pointer bg-[#4e6a40] text-white py-2 px-4 rounded hover:bg-[#7cbf4a] flex-1 duration-700 "
             >

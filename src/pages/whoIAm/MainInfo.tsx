@@ -37,7 +37,7 @@ function MainInfo() {
                 <ButtonSocialMediaTwo
                     icon={DownloadIcon}
                     label="Download CV"
-                    url="https://www.linkedin.com/in/yassine-bouali/"
+                    url="/"
                     isDownload={true}
                 />
             </div>

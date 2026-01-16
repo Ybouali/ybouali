@@ -53,8 +53,7 @@ function ListEducations() {
             degree: 'Baccalaureate',
             fieldOfStudy: 'Science Stream',
             location: 'Errachidia, Morocco',
-            urlSchool:
-                'https://massary.ma/annuaire-des-ecoles/cpge/public/Lyc%C3%A9e%20Ibn%20Tahir%20(LIH-Er)-%20Errachidia/',
+            urlSchool: 'https://www.9rayti.com/ecole/cpge-errachidia-ibn-tahir',
             urlLogo:
                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5AVuWbxb4CZQnjuaKdteM-UBbEdcz3dHopw&s',
         },

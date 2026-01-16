@@ -16,7 +16,7 @@ function SocecialContactMe() {
                     <ButtonSocecialMedia
                         icon={EmailIcon}
                         label={'Email'}
-                        url={'yssine.bouali.bo@gmail.com'}
+                        url={'yassine.bouali.bo@gmail.com'}
                     />
                     <ButtonSocecialMedia
                         icon={GithubIcon}

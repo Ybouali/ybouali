@@ -32,6 +32,7 @@ function ItemEducation({
                 <p className="text-md text-gray-300">{fieldOfStudy}</p>
                 <a
                     href={urlSchool}
+                    target="_blank"
                     className="text-lg font-medium text-blue-400 hover:underline flex items-center gap-1"
                 >
                     <LinkIcon className="h-4 w-4" />
