@@ -38,6 +38,7 @@ function MainInfo() {
                     icon={DownloadIcon}
                     label="Download CV"
                     url="https://www.linkedin.com/in/yassine-bouali/"
+                    isDownload={true}
                 />
             </div>
             <div className="flex flex-col gap-2 w-full md:w-4/6 ">
@@ -86,23 +87,23 @@ function MainInfo() {
                     </span>
                 </div>
                 <p className="text-lg font-semibold text-[#4e6a40] ">
-                    {`// Connect with me`}
+                    {`// Social Media Links`}
                 </p>
                 <div className="flex flex-row items-center justify-start gap-4">
                     <ButtonSocialMediaTwo
                         icon={GithubIcon}
                         label="GitHub"
-                        url="https://github.com/YassineBouali"
+                        url="https://github.com/Ybouali"
                     />
                     <ButtonSocialMediaTwo
                         icon={LinkedInIcon}
                         label="LinkedIn"
-                        url="https://www.linkedin.com/in/yassine-bouali/"
+                        url="https://www.linkedin.com/in/ybouali/"
                     />
                     <ButtonSocialMediaTwo
                         icon={InstagramIcon}
                         label="Instagram"
-                        url="https://www.instagram.com/yassine.bouali/"
+                        url="https://www.instagram.com/yassineboualino/"
                     />
                 </div>
             </div>

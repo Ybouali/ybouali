@@ -31,7 +31,7 @@ function SocecialContactMe() {
                     <ButtonSocecialMedia
                         icon={InstagramIcon}
                         label={'Instagram'}
-                        url={'https://www.instagram.com/ybouali/'}
+                        url={'https://www.instagram.com/yassineboualino/'}
                     />
                 </div>
             </Card>
