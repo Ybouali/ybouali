@@ -2,6 +2,15 @@ import type { CertificateType } from '../pages/certifitcates/ListCertificates';
 
 export const certificates: CertificateType[] = [
     {
+        courseName: 'IBM Java Developer',
+        platform: 'IBM Coursera',
+        issuedDate: 'November 2025',
+        certificateID: '2ACPQFG8U6E1',
+        verificationURL:
+            'https://www.coursera.org/verify/professional-cert/2ACPQFG8U6E1',
+        yourName: 'Youssef Bouali',
+    },
+    {
         courseName: 'Cloud Native, Microservices, Containers, DevOps and Agile',
         platform: 'IBM Coursera',
         issuedDate: 'November 2025',

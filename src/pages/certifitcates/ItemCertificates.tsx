@@ -16,7 +16,12 @@ function ItemCertificates({
     verificationURL,
 }: CertificateType) {
     return (
-        <Card className=" rounded-xl border border-gray-700 hover:border-blue-500 transition-all">
+        <Card
+            className="rounded-xl border border-gray-700 hover:border-blue-500 transition-all cursor-pointer "
+            onClick={() => {
+                window.open(verificationURL, '_blank', 'noopener,noreferrer');
+            }}
+        >
             <div className="flex items-center mb-4">
                 <AcademicCapIcon className="h-6 w-6 text-gray-700 mr-2" />
                 <h3 className="text-xl font-semibold text-purple-400">
@@ -42,10 +47,6 @@ function ItemCertificates({
                         {`Certificate ID: ${certificateID}`}
                     </span>
                 </p>
-                {/* <p className="flex items-center">
-                    <UserIcon className="h-5 w-5 mr-2" />
-                    <span className="font-medium text-purple-200 ">Issued To:</span> {yourName}
-                </p> */}
                 {verificationURL && (
                     <a
                         href={verificationURL}

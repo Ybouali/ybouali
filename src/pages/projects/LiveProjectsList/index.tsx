@@ -9,19 +9,16 @@ function LiveProjectsList({ onProjectClick }: LiveProjectsListProps) {
     const liveProjects: CloseProject[] = [
         {
             id: 1,
-            name: 'Dining Philosophers',
-            smallDescription:
-                'Five guys, five forks, zero starvation. I made them behave.',
-            imageUrl:
-                'https://assets.leetcode.com/uploads/2019/09/24/an_illustration_of_the_dining_philosophers_problem.png',
-            projectUrl: 'https://github.com/Ybouali/Philosopher',
-            tags: ['C++', 'threads', 'deadlock'],
+            name: 'My Portfolio',
+            smallDescription: 'My current portfolio',
+            imageUrl: '/src/assets/img/projects/protfolio.png',
+            projectUrl: 'https://github.com/Ybouali/',
+            tags: ['Type script', 'react', 'vite'],
             details: [
-                "One mutex wasn't enough—so I invented a waiter.",
-                'They eat forever now. No drama.',
-                "Click 'replay crash' to watch them choke first.",
+                'Take this portfolio, make it yours, slap your info on it — go wild! 🔥💪🎨',
+                'Show some love with a GitHub star pleeease 🥺👉👈✨⭐',
             ],
-            liveUrl: 'https://example.com/dining-philosophers',
+            liveUrl: '',
         },
     ];
 
