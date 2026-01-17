@@ -3,8 +3,9 @@ import BlogItem from './BlogItem';
 
 export interface BlogPost {
     title: string;
+    titleFile: string;
     blurb: string;
-    whyItMatters: string;
+    whyItMatters?: string;
     content: string;
     date?: string;
     author?: string;

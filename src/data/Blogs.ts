@@ -2,91 +2,29 @@ import type { BlogPost } from '../pages/blogs/ListBlogs';
 
 export const posts: BlogPost[] = [
     {
-        title: 'The Future of AI in Everyday Life',
-        blurb: 'Exploring how AI tools like Grok are changing how we work and play.',
-        whyItMatters:
-            'Understanding AI helps you stay ahead in a tech-driven world, boosting productivity and creativity.',
-        content:
-            'Full post content here: AI is evolving rapidly. Tools like Grok from xAI are making complex tasks simpler. For example, in coding, AI can suggest interfaces like this one. In daily life, it assists with planning and creativity. The key is ethical integration...',
-        date: '2025-12-04',
-        author: 'You',
-        tags: ['AI', 'tech', 'future'],
-        avatartUrl:
-            'https://blog.theodo.com/_astro/ts_logo.BstCNrTU_1Dbxpr.webp',
+        title: 'Why I Redesesign My Portfolio – From Inspiration to Identity',
+        titleFile: 'Why I Redesesign',
+        blurb: 'That old portfolio? 😏 Definitely not me! (UI) 🚀',
+
+        content: `The old portfolio wasn’t really mine.
+        It was someone else’s layout I liked to inspire from it.
+        Nothing wrong with it — but it never felt personal.
+
+        So I started over.
+        I wanted something that actually feels like me.
+        Something built from scratch, with my own flow and my own voice.
+        No borrowed pieces this time.
+
+        Just clean, honest lines that tell my story.
+
+        This is me now.
+        Welcome inside.`,
+        date: '2026-01-17',
+        author: 'Author',
         imageUrl: [
-            'https://blog.theodo.com/_astro/ts_logo.BstCNrTU_1Dbxpr.webp',
-            'https://blog.theodo.com/_astro/ts_logo.BstCNrTU_1Dbxpr.webp',
-            'https://blog.theodo.com/_astro/ts_logo.BstCNrTU_1Dbxpr.webp',
-            'https://blog.theodo.com/_astro/ts_logo.BstCNrTU_1Dbxpr.webp',
-            'https://blog.theodo.com/_astro/ts_logo.BstCNrTU_1Dbxpr.webp',
-            'https://blog.theodo.com/_astro/ts_logo.BstCNrTU_1Dbxpr.webp',
-            'https://blog.theodo.com/_astro/ts_logo.BstCNrTU_1Dbxpr.webp',
-            'https://blog.theodo.com/_astro/ts_logo.BstCNrTU_1Dbxpr.webp',
-            'https://blog.theodo.com/_astro/ts_logo.BstCNrTU_1Dbxpr.webp',
-        ],
-        codeExample: [
-            'interface BlogPost {',
-            '    title: string;',
-            '    blurb: string;',
-            '    content: string;',
-            '    date?: string;',
-            '    author?: string;',
-            '    tags?: string[];',
-            '    imageUrl?: string;',
-            '}',
-            '',
-            'const posts: BlogPost[] = [',
-            '    {',
-            '        title: "My First Post",',
-            '        blurb: "An intro to my blog",',
-            '        content: "Full post content here...",',
-            '        date: "2025-11-28",',
-            '        tags: ["intro", "blogging"],',
-            '    },',
-            '];',
-            '',
-            'export default posts;',
-        ],
-    },
-    {
-        title: 'Building Your First Blog with TypeScript',
-        blurb: "A beginner's guide to setting up interfaces and rendering content.",
-        whyItMatters:
-            'Strong typing prevents errors and makes your code scalable as your blog grows.',
-        content:
-            'Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...Full post content here: Start by defining your interfaces in TypeScript. For a blog, include fields like title, blurb, and content. Then, create an array of posts and render them in React. Add optional fields for dates and tags to enhance functionality...',
-        date: '2025-11-28',
-        tags: ['TypeScript', 'web-dev', 'blogging'],
-        avatartUrl:
-            'https://blog.theodo.com/_astro/ts_logo.BstCNrTU_1Dbxpr.webp',
-        imageUrl: [
-            'https://blog.theodo.com/_astro/ts_logo.BstCNrTU_1Dbxpr.webp',
-            'https://www.infoworld.com/wp-content/uploads/2024/06/java_binary_code_gears_programming_coding_development_by_bluebay2014_gettyimages-1040871468_2400x1600-100795798-orig.jpg',
-            'https://guruzwebservices.com/wp-content/uploads/2025/06/c-language.png',
-            'https://github.blog/wp-content/uploads/2025/04/darklight.png',
-        ],
-        codeExample: [
-            'interface BlogPost {',
-            '    title: string;',
-            '    blurb: string;',
-            '    content: string;',
-            '    date?: string;',
-            '    author?: string;',
-            '    tags?: string[];',
-            '    imageUrl?: string;',
-            '}',
-            '',
-            'const posts: BlogPost[] = [',
-            '    {',
-            '        title: "My First Post",',
-            '        blurb: "An intro to my blog",',
-            '        content: "Full post content here...",',
-            '        date: "2025-11-28",',
-            '        tags: ["intro", "blogging"],',
-            '    },',
-            '];',
-            '',
-            'export default posts;',
+            'src/assets/img/blog/why/home.png',
+            'src/assets/img/blog/why/projects.png',
+            'src/assets/img/blog/why/contact_me.png',
         ],
     },
 ];

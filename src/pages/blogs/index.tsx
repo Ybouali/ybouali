@@ -19,7 +19,9 @@ function Blogs() {
                     <div className="flex flex-col items-start pb-20 gap-3 ">
                         <Header openBlog={openBlog} setOpenBlog={setOpenBlog} />
 
-                        <CodeArrayDisplay variableName={'blogs'} />
+                        {openBlog === null && (
+                            <CodeArrayDisplay variableName={'blogs'} />
+                        )}
 
                         {openBlog === null ? (
                             <motion.div
@@ -38,9 +40,15 @@ function Blogs() {
                             <BlogDetails {...openBlog} />
                         )}
 
-                        <span className="text-yellow-600">];</span>
-
-                        <ExportDefault moduleName="Blogs" />
+                        <ExportDefault
+                            moduleName={
+                                openBlog !== null
+                                    ? `${openBlog.titleFile
+                                          .split(' ')
+                                          .join('')}`
+                                    : 'Blogs'
+                            }
+                        />
                     </div>
                 </div>
             </div>

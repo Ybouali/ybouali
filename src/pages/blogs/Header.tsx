@@ -12,7 +12,11 @@ function Header({ openBlog, setOpenBlog }: HeaderProps) {
             <DeveloperInfo
                 labelOne="from"
                 labelTwo="description"
-                valueOne={openBlog !== null ? 'BlogDetails.tsx' : 'Blogs.tsx'}
+                valueOne={
+                    openBlog !== null
+                        ? `${openBlog.titleFile.split(' ').join('')}.tsx`
+                        : 'Blogs.tsx'
+                }
                 valueTwo={
                     openBlog !== null
                         ? `${openBlog.title}`

@@ -33,21 +33,29 @@ function BlogDetails({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
             >
-                <div className="relative w-full h-64">
-                    {imageUrl?.map((url, index) => (
-                        <motion.img
-                            key={index}
-                            src={url}
-                            alt={`Slide ${index}`}
-                            className="absolute top-0 left-0 w-full h-full object-cover"
-                            initial={{ opacity: 0 }}
-                            animate={{
-                                opacity: index === currentIndex ? 1 : 0,
-                            }}
-                            transition={{ duration: 0.5, ease: 'easeInOut' }}
-                        />
-                    ))}
-                </div>
+                {imageUrl && imageUrl.length > 0 && (
+                    <div
+                        className="relative w-full"
+                        style={{ aspectRatio: '16/9' }}
+                    >
+                        {imageUrl.map((url, index) => (
+                            <motion.img
+                                key={index}
+                                src={url}
+                                alt={`Slide ${index}`}
+                                className="absolute inset-0 w-full h-full object-contain"
+                                initial={{ opacity: 0 }}
+                                animate={{
+                                    opacity: index === currentIndex ? 1 : 0,
+                                }}
+                                transition={{
+                                    duration: 1.8,
+                                    ease: 'easeInOut',
+                                }}
+                            />
+                        ))}
+                    </div>
+                )}
                 <header className="mb-4">
                     <motion.h1
                         className="text-3xl font-bold text-blue-400"
@@ -66,17 +74,28 @@ function BlogDetails({
                 <section className="mb-4">
                     <p className="text-lg text-gray-300 italic">{blurb}</p>
                 </section>
+                {whyItMatters && (
+                    <section className="mb-4">
+                        <h2 className="text-xl font-semibold text-green-400 mb-2">
+                            Why It Matters
+                        </h2>
+                        <p className="text-gray-200">{whyItMatters}</p>
+                    </section>
+                )}
                 <section className="mb-4">
-                    <h2 className="text-xl font-semibold text-green-400 mb-2">
-                        Why It Matters
-                    </h2>
-                    <p className="text-gray-200">{whyItMatters}</p>
-                </section>
-                <section className="mb-4">
-                    <h2 className="text-xl font-semibold text-purple-400 mb-2">
+                    {/* <h2 className="text-xl font-semibold text-purple-400 mb-2">
                         Full Content
-                    </h2>
-                    <p className="text-gray-100">{content}</p>
+                    </h2> */}
+                    <div className="border-b-2 border-amber-800 my-1 mx-2 " />
+
+                    <p className="text-gray-100">
+                        {content.split('\n').map((line, index) => (
+                            <span key={index}>
+                                {line}
+                                <br />
+                            </span>
+                        ))}
+                    </p>
                     {codeExample && (
                         <>
                             <br />
