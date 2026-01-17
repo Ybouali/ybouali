@@ -7,8 +7,8 @@ import {
     InstagramIcon,
     LinkedInIcon,
 } from '../../components';
-import MeImage from '../../assets/img/me.jpeg';
-import ProMeImage from '../../assets/img/proMe.jpeg';
+import MeImage from '/assets/img/me.jpeg';
+import ProMeImage from '/assets/img/proMe.jpeg';
 import { MapPinIcon } from '@heroicons/react/24/solid';
 import { motion } from 'framer-motion';
 

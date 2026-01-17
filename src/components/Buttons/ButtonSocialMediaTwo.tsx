@@ -14,7 +14,7 @@ function ButtonSocialMediaTwo({
 }: Props) {
     const downloadCV = () => {
         const link = document.createElement('a');
-        link.href = '/src/assets/cv/yassine_bouali_cv.pdf';
+        link.href = '/assets/cv/yassine_bouali_cv.pdf';
         link.download = 'Yassine_Bouali_CV.pdf';
         document.body.appendChild(link);
         link.click();

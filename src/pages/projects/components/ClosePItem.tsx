@@ -37,7 +37,7 @@ function ClosePItem({ project, onClick }: ClosePItemProps) {
                 <img
                     src={project.imageUrl}
                     alt={project.name}
-                    className="w-20 h-20 object-cover rounded border border-[#333333]"
+                    className="w-20 h-20 object-contain rounded border border-[#333333]"
                 />
                 <div>
                     <h3 className="m-0 text-lg font-bold text-white">

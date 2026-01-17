@@ -22,9 +22,9 @@ export const posts: BlogPost[] = [
         date: '2026-01-17',
         author: 'Author',
         imageUrl: [
-            'src/assets/img/blog/why/home.png',
-            'src/assets/img/blog/why/projects.png',
-            'src/assets/img/blog/why/contact_me.png',
+            '/assets/img/blog/why/home.png',
+            '/assets/img/blog/why/projects.png',
+            '/assets/img/blog/why/contact_me.png',
         ],
     },
 ];
