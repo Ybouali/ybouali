@@ -1,19 +1,36 @@
-# React + TypeScript + Vite
+<div align="center">
+<summary align="center" style="font-size:1.4rem; font-weight:600; cursor:pointer;">
+🧠 <b>Yassine Bouali</b> – Software Engineer
+</summary>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+<details close>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img alt="Banner" src="https://capsule-render.vercel.app/api?type=waving&color=0:1e40af,1:1e3a8a&height=220&section=header&text=Yassine%20Bouali&fontSize=52&fontColor=ffffff&animation=twinkling&fontAlign=70&fontAlignY=38" />
+
+---
+
+**Full-Stack Developer | React Native • React • Django • Flutter**  
+_From Casablanca, Morocco_ 🇲🇦  
+📧 `yassine.bouali.bo@gmail.com` • [LinkedIn](https://www.linkedin.com/in/ybouali) • [📞 +212 650 027 073](tel:+212650027073)
+
+-   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+-   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-   **Full-Stack Developer Intern** @ **Koolskools** _(Jul 2025 – Present)_  
+    → Building **React Native mobile app** + **web ticketing platform**  
+    → **Django + PostgreSQL** backend with **AWS S3**, **FCM**, **Google Maps API**  
+    → Full **Docker + Docker Compose** deployment
 
-## Expanding the ESLint configuration
+-   **Full-Stack Web Intern** @ **ORMVA/TF** _(Jan–May 2025)_  
+    → Developed offer creation workflow with role-based UIs & legacy data migration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-   **1337 School (42 Network)** – _2021 – Present_  
+    → Peer-learning, C, algorithms, systems programming, full-stack projects
 
 ```js
 export default defineConfig([
@@ -30,44 +47,16 @@ export default defineConfig([
       // Optionally, add this for stylistic rules
       tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| **Frontend** | **Backend** | **Mobile** | **DevOps** |
+|---------------|-------------|-------------|-------------|
+| React + Vite | Django / DRF | React Native | Docker |
+| TypeScript | PostgreSQL | Flutter | Nginx |
+| Tailwind CSS | REST APIs | Expo | AWS S3 |
+| JavaScript | Celery | Redux Toolkit | Firebase FCM |
+| Node.js | JWT Auth | Axios | Google Maps API |
+| Express.js | MongoDB | Shell Scripting | Git & GitHub |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+</details>
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
