@@ -1,7 +1,8 @@
 {
-    "name": "ybouali",
+    "name": "noone",
+    "version": "0.1.0",
     "private": true,
-    "version": "0.0.0",
+    "homepage": "https://github.io/ybouali",
     "type": "module",
     "scripts": {
         "dev": "vite",
