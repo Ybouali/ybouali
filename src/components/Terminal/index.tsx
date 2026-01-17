@@ -3,7 +3,7 @@ import { useAppContext } from '../../context/AppContext';
 import { motion } from 'framer-motion';
 
 function Terminal() {
-    const { setOpenTerminal } = useAppContext();
+    const { setOpenTerminal, addPageToNavbar, pages } = useAppContext();
     const [command, setCommand] = useState('');
     const [history, setHistory] = useState<{ cmd: string; output: string }[]>(
         []
@@ -49,6 +49,12 @@ function Terminal() {
 
             if (fileName) {
                 output = `Opening ${fileName} in VS Code ... `;
+
+                pages.map((p) => {
+                    if (p.page_name.startsWith(fileName)) {
+                        addPageToNavbar(p);
+                    }
+                });
             } else {
                 output = 'Please specify a file to open.';
             }
@@ -85,7 +91,12 @@ function Terminal() {
                             {`ybouali@0.0.0.0:~$ ${item.cmd}`}
                         </span>
                         <br />
-                        <span className="text-gray-300">{item.output}</span>
+                        {item.output.split('\n').map((line, index) => (
+                            <span key={index} className="text-gray-300">
+                                {line}
+                                <br />
+                            </span>
+                        ))}
                         <br />
                     </div>
                 ))}
