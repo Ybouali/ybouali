@@ -1,5 +1,7 @@
 import type { IconType } from '../../types';
 
+import myCv from '/assets/cv/yassine_bouali_cv.pdf';
+
 type Props = {
     icon: IconType;
     label: string;
@@ -14,7 +16,7 @@ function ButtonSocialMediaTwo({
 }: Props) {
     const downloadCV = () => {
         const link = document.createElement('a');
-        link.href = '/assets/cv/yassine_bouali_cv.pdf';
+        link.href = myCv;
         link.download = 'Yassine_Bouali_CV.pdf';
         document.body.appendChild(link);
         link.click();

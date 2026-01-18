@@ -1,5 +1,9 @@
 import type { BlogPost } from '../pages/blogs/ListBlogs';
 
+import homeImage from '/assets/img/blog/why/home.png';
+import projectsImage from '/assets/img/blog/why/projects.png';
+import contactMeImage from '/assets/img/blog/why/contact_me.png';
+
 export const posts: BlogPost[] = [
     {
         title: 'Why I Redesesign My Portfolio – From Inspiration to Identity',
@@ -21,10 +25,6 @@ export const posts: BlogPost[] = [
         Welcome inside.`,
         date: '2026-01-17',
         author: 'Author',
-        imageUrl: [
-            '/assets/img/blog/why/home.png',
-            '/assets/img/blog/why/projects.png',
-            '/assets/img/blog/why/contact_me.png',
-        ],
+        imageUrl: [homeImage, projectsImage, contactMeImage],
     },
 ];
