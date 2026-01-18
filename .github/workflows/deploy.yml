@@ -24,22 +24,22 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
-            - name: Create .env.production with secrets
+            - name: Debug secrets (confirm they're loaded)
               run: |
-                  echo "VITE_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}" >> .env.production
-                  echo "VITE_EMAILJS_SERVICE_ID=${{ secrets.VITE_EMAILJS_SERVICE_ID }}" >> .env.production
-                  echo "VITE_EMAILJS_TEMPLATE_ID=${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}" >> .env.production
+                  echo "PUBLIC_KEY length: ${#VITE_EMAILJS_PUBLIC_KEY}"
+                  echo "SERVICE_ID length: ${#VITE_EMAILJS_SERVICE_ID}"
+                  echo "TEMPLATE_ID length: ${#VITE_EMAILJS_TEMPLATE_ID}"
 
             - name: Build
               run: npm run build
-              env:
+              env: # ← CRITICAL: env HERE under BUILD step only!
                   VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
                   VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
                   VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
 
-            - name: Debug secrets availability
+            - name: Debug post-build env (should show lengths >0)
               run: |
-                  echo "PUBLIC_KEY length: ${#VITE_EMAILJS_PUBLIC_KEY}"
+                  echo "AFTER BUILD - PUBLIC_KEY length: ${#VITE_EMAILJS_PUBLIC_KEY}"
                   echo "SERVICE_ID length: ${#VITE_EMAILJS_SERVICE_ID}"
                   echo "TEMPLATE_ID length: ${#VITE_EMAILJS_TEMPLATE_ID}"
 
