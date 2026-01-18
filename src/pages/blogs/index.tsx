@@ -39,6 +39,9 @@ function Blogs() {
                         ) : (
                             <BlogDetails {...openBlog} />
                         )}
+                        {openBlog === null && (
+                            <span className="text-yellow-600">];</span>
+                        )}
 
                         <ExportDefault
                             moduleName={
