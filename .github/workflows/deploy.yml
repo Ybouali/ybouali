@@ -8,7 +8,6 @@ on:
 jobs:
     deploy:
         runs-on: ubuntu-latest
-        environment: production
         permissions:
             contents: write
 
@@ -28,17 +27,15 @@ jobs:
             - name: Build
               run: npm run build
               env:
-                  CI: false
                   VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
                   VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
                   VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
 
-            - name: Debug - Print available env vars (masked)
+            - name: Debug secrets availability
               run: |
-                  echo "GITHUB_TOKEN length: ${#GITHUB_TOKEN}"
-                  echo "VITE_EMAILJS_PUBLIC_KEY is set: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY != '' }}"
-                  echo "VITE_EMAILJS_SERVICE_ID is set: ${{ secrets.VITE_EMAILJS_SERVICE_ID != '' }}"
-                  echo "VITE_EMAILJS_TEMPLATE_ID is set: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID != '' }}"
+                  echo "PUBLIC_KEY length: ${#VITE_EMAILJS_PUBLIC_KEY}"
+                  echo "SERVICE_ID length: ${#VITE_EMAILJS_SERVICE_ID}"
+                  echo "TEMPLATE_ID length: ${#VITE_EMAILJS_TEMPLATE_ID}"
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v4
