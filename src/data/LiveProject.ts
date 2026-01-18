@@ -1,11 +1,13 @@
 import type { CloseProject } from '../pages/projects/CloseProjectsList';
 
+import fProjectImage from '/assets/img/projects/protfolio.png';
+
 export const liveProjects: CloseProject[] = [
     {
         id: 1,
         name: 'My Portfolio',
         smallDescription: 'My current portfolio',
-        imageUrl: '/assets/img/projects/protfolio.png',
+        imageUrl: fProjectImage,
         projectUrl: 'https://github.com/Ybouali/ybouali',
         tags: ['Type script', 'react', 'vite'],
         details: [
