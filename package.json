@@ -2,7 +2,7 @@
     "name": "noone",
     "version": "0.2.0",
     "private": true,
-    "homepage": "https://github.io/ybouali/",
+    "homepage": "https://ybouali.github.io/Ybouali/",
     "type": "module",
     "scripts": {
         "dev": "vite",
