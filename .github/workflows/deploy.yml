@@ -8,6 +8,7 @@ on:
 jobs:
     deploy:
         runs-on: ubuntu-latest
+        environment: production
         permissions:
             contents: write
 
@@ -34,6 +35,7 @@ jobs:
 
             - name: Debug - Print available env vars (masked)
               run: |
+                  echo "GITHUB_TOKEN length: ${#GITHUB_TOKEN}"
                   echo "VITE_EMAILJS_PUBLIC_KEY is set: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY != '' }}"
                   echo "VITE_EMAILJS_SERVICE_ID is set: ${{ secrets.VITE_EMAILJS_SERVICE_ID != '' }}"
                   echo "VITE_EMAILJS_TEMPLATE_ID is set: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID != '' }}"
