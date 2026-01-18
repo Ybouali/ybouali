@@ -32,6 +32,12 @@ jobs:
                   VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
                   VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
 
+            - name: Debug - Print available env vars (masked)
+              run: |
+                  echo "VITE_EMAILJS_PUBLIC_KEY is set: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY != '' }}"
+                  echo "VITE_EMAILJS_SERVICE_ID is set: ${{ secrets.VITE_EMAILJS_SERVICE_ID != '' }}"
+                  echo "VITE_EMAILJS_TEMPLATE_ID is set: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID != '' }}"
+
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v4
               with:
