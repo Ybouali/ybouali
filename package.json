@@ -2,7 +2,7 @@
     "name": "noone",
     "version": "0.2.0",
     "private": true,
-    "homepage": "https://ybouali.github.io/ybouali/",
+    "homepage": "https://ybouali.dev",
     "type": "module",
     "scripts": {
         "dev": "vite",
@@ -32,6 +32,7 @@
         "globals": "^16.5.0",
         "typescript": "~5.9.3",
         "typescript-eslint": "^8.46.4",
-        "vite": "^7.2.4"
+        "vite": "^7.2.4",
+        "vite-plugin-sitemap": "^0.8.2"
     }
 }
