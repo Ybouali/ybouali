@@ -7,8 +7,6 @@ import {
     InstagramIcon,
     LinkedInIcon,
 } from '../../components';
-import MeImage from '/assets/img/me.jpeg';
-import ProMeImage from '/assets/img/proMe.jpeg';
 import { MapPinIcon } from '@heroicons/react/24/solid';
 import { motion } from 'framer-motion';
 
@@ -18,7 +16,7 @@ function MainInfo() {
             <div className="flex flex-col w-full  h-full justify-start gap-4 ">
                 <div className="relative w-50 h-50 rounded-lg overflow-hidden  ">
                     <motion.img
-                        src={ProMeImage}
+                        src={'/assets/img/proMe.jpeg'}
                         alt="yassine bouali"
                         className="absolute inset-0 top-0 left-0 w-full h-full object-cover border border-[#404040]"
                         initial={{ opacity: 1 }}
@@ -26,7 +24,7 @@ function MainInfo() {
                         transition={{ duration: 0.4 }}
                     />
                     <motion.img
-                        src={MeImage}
+                        src={'/assets/img/me.jpeg'}
                         alt="hover"
                         className="absolute inset-0 top-0 left-0 w-full h-full object-cover border border-[#404040]"
                         initial={{ opacity: 0 }}
