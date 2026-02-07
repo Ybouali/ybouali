@@ -20,7 +20,7 @@ function CustomInput({ label, placeholder, value, type, onChange }: Props) {
                 value={value}
                 onChange={onChange}
                 id="custom-input"
-                className=" text-white border border-[#4e6a40] p-2 rounded bg-[#3f3f43] focus:border-[#7cbf4a] focus:outline-none"
+                className=" text-white border border-indigo-500/50 p-2 rounded bg-[#252526] focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-all"
             />
         </div>
     );

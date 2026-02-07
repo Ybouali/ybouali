@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from 'vite-plugin-sitemap';
+import Pages from 'vite-plugin-pages';
 
 export default defineConfig({
     plugins: [
@@ -11,6 +12,10 @@ export default defineConfig({
             generateRobotsTxt: true,
             changefreq: 'monthly',
             priority: 0.8,
+        }),
+        Pages({
+            dirs: 'src/pages',
+            extensions: ['tsx', 'ts', 'jsx', 'js'],
         }),
     ],
     base: '/',

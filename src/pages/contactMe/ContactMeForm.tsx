@@ -7,11 +7,13 @@ import {
 } from '../../components';
 
 import emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast';
 
 type SendEmail = {
     fromEmail: string;
     message: string;
     fromName: string;
+    time: string;
 };
 
 export async function sendEmail({
@@ -36,19 +38,52 @@ function ContactMeForm() {
         fromEmail: '',
         message: '',
         fromName: '',
+        time: new Date().toISOString(),
     });
 
     const [loading, setLoading] = useState(false);
 
     const handleSend = async () => {
+        if (
+            !emailContent.fromName ||
+            !emailContent.fromEmail ||
+            !emailContent.message
+        ) {
+            toast.error('Please fill in all fields');
+            return;
+        }
+
+        setLoading(true);
         try {
-            setLoading(true);
-            await sendEmail(emailContent);
-            // alert('Message sent successfully ✅');
-            setEmailContent({ fromEmail: '', message: '', fromName: '' });
+            await toast.promise(
+                sendEmail(emailContent),
+                {
+                    loading: 'Sending...',
+                    success: 'Message sent! I’ll reply soon.',
+                    error: 'Send failed. Try again or email me.',
+                },
+                {
+                    style: {
+                        background: '#1e1e1e',
+                        color: '#fff',
+                        border: '1px solid #3730a3', // Indigo border for toast
+                    },
+                    success: {
+                        iconTheme: {
+                            primary: '#6366f1',
+                            secondary: '#fff',
+                        },
+                    },
+                }
+            );
+            setEmailContent({
+                fromEmail: '',
+                message: '',
+                fromName: '',
+                time: new Date().toISOString(),
+            });
         } catch (err) {
             console.error(err);
-            alert('Failed to send message ❌');
         } finally {
             setLoading(false);
         }
@@ -56,7 +91,7 @@ function ContactMeForm() {
 
     return (
         <Card className="flex flex-col w-full items-start justify-center gap-3">
-            <p className="text-lg font-semibold text-[#4e6a40]">
+            <p className="text-lg font-semibold text-indigo-400">
                 {`// Send a message`}
             </p>
 

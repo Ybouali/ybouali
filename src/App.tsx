@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Toaster } from 'react-hot-toast';
 import './App.css';
 import { Footer, SideBar } from './components';
 import Terminal from './components/Terminal';
@@ -32,6 +33,28 @@ function App() {
                 {openTerminal && <Terminal />}
                 
                 <Footer />
+                <Toaster
+                    position="bottom-right"
+                    toastOptions={{
+                        style: {
+                            background: '#1e1e1e',
+                            color: '#fff',
+                            border: '1px solid #333',
+                        },
+                        success: {
+                            iconTheme: {
+                                primary: '#6366f1', // Indigo-500
+                                secondary: '#fff',
+                            },
+                        },
+                        error: {
+                            iconTheme: {
+                                primary: '#ef4444', // Red-500
+                                secondary: '#fff',
+                            },
+                        },
+                    }}
+                />
             </div>
         </div>
     );

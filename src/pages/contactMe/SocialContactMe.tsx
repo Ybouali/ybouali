@@ -11,7 +11,7 @@ function SocialContactMe() {
     return (
         <div className="flex flex-col w-full items-start justify-center gap-4">
             <Card className="flex flex-col w-full items-start justify-center gap-3 p-4">
-                <p className="text-lg font-semibold text-[#4e6a40] ">{`// Social Media Links`}</p>
+                <p className="text-lg font-semibold text-indigo-400 ">{`// Social Media Links`}</p>
                 <div className="flex flex-col w-full justify-start items-start gap-3">
                     <ButtonSocialMedia
                         icon={EmailIcon}
@@ -37,7 +37,7 @@ function SocialContactMe() {
             </Card>
 
             <Card className="flex flex-col w-full items-start justify-center gap-3 p-4">
-                <p className="text-lg font-semibold text-[#4e6a40] ">{`// Current status`}</p>
+                <p className="text-lg font-semibold text-indigo-400 ">{`// Current status`}</p>
                 <div className="flex items-center gap-3">
                     <div className="relative">
                         <span className="absolute inline-flex h-3 w-3 rounded-full bg-[#00ff80] opacity-75 animate-ping duration-700" />

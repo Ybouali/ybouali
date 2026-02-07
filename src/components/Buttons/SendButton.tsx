@@ -18,7 +18,7 @@ function SendButton({
             <button
                 disabled={disabled}
                 onClick={onClick}
-                className="flex justify-center items-center cursor-pointer bg-[#4e6a40] text-white py-2 px-4 rounded hover:bg-[#7cbf4a] flex-1 duration-700 "
+                className="flex justify-center items-center cursor-pointer bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-500 flex-1 duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-indigo-600 transition-all"
             >
                 {showIcon && (
                     <PaperAirplaneIcon className="h-5 w-5 inline-block mr-2 -rotate-20 " />
