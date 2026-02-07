@@ -68,14 +68,14 @@ function Terminal() {
 
     return (
         <motion.div
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            exit={{ y: '100%' }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed bottom-0 left-0 right-0 h-1/3 bg-[#1e1e1e] text-white font-mono text-sm overflow-hidden flex flex-col z-30 border-t border-gray-600"
+            initial={{ height: 0 }}
+            animate={{ height: '60%' }}
+            exit={{ height: 0 }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
+            className="bg-[#1e1e1e] text-white font-mono text-sm overflow-hidden flex flex-col border-t border-gray-600 shrink-0 w-full"
         >
-            <div className="flex justify-between items-center bg-[#252526] px-4 py-2">
-                <span>Terminal</span>
+            <div className="flex justify-between items-center bg-[#252526] px-4 py-1 select-none">
+                <span className="text-xs uppercase">Terminal</span>
                 <button
                     className="text-white hover:text-gray-300 transition-colors"
                     onClick={() => setOpenTerminal(false)}
@@ -83,7 +83,7 @@ function Terminal() {
                     ×
                 </button>
             </div>
-            <div ref={terminalRef} className="flex-1 overflow-y-auto p-4">
+            <div ref={terminalRef} className="flex-1 overflow-y-auto p-4 custom-scrollbar">
                 <p className="text-green-400">Welcome to the terminal!</p>
                 {history.map((item, index) => (
                     <div key={index}>
@@ -111,7 +111,7 @@ function Terminal() {
                     type="text"
                     value={command}
                     onChange={(e) => setCommand(e.target.value)}
-                    className="flex-1 bg-transparent outline-none text-white"
+                    className="flex-1 bg-transparent outline-none text-white placeholder-gray-600"
                     placeholder="Type a command..."
                 />
             </form>

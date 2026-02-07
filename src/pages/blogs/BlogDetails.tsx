@@ -34,16 +34,13 @@ function BlogDetails({
                 transition={{ duration: 0.5, ease: 'easeOut' }}
             >
                 {imageUrl && imageUrl.length > 0 && (
-                    <div
-                        className="relative w-full"
-                        style={{ aspectRatio: '16/9' }}
-                    >
+                    <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-6">
                         {imageUrl.map((url, index) => (
                             <motion.img
                                 key={index}
                                 src={url}
                                 alt={`Slide ${index}`}
-                                className="absolute inset-0 w-full h-full object-contain"
+                                className="absolute inset-0 w-full h-full object-cover"
                                 initial={{ opacity: 0 }}
                                 animate={{
                                     opacity: index === currentIndex ? 1 : 0,
@@ -56,9 +53,9 @@ function BlogDetails({
                         ))}
                     </div>
                 )}
-                <header className="mb-4">
+                <header className="mb-6">
                     <motion.h1
-                        className="text-3xl font-bold text-blue-400"
+                        className="text-2xl md:text-3xl font-bold text-blue-400 leading-tight"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2, duration: 0.4 }}
@@ -66,36 +63,30 @@ function BlogDetails({
                         {title}
                     </motion.h1>
                     {date && (
-                        <p className="text-sm text-gray-400 mt-1">
+                        <p className="text-sm text-gray-400 mt-2">
                             Posted on {date}
                         </p>
                     )}
                 </header>
-                <section className="mb-4">
-                    <p className="text-lg text-gray-300 italic">{blurb}</p>
+                <section className="mb-6">
+                    <p className="text-base md:text-lg text-gray-300 italic border-l-4 border-gray-600 pl-4">{blurb}</p>
                 </section>
                 {whyItMatters && (
-                    <section className="mb-4">
-                        <h2 className="text-xl font-semibold text-green-400 mb-2">
+                    <section className="mb-6">
+                        <h2 className="text-lg md:text-xl font-semibold text-green-400 mb-2">
                             Why It Matters
                         </h2>
-                        <p className="text-gray-200">{whyItMatters}</p>
+                        <p className="text-base text-gray-200">{whyItMatters}</p>
                     </section>
                 )}
-                <section className="mb-4">
-                    {/* <h2 className="text-xl font-semibold text-purple-400 mb-2">
-                        Full Content
-                    </h2> */}
-                    <div className="border-b-2 border-amber-800 my-1 mx-2 " />
+                <section className="mb-6">
+                    <div className="border-b border-gray-700 my-4" />
 
-                    <p className="text-gray-100">
+                    <div className="text-base text-gray-100 leading-relaxed space-y-4">
                         {content.split('\n').map((line, index) => (
-                            <span key={index}>
-                                {line}
-                                <br />
-                            </span>
+                            <p key={index}>{line}</p>
                         ))}
-                    </p>
+                    </div>
                     {codeExample && (
                         <>
                             <br />

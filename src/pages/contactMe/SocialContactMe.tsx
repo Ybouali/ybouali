@@ -1,5 +1,5 @@
 import {
-    ButtonSocecialMedia,
+    ButtonSocialMedia,
     Card,
     EmailIcon,
     GithubIcon,
@@ -7,28 +7,28 @@ import {
     LinkedInIcon,
 } from '../../components';
 
-function SocecialContactMe() {
+function SocialContactMe() {
     return (
-        <div className="flex flex-col w-full items-start justify-center gap-2">
-            <Card className="flex flex-col w-full items-start justify-center gap-1">
+        <div className="flex flex-col w-full items-start justify-center gap-4">
+            <Card className="flex flex-col w-full items-start justify-center gap-3 p-4">
                 <p className="text-lg font-semibold text-[#4e6a40] ">{`// Social Media Links`}</p>
-                <div className="flex flex-col w-full justify-start items-start gap-2">
-                    <ButtonSocecialMedia
+                <div className="flex flex-col w-full justify-start items-start gap-3">
+                    <ButtonSocialMedia
                         icon={EmailIcon}
                         label={'Email'}
-                        url={'yassine.bouali.bo@gmail.com'}
+                        url={'mailto:yassine.bouali.bo@gmail.com'}
                     />
-                    <ButtonSocecialMedia
+                    <ButtonSocialMedia
                         icon={GithubIcon}
                         label={'Github'}
                         url={'https://github.com/ybouali'}
                     />
-                    <ButtonSocecialMedia
+                    <ButtonSocialMedia
                         icon={LinkedInIcon}
                         label={'LinkedIn'}
                         url={'https://www.linkedin.com/in/ybouali/'}
                     />
-                    <ButtonSocecialMedia
+                    <ButtonSocialMedia
                         icon={InstagramIcon}
                         label={'Instagram'}
                         url={'https://www.instagram.com/yassineboualino/'}
@@ -36,7 +36,7 @@ function SocecialContactMe() {
                 </div>
             </Card>
 
-            <Card className="flex flex-col w-full items-start justify-center gap-1">
+            <Card className="flex flex-col w-full items-start justify-center gap-3 p-4">
                 <p className="text-lg font-semibold text-[#4e6a40] ">{`// Current status`}</p>
                 <div className="flex items-center gap-3">
                     <div className="relative">
@@ -52,4 +52,4 @@ function SocecialContactMe() {
     );
 }
 
-export default SocecialContactMe;
+export default SocialContactMe;

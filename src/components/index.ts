@@ -1,4 +1,4 @@
-export { default as TopHeader } from './TopHeader';
+
 export { default as SideBar } from './SideBar';
 export { default as Footer } from './Footer';
 export { default as PagesNavBar } from './PagesNavBar';
@@ -16,7 +16,7 @@ export { default as CustomInput } from './input/CustomInput';
 export { default as CustomTextArea } from './input/CustomTextArea';
 export { default as SendButton } from './Buttons/SendButton';
 export { default as ButtonSocialMediaTwo } from './Buttons/ButtonSocialMediaTwo';
-export { default as ButtonSocecialMedia } from './Buttons/ButtonSocecialMedia';
+export { default as ButtonSocialMedia } from './Buttons/ButtonSocialMedia';
 export { default as DownloadIcon } from './Svg/DownloadIcon';
 export { default as MainForScreen } from './Cards/MainForScreen';
 export { default as CodeArrayDisplay } from './Cards/CodeArrayDisplay';

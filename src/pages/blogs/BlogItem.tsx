@@ -32,20 +32,22 @@ function BlogItem({ blog, onClick }: BlogItemProps) {
                 initial="rest"
                 whileHover="hover"
                 animate="rest"
-                className="group flex items-center gap-4 cursor-pointer transition-colors duration-700 ease-in-out  w-full "
+            className="group flex items-center gap-4 cursor-pointer transition-colors duration-700 ease-in-out w-full"
             >
                 {blog.avatartUrl && (
                     <img
                         src={blog.avatartUrl}
                         alt={blog.title}
-                        className="w-20 h-20 object-cover rounded border border-[#333333]"
+                        className="w-16 h-16 md:w-20 md:h-20 object-cover rounded border border-[#333333] shrink-0"
                     />
                 )}
-                <div>
-                    <h3 className="m-0 text-lg font-bold text-white">
+                <div className="min-w-0 flex-1">
+                    <h3 className="m-0 text-base md:text-lg font-bold text-white truncate">
                         {blog.title}
                     </h3>
-                    <p className="mt-1 text-sm text-[#a0a0a0]">{blog.blurb}</p>
+                    <p className="mt-1 text-sm text-[#a0a0a0] line-clamp-2 md:line-clamp-none">
+                        {blog.blurb}
+                    </p>
                 </div>
                 <motion.div
                     className="ml-auto"

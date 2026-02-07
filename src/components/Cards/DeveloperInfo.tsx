@@ -55,7 +55,6 @@ function DeveloperInfo({
             <pre className="text-xl text-[#4e6a40]">/**</pre>
 
             <pre className="text-xl">
-                {/* valueOne → animation type: up */}
                 <span className="text-[#569cd6] flex flex-row">
                     <span className="text-[#4e6a40]">{`*  `}</span>
                     <span className="text-[#47ae98]">{`@${labelOne} `}</span>

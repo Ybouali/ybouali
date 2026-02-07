@@ -8,7 +8,7 @@ interface LiveProjectsListProps {
 
 function LiveProjectsList({ onProjectClick }: LiveProjectsListProps) {
     return (
-        <div className="flex flex-col  mt-8 px-4 gap-4 w-full ">
+        <div className="flex flex-col mt-4 px-2 gap-4 w-full">
             {liveProjects.map((project) => (
                 <ClosePItem
                     key={project.id}

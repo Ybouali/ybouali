@@ -5,9 +5,9 @@ type Props = {
 function MainForScreen({ children, className }: Props) {
     return (
         <div
-            className={`min-h-screen h-screen overflow-hidden bg-background ${className}`}
+            className={`h-full w-full overflow-hidden bg-transparent ${className}`}
         >
-            <div className="h-full overflow-y-auto px-8 py-12 scrollbar-thin scrollbar-thumb-rounded-lg">
+            <div className="h-full w-full overflow-y-auto px-4 md:px-6 py-4 md:py-6 custom-scrollbar">
                 {children}
             </div>
         </div>

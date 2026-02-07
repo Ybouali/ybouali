@@ -22,41 +22,38 @@ function ItemCertificates({
                 window.open(verificationURL, '_blank', 'noopener,noreferrer');
             }}
         >
-            <div className="flex items-center mb-4">
-                <AcademicCapIcon className="h-6 w-6 text-gray-700 mr-2" />
-                <h3 className="text-xl font-semibold text-purple-400">
+            <div className="flex items-start mb-4">
+                <AcademicCapIcon className="h-6 w-6 text-gray-700 mr-2 shrink-0 mt-1" />
+                <h3 className="text-lg md:text-xl font-semibold text-purple-400 leading-tight">
                     {courseName}
                 </h3>
             </div>
-            <div className="space-y-2 text-sm text-gray-600">
-                <p className="flex items-center">
-                    <GlobeAltIcon className="h-5 w-5 mr-2" />
-                    <span className="font-medium text-purple-200 ">
+            <div className="space-y-3 text-sm text-gray-600">
+                <p className="flex items-start">
+                    <GlobeAltIcon className="h-5 w-5 mr-2 shrink-0" />
+                    <span className="font-medium text-purple-200 break-words">
                         {`Platform: ${platform}`}
                     </span>
                 </p>
                 <p className="flex items-center">
-                    <CalendarIcon className="h-5 w-5 mr-2" />
-                    <span className="font-medium text-purple-200 ">
+                    <CalendarIcon className="h-5 w-5 mr-2 shrink-0" />
+                    <span className="font-medium text-purple-200">
                         {`Issued Date: ${issuedDate}`}
                     </span>
                 </p>
-                <p className="flex items-center">
-                    <IdentificationIcon className="h-5 w-5 mr-2" />
-                    <span className="font-medium text-purple-200 ">
+                <p className="flex items-start">
+                    <IdentificationIcon className="h-5 w-5 mr-2 shrink-0" />
+                    <span className="font-medium text-purple-200 break-all">
                         {`Certificate ID: ${certificateID}`}
                     </span>
                 </p>
                 {verificationURL && (
-                    <a
-                        href={verificationURL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-blue-600 hover:text-blue-800"
-                    >
-                        <LinkIcon className="h-5 w-5 mr-2" />
-                        Verify Certificate
-                    </a>
+                    <div className="pt-2">
+                        <span className="flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+                            <LinkIcon className="h-5 w-5 mr-2 shrink-0" />
+                            Verify Certificate
+                        </span>
+                    </div>
                 )}
             </div>
         </Card>

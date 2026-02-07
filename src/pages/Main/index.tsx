@@ -6,9 +6,9 @@ import GridNavigation from './GridNavigation';
 function Main() {
     return (
         <MainForScreen>
-            <div className="w-full ">
-                <div className="mx-auto     w-1/2 ">
-                    <div className="flex flex-col items-center pb-12 ">
+            <div className="w-full h-full flex items-center justify-center">
+                <div className="w-full md:w-3/4 lg:w-1/2 mx-auto">
+                    <div className="flex flex-col items-center pb-8 gap-4">
                         {/* Header - full width of the 50% */}
                         <div className="flex items-center gap-3">
                             <CodeBracketIcon className="h-12 w-12 text-blue-600" />

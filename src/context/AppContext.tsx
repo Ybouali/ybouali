@@ -14,6 +14,10 @@ type AppContextType = {
 
     openTerminal: boolean;
     setOpenTerminal: React.Dispatch<React.SetStateAction<boolean>>;
+
+    isSidebarOpen: boolean;
+    toggleSidebar: () => void;
+    closeSidebar: () => void;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -115,6 +119,11 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
     const [openTerminal, setOpenTerminal] = useState<boolean>(false);
 
+    const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+
+    const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+    const closeSidebar = () => setIsSidebarOpen(false);
+
     return (
         <AppContext.Provider
             value={{
@@ -126,6 +135,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
                 removePageFromNavbar,
                 openTerminal,
                 setOpenTerminal,
+                isSidebarOpen,
+                toggleSidebar,
+                closeSidebar,
             }}
         >
             {children}

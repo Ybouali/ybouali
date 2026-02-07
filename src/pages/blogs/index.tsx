@@ -15,8 +15,8 @@ function Blogs() {
     return (
         <MainForScreen>
             <div className="w-full">
-                <div className="mx-auto w-1/2 ">
-                    <div className="flex flex-col items-start pb-20 gap-3 ">
+                <div className="w-full md:w-3/4 lg:w-1/2 mx-auto">
+                    <div className="flex flex-col items-start pb-10 gap-4">
                         <Header openBlog={openBlog} setOpenBlog={setOpenBlog} />
 
                         {openBlog === null && (
