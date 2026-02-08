@@ -8,7 +8,7 @@ import { useAppContext } from './context/AppContext';
 import Pages from './pages';
 import { useLocation } from 'react-router-dom';
 
-ReactGA.initialize('G-CHY8D877KV');
+ReactGA.initialize('G-JYT6MH1B00');
 
 function App() {
     const location = useLocation();
