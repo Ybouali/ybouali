@@ -16,6 +16,7 @@ export default defineConfig({
         Pages({
             dirs: 'src/pages',
             extensions: ['tsx', 'ts', 'jsx', 'js'],
+            resolver: 'react',
         }),
     ],
     base: '/',
