@@ -1,3 +1,4 @@
+
 name: Deploy Portfolio to GitHub Pages
 
 on:
@@ -8,27 +9,22 @@ on:
 jobs:
     deploy:
         runs-on: ubuntu-latest
+
         permissions:
             contents: write
 
         steps:
             - name: Checkout
-              uses: actions/checkout@v4
+              uses: actions/checkout@v5
 
             - name: Setup Node
-              uses: actions/setup-node@v4
+              uses: actions/setup-node@v5
               with:
                   node-version: '24'
                   cache: 'npm'
 
             - name: Install dependencies
               run: npm ci
-
-            - name: Debug secrets (confirm they're loaded)
-              run: |
-                  echo "PUBLIC_KEY length: ${#VITE_EMAILJS_PUBLIC_KEY}"
-                  echo "SERVICE_ID length: ${#VITE_EMAILJS_SERVICE_ID}"
-                  echo "TEMPLATE_ID length: ${#VITE_EMAILJS_TEMPLATE_ID}"
 
             - name: Build
               run: npm run build
@@ -37,11 +33,13 @@ jobs:
                   VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
                   VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
 
-            - name: Debug post-build env (should show lengths >0)
+            - name: Verify build
               run: |
-                  echo "AFTER BUILD - PUBLIC_KEY length: ${#VITE_EMAILJS_PUBLIC_KEY}"
-                  echo "SERVICE_ID length: ${#VITE_EMAILJS_SERVICE_ID}"
-                  echo "TEMPLATE_ID length: ${#VITE_EMAILJS_TEMPLATE_ID}"
+                  echo "Build output:"
+                  ls -la dist/
+
+                  echo "Checking index.html:"
+                  test -f dist/index.html
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v4
