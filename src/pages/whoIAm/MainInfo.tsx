@@ -46,7 +46,7 @@ function MainInfo() {
                 <div className="flex flex-col gap-1">
                     <p className="text-2xl md:text-3xl font-bold text-purple-500">Yassine Bouali</p>
                     <p className="text-lg md:text-xl text-purple-200">
-                        Full Stack Developer & Mobile Developer
+                        Software Engineer · Backend · AI/RAG · Industrial IT
                     </p>
                 </div>
                 <div className="flex flex-col gap-2 my-2">
@@ -69,24 +69,33 @@ function MainInfo() {
                 </p>
                 <div className="text-base text-gray-300 font-mono leading-relaxed break-words">
                     <span className="text-purple-400">const</span>
-                    <span className="text-white">{` bio `}</span>
+                    <span className="text-white">{` mantra `}</span>
                     <span className="text-white">{' = '}</span>
                     <span className="text-[#4e6a40]">
                         {
-                            '"Passionate developer with a knack for creating efficient and scalable web and mobile applications. Always eager to learn new technologies and improve my skills."'
+                            '"No One → Becoming Someone."'
+                        }
+                    </span>
+                    <span className="text-white">{';'}</span>
+                    <br/>
+                    <span className="text-purple-400">const</span>
+                    <span className="text-white">{` principle `}</span>
+                    <span className="text-white">{' = '}</span>
+                    <span className="text-[#4e6a40]">
+                        {
+                            '"Every piece of code deserves a second refactor."'
                         }
                     </span>
                     <span className="text-white">{';'}</span>
                 </div>
                 <div className="text-base text-gray-300 leading-relaxed mt-2">
                     <span className="text-purple-300/80">
-                        I love solving complex problems and creating intuitive,
-                        scalable solutions. My approach combines technical
-                        excellence with creative design thinking to deliver
-                        exceptional digital experiences. Whether it's
-                        architecting backend systems or crafting pixel-perfect
-                        interfaces, I'm driven by the challenge of building
-                        products that make a real impact.
+                        I am a Software Engineer focused on building practical, scalable systems. 
+                        My work increasingly spans backend architectures, distributed infrastructure, 
+                        and asynchronous processing pipelines. I enjoy architecting RAG systems for document 
+                        processing and bridging the gap between modern software engineering and Industrial IT (SCADA, PLCs). 
+                        Whether it's deploying Temporal workflows or managing Kafka event streams, I build 
+                        systems designed for reliability and scale.
                     </span>
                 </div>
                 
@@ -103,11 +112,6 @@ function MainInfo() {
                         icon={LinkedInIcon}
                         label="LinkedIn"
                         url="https://www.linkedin.com/in/ybouali/"
-                    />
-                    <ButtonSocialMediaTwo
-                        icon={InstagramIcon}
-                        label="Instagram"
-                        url="https://www.instagram.com/yassineboualino/"
                     />
                 </div>
             </div>

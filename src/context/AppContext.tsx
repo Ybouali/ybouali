@@ -29,36 +29,42 @@ export function AppProvider({ children }: { children: ReactNode }) {
             selected: false,
             icon_name: 'user',
             description: 'Personal bio, background, and CV',
+            path: '/about',
         },
         {
             page_name: 'projects.tsx',
             selected: false,
             icon_name: 'folder',
             description: 'Overview of projects and work',
+            path: '/projects',
         },
         {
             page_name: 'education.tsx',
             selected: false,
             icon_name: 'book',
             description: 'Educational background and qualifications',
+            path: '/education',
         },
         {
             page_name: 'certificates.tsx',
             selected: false,
             icon_name: 'certificate',
             description: 'List of earned certificates and achievements',
+            path: '/certificates',
         },
         {
             page_name: 'contact-me.tsx',
             selected: false,
             icon_name: 'envelope',
             description: 'Contact information and social links',
+            path: '/contact',
         },
         {
             page_name: 'blogs.tsx',
             selected: false,
             icon_name: 'document-text',
             description: 'Blog posts and articles',
+            path: '/blog',
         },
     ]);
 

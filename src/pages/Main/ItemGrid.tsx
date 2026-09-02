@@ -2,6 +2,7 @@ import { Card } from '../../components';
 import { iconMap } from '../../components/SideBar/ItemSideBar';
 import { useAppContext } from '../../context/AppContext';
 import type { Page } from '../../types';
+import { useNavigate } from 'react-router-dom';
 
 type ItemGridProps = {
     page: Page;
@@ -9,9 +10,13 @@ type ItemGridProps = {
 
 function ItemGrid({ page }: ItemGridProps) {
     const { addPageToNavbar } = useAppContext();
+    const navigate = useNavigate();
+    
     const onClick = () => {
         addPageToNavbar(page);
+        navigate(page.path);
     };
+    
     const IconComponent =
         iconMap[page.icon_name as keyof typeof iconMap] || null;
     return (

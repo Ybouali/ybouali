@@ -65,23 +65,23 @@ function SideBar() {
                 } md:translate-x-0 md:flex-row h-screen md:w-full`}
             >
                 {/* Activity Bar (Leftmost narrow strip) - Fixed 48px/3rem */}
-                <div className="w-12 bg-[#333333] flex flex-col items-center py-4 justify-between h-full border-r border-[#1e1e1e] text-[#858585] shrink-0">
+                <div className="w-12 bg-owl-bg flex flex-col items-center py-4 justify-between h-full border-r border-owl-border text-owl-text-muted shrink-0">
                     <div className="flex flex-col gap-6">
-                        <div className="cursor-pointer p-2 border-l-2 border-white text-white">
+                        <div className="cursor-pointer p-2 border-l-2 border-owl-keyword text-owl-text">
                             <DocumentIcon className="w-6 h-6" />
                         </div>
                     </div>
                     <div className="flex flex-col gap-6 mb-2">
-                        <div className="cursor-pointer p-2 hover:text-white transition-colors">
+                        <div className="cursor-pointer p-2 hover:text-owl-text transition-colors">
                             <Cog6ToothIcon className="w-6 h-6" />
                         </div>
                     </div>
                 </div>
 
                 {/* Explorer Pane - Fills remaining width of the sidebar column */}
-                <div className="flex-1 bg-[#252526] flex flex-col h-full border-r border-[#1e1e1e] min-w-0">
+                <div className="flex-1 bg-owl-surface flex flex-col h-full border-r border-owl-border min-w-0">
                     {/* Header */}
-                    <div className="h-9 flex items-center px-4 text-xs tracking-wider text-[#BBBBBB] font-normal uppercase select-none shrink-0">
+                    <div className="h-9 flex items-center px-4 text-xs tracking-wider text-owl-text-muted font-normal uppercase select-none shrink-0">
                         Explorer
                     </div>
 
@@ -90,9 +90,9 @@ function SideBar() {
                         {/* Portfolio Section Header */}
                         <div
                             onClick={() => setOpen(!open)}
-                            className="flex items-center gap-1 px-1 py-1 cursor-pointer hover:bg-[#37373d] text-white font-bold text-xs group"
+                            className="flex items-center gap-1 px-1 py-1 cursor-pointer hover:bg-owl-surface-hover text-owl-text font-bold text-xs group"
                         >
-                            <span className="text-white">
+                            <span className="text-owl-text">
                                 {open ? (
                                     <ChevronDownIcon className="w-4 h-4" />
                                 ) : (

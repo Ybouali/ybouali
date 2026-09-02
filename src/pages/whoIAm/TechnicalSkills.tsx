@@ -2,27 +2,26 @@ import { Card } from '../../components';
 
 function TechnicalSkills() {
     const skills = {
-        frontEnd: [
-            'HTML',
-            'CSS',
-            'JavaScript',
-            'React',
-            'typeScript',
-            'Tailwind CSS',
+        backend: [
+            'Python',
+            'FastAPI',
+            'Node.js',
+            'TypeScript',
+            'C++',
         ],
-        backEnd: ['Node.js', 'Express.js', 'Django', 'Java', 'Spring Boot'],
-        mobile: ['React Native', 'Flutter'],
-        databases: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQLite'],
-        tools: ['Git', 'Docker', 'Postman', 'VS Code', 'And more...'],
+        infrastructure: ['Docker', 'Kafka', 'Temporal', 'Nginx'],
+        databases: ['PostgreSQL', 'Redis', 'MongoDB'],
+        aiAndRAG: ['LangChain', 'LangGraph', 'Vector Databases'],
+        frontend: ['React', 'Tailwind CSS', 'Vite'],
     };
     return (
         <Card className="flex flex-col w-full items-start justify-between gap-4 p-4">
             <p className="text-lg font-semibold text-[#4e6a40]">
-                {`// Technical Skills`}
+                {`// Technical Stack`}
             </p>
             <div className="text-base text-gray-300 font-mono w-full overflow-hidden">
                 <span className="text-purple-400">const</span>
-                <span className="text-white">{` skills `}</span>
+                <span className="text-white">{` stack `}</span>
                 <span className="text-white">{' = '}</span>
                 <span className="text-[#4e6a40]">{'['}</span>
                 {Object.entries(skills).map(([category, skillList], index) => (

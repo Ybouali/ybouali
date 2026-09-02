@@ -3,6 +3,7 @@ import ReactGA from 'react-ga4';
 import { Toaster } from 'react-hot-toast';
 import './App.css';
 import { Footer, SideBar } from './components';
+import SearchOverlay from './components/SearchOverlay';
 import Terminal from './components/Terminal';
 import { useAppContext } from './context/AppContext';
 import Pages from './pages';
@@ -33,11 +34,13 @@ function App() {
     }, [setOpenTerminal]);
 
     return (
-        <div className="h-screen w-screen bg-[#1e1f1f] text-white overflow-hidden font-sans md:grid md:grid-cols-[250px_1fr] flex flex-col">
+        <div className="h-screen w-screen bg-owl-bg text-owl-text overflow-hidden font-sans md:grid md:grid-cols-[250px_1fr] flex flex-col">
             <SideBar />
 
             <div className="flex flex-col h-full min-w-0 relative overflow-hidden">
                 <Pages />
+                
+                <SearchOverlay />
 
                 {/* Terminal sits here, taking available space or fixed height, pushing footer down */}
                 {openTerminal && <Terminal />}
@@ -47,20 +50,20 @@ function App() {
                     position="bottom-right"
                     toastOptions={{
                         style: {
-                            background: '#1e1e1e',
-                            color: '#fff',
-                            border: '1px solid #333',
+                            background: 'var(--color-owl-surface)',
+                            color: 'var(--color-owl-text)',
+                            border: '1px solid var(--color-owl-border)',
                         },
                         success: {
                             iconTheme: {
-                                primary: '#6366f1', // Indigo-500
-                                secondary: '#fff',
+                                primary: 'var(--color-owl-string)',
+                                secondary: 'var(--color-owl-bg)',
                             },
                         },
                         error: {
                             iconTheme: {
-                                primary: '#ef4444', // Red-500
-                                secondary: '#fff',
+                                primary: 'var(--color-owl-error)',
+                                secondary: 'var(--color-owl-bg)',
                             },
                         },
                     }}

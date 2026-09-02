@@ -5,23 +5,23 @@ function Footer() {
     const { openTerminal, setOpenTerminal } = useAppContext();
 
     return (
-        <footer className="h-6 bg-[#007acc] text-white flex items-center justify-between px-2 text-xs select-none z-10 w-full shrink-0">
+        <footer className="h-6 bg-owl-surface text-owl-text flex items-center justify-between px-2 text-xs select-none z-10 w-full shrink-0 border-t border-owl-border">
             <div className="flex items-center gap-4">
                 <a
                     href="https://github.com/ybouali/Ybouali"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-1 hover:bg-[#1f8ad2] px-1 rounded cursor-pointer transition-colors"
+                    className="flex items-center gap-1 hover:bg-owl-surface-hover px-1 rounded cursor-pointer transition-colors"
                 >
                     <ShareIcon className="w-3 h-3" />
                     <span>master*</span>
                 </a>
-                <div className="flex items-center gap-1 hover:bg-[#1f8ad2] px-1 rounded cursor-pointer transition-colors">
-                    <div className="w-3 h-3 rounded-full bg-transparent border border-white/50 flex items-center justify-center">
+                <div className="flex items-center gap-1 hover:bg-owl-surface-hover px-1 rounded cursor-pointer transition-colors">
+                    <div className="w-3 h-3 rounded-full bg-transparent border border-owl-text-muted flex items-center justify-center">
                         <span className="text-[8px]">×</span>
                     </div>
                     <span>0</span>
-                    <div className="w-3 h-3 rounded-full bg-transparent border border-white/50 flex items-center justify-center ml-1">
+                    <div className="w-3 h-3 rounded-full bg-transparent border border-owl-text-muted flex items-center justify-center ml-1">
                         <span className="text-[8px]">!</span>
                     </div>
                     <span>0</span>
@@ -29,20 +29,20 @@ function Footer() {
             </div>
 
             <div className="flex items-center gap-4">
-                <div className="flex items-center gap-1 hover:bg-[#1f8ad2] px-1 rounded cursor-pointer transition-colors">
+                <div className="flex items-center gap-1 hover:bg-owl-surface-hover px-1 rounded cursor-pointer transition-colors">
                    <span>UTF-8</span>
                 </div>
-                <div className="flex items-center gap-1 hover:bg-[#1f8ad2] px-1 rounded cursor-pointer transition-colors">
+                <div className="flex items-center gap-1 hover:bg-owl-surface-hover px-1 rounded cursor-pointer transition-colors">
                    <span>TypeScript React</span>
                 </div>
-                <div className="flex items-center gap-1 hover:bg-[#1f8ad2] px-1 rounded cursor-pointer transition-colors">
+                <div className="flex items-center gap-1 hover:bg-owl-surface-hover px-1 rounded cursor-pointer transition-colors">
                     <BellIcon className="w-3 h-3" />
                 </div>
                 
                 {/* Terminal Toggle Button */}
                 <button 
                     onClick={() => setOpenTerminal(!openTerminal)}
-                    className={`flex items-center gap-1 px-1 rounded cursor-pointer transition-colors ${openTerminal ? 'bg-[#1f8ad2]' : 'hover:bg-[#1f8ad2]'}`}
+                    className={`flex items-center gap-1 px-1 rounded cursor-pointer transition-colors ${openTerminal ? 'bg-owl-surface-hover' : 'hover:bg-owl-surface-hover'}`}
                     title="Toggle Terminal (Ctrl + `)"
                 >
                     {openTerminal ? (

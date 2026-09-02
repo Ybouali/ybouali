@@ -72,12 +72,12 @@ function Terminal() {
             animate={{ height: '60%' }}
             exit={{ height: 0 }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="bg-[#1e1e1e] text-white font-mono text-sm overflow-hidden flex flex-col border-t border-gray-600 shrink-0 w-full"
+            className="bg-owl-bg text-owl-text font-mono text-sm overflow-hidden flex flex-col border-t border-owl-border shrink-0 w-full"
         >
-            <div className="flex justify-between items-center bg-[#252526] px-4 py-1 select-none">
-                <span className="text-xs uppercase">Terminal</span>
+            <div className="flex justify-between items-center bg-owl-surface px-4 py-1 select-none border-b border-owl-border">
+                <span className="text-xs uppercase text-owl-text-muted tracking-wider">Terminal</span>
                 <button
-                    className="text-white hover:text-gray-300 transition-colors"
+                    className="text-owl-text-muted hover:text-owl-error transition-colors"
                     onClick={() => setOpenTerminal(false)}
                 >
                     ×
@@ -103,15 +103,15 @@ function Terminal() {
             </div>
             <form
                 onSubmit={handleCommand}
-                className="bg-[#1e1e1e] px-4 py-2 flex items-center border-t border-gray-600"
+                className="bg-owl-bg px-4 py-2 flex items-center border-t border-owl-border"
             >
-                <span className="text-blue-400 mr-2">{`ybouali@0.0.0.0:~$ `}</span>
+                <span className="text-owl-keyword mr-2">{`ybouali@0.0.0.0:~$ `}</span>
                 <input
                     ref={inputRef}
                     type="text"
                     value={command}
                     onChange={(e) => setCommand(e.target.value)}
-                    className="flex-1 bg-transparent outline-none text-white placeholder-gray-600"
+                    className="flex-1 bg-transparent outline-none text-owl-text placeholder-owl-text-muted"
                     placeholder="Type a command..."
                 />
             </form>

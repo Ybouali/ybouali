@@ -5,6 +5,7 @@ type Page = {
     selected: boolean;
     icon_name: string;
     description: string;
+    path: string;
 };
 
 type IconType = React.FC<
