@@ -4,7 +4,6 @@ import {
     DevIcon,
     DownloadIcon,
     GithubIcon,
-    InstagramIcon,
     LinkedInIcon,
 } from '../../components';
 import { MapPinIcon } from '@heroicons/react/24/solid';

@@ -17,10 +17,14 @@ export default function SearchOverlay() {
         const handleKeyDown = (e: KeyboardEvent) => {
             if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
                 e.preventDefault();
-                setIsOpen((prev) => !prev);
+                setIsOpen((prev) => {
+                    if (!prev) setQuery('');
+                    return !prev;
+                });
             }
             if (e.key === 'Escape') {
                 setIsOpen(false);
+                setQuery('');
             }
         };
 
@@ -31,12 +35,10 @@ export default function SearchOverlay() {
     useEffect(() => {
         if (isOpen && inputRef.current) {
             setTimeout(() => inputRef.current?.focus(), 50);
-        } else {
-            setQuery('');
         }
     }, [isOpen]);
 
-    const results = [];
+    const results: { type: string; title: string; desc: string; url: string; }[] = [];
     if (query.trim().length > 0) {
         const lowerQuery = query.toLowerCase();
         
@@ -57,6 +59,7 @@ export default function SearchOverlay() {
 
     const handleSelect = (url: string) => {
         setIsOpen(false);
+        setQuery('');
         const page = pages.find(p => p.path === url);
         if (page) {
             addPageToNavbar(page);
@@ -73,7 +76,10 @@ export default function SearchOverlay() {
                         animate={{ opacity: 0.5 }}
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 bg-black z-[100]"
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => {
+                            setIsOpen(false);
+                            setQuery('');
+                        }}
                     />
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95, y: -20 }}

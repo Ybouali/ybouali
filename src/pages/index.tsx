@@ -36,7 +36,7 @@ const HomeTransition = ({ children }: { children: React.ReactNode }) => (
 );
 
 function Pages() {
-    const { pagesInNavbar, pages, addPageToNavbar, setPagesInNavbar } = useAppContext();
+    const { pagesInNavbar, pages,  setPagesInNavbar } = useAppContext();
     const location = useLocation();
 
     // Sync URL with IDE Tabs
