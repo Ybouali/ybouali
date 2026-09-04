@@ -1,17 +1,22 @@
-
 name: Deploy Portfolio to GitHub Pages
 
 on:
     push:
-        branches: [main, master]
+        branches: [main]
     workflow_dispatch:
 
-jobs:
-    deploy:
-        runs-on: ubuntu-latest
+permissions:
+    contents: read
+    pages: write
+    id-token: write
 
-        permissions:
-            contents: write
+concurrency:
+    group: pages
+    cancel-in-progress: true
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
 
         steps:
             - name: Checkout
@@ -33,18 +38,27 @@ jobs:
                   VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
                   VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
 
-            - name: Verify build
-              run: |
-                  echo "Build output:"
-                  ls -la dist/
+            - name: Configure GitHub Pages
+              uses: actions/configure-pages@v5
 
-                  echo "Checking index.html:"
-                  test -f dist/index.html
-
-            - name: Deploy to GitHub Pages
-              uses: peaceiris/actions-gh-pages@v4
+            - name: Upload Pages artifact
+              uses: actions/upload-pages-artifact@v4
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./dist
-                  keep_files: false
-                  force_orphan: true
+                  path: ./dist
+
+    deploy:
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+
+        runs-on: ubuntu-latest
+        needs: build
+
+        permissions:
+            pages: write
+            id-token: write
+
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
