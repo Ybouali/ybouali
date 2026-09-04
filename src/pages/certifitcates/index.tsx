@@ -15,14 +15,14 @@ function Certificates() {
                         <DeveloperInfo
                             labelOne="from"
                             labelTwo="description"
-                            valueOne="certificates.tsx"
+                            valueOne="certificates.json"
                             valueTwo="Professional certifications and achievements"
                         />
                         <CodeArrayDisplay variableName={'certificates'} />
 
                         <ListCertificates />
 
-                        <span className="text-yellow-600">];</span>
+                        <span className="text-owl-warning">];</span>
 
                         <ExportDefault moduleName="certificates" />
                     </div>

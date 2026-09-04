@@ -52,25 +52,25 @@ function DeveloperInfo({
 }: DeveloperInfoProps) {
     return (
         <div className={`flex flex-col items-start ${className}`}>
-            <pre className="text-xl text-[#4e6a40]">/**</pre>
+            <pre className="text-xl text-owl-comment">/**</pre>
 
             <pre className="text-xl">
-                <span className="text-[#569cd6] flex flex-row">
-                    <span className="text-[#4e6a40]">{`*  `}</span>
-                    <span className="text-[#47ae98]">{`@${labelOne} `}</span>
+                <span className="text-owl-blue flex flex-row">
+                    <span className="text-owl-comment">{`*  `}</span>
+                    <span className="text-owl-keyword">{`@${labelOne} `}</span>
                     <AnimatedChars text={valueOne} animationType="up" />
                 </span>
             </pre>
 
             <pre className="text-xl">
-                <span className="text-[#569cd6] flex flex-row">
-                    <span className="text-[#4e6a40]">{`*  `}</span>
-                    <span className="text-[#47ae98]">{`@${labelTwo}  `}</span>
+                <span className="text-owl-blue flex flex-row">
+                    <span className="text-owl-comment">{`*  `}</span>
+                    <span className="text-owl-keyword">{`@${labelTwo}  `}</span>
                     <AnimatedChars text={valueTwo} animationType="fade" />
                 </span>
             </pre>
 
-            <pre className="text-xl text-[#4e6a40] ">*/</pre>
+            <pre className="text-xl text-owl-comment ">*/</pre>
         </div>
     );
 }

@@ -10,6 +10,7 @@ import Main from './Main';
 import Projects from './projects';
 import WhoIAm from './whoIAm';
 import Blogs from './blogs';
+import NotFound from './NotFound';
 
 const PageTransition = ({ children }: { children: React.ReactNode }) => (
     <motion.div
@@ -36,46 +37,125 @@ const HomeTransition = ({ children }: { children: React.ReactNode }) => (
 );
 
 function Pages() {
-    const { pagesInNavbar, pages,  setPagesInNavbar } = useAppContext();
+    const { pagesInNavbar, pages, setPagesInNavbar } = useAppContext();
     const location = useLocation();
 
-    // Sync URL with IDE Tabs
     useEffect(() => {
         if (location.pathname === '/') {
-            setPagesInNavbar((prev) => prev.map(p => ({ ...p, selected: false })));
+            setPagesInNavbar((prev) =>
+                prev.map((p) => ({ ...p, selected: false }))
+            );
             return;
         }
 
-        const pageForRoute = pages.find((p) => p.path === location.pathname);
+        const pageForRoute = pages.find(
+            (p) =>
+                p.path === location.pathname ||
+                (p.path !== '/' && location.pathname.startsWith(`${p.path}/`))
+        );
         if (pageForRoute) {
-            // Check if it's already in the navbar
-            const exists = pagesInNavbar.find((p) => p.page_name === pageForRoute.page_name);
-            
-            // We need to mark it as selected in the navbar state
             setPagesInNavbar((prev) => {
+                const exists = prev.find(
+                    (p) => p.page_name === pageForRoute.page_name
+                );
                 const newNavbar = exists ? prev : [...prev, pageForRoute];
                 return newNavbar.map((p) => ({
                     ...p,
-                    selected: p.path === location.pathname
+                    selected:
+                        p.path === pageForRoute.path ||
+                        location.pathname.startsWith(`${p.path}/`),
                 }));
             });
         }
-    }, [location.pathname, pages]);
+    }, [location.pathname, pages, setPagesInNavbar]);
 
     return (
-        <main className="flex flex-col flex-1 h-full overflow-hidden bg-[#1e1f1f] text-gray-300">
+        <main className="flex flex-col flex-1 h-full overflow-hidden bg-owl-bg text-owl-text">
             {pagesInNavbar.length > 0 && <PagesNavBar />}
-            
+
             <div className="flex-1 overflow-y-auto custom-scrollbar p-0 relative">
                 <AnimatePresence mode="wait">
                     <Routes location={location} key={location.pathname}>
-                        <Route path="/" element={<HomeTransition><Main /></HomeTransition>} />
-                        <Route path="/about" element={<PageTransition><WhoIAm /></PageTransition>} />
-                        <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
-                        <Route path="/education" element={<PageTransition><Educations /></PageTransition>} />
-                        <Route path="/certificates" element={<PageTransition><Certificates /></PageTransition>} />
-                        <Route path="/contact" element={<PageTransition><ContactMe /></PageTransition>} />
-                        <Route path="/blog" element={<PageTransition><Blogs /></PageTransition>} />
+                        <Route
+                            path="/"
+                            element={
+                                <HomeTransition>
+                                    <Main />
+                                </HomeTransition>
+                            }
+                        />
+                        <Route
+                            path="/about"
+                            element={
+                                <PageTransition>
+                                    <WhoIAm />
+                                </PageTransition>
+                            }
+                        />
+                        <Route
+                            path="/projects"
+                            element={
+                                <PageTransition>
+                                    <Projects />
+                                </PageTransition>
+                            }
+                        />
+                        <Route
+                            path="/projects/:id"
+                            element={
+                                <PageTransition>
+                                    <Projects />
+                                </PageTransition>
+                            }
+                        />
+                        <Route
+                            path="/education"
+                            element={
+                                <PageTransition>
+                                    <Educations />
+                                </PageTransition>
+                            }
+                        />
+                        <Route
+                            path="/certificates"
+                            element={
+                                <PageTransition>
+                                    <Certificates />
+                                </PageTransition>
+                            }
+                        />
+                        <Route
+                            path="/contact"
+                            element={
+                                <PageTransition>
+                                    <ContactMe />
+                                </PageTransition>
+                            }
+                        />
+                        <Route
+                            path="/blog"
+                            element={
+                                <PageTransition>
+                                    <Blogs />
+                                </PageTransition>
+                            }
+                        />
+                        <Route
+                            path="/blog/:slug"
+                            element={
+                                <PageTransition>
+                                    <Blogs />
+                                </PageTransition>
+                            }
+                        />
+                        <Route
+                            path="*"
+                            element={
+                                <PageTransition>
+                                    <NotFound />
+                                </PageTransition>
+                            }
+                        />
                     </Routes>
                 </AnimatePresence>
             </div>

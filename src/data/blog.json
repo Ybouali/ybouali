@@ -1,0 +1,15 @@
+[
+  {
+    "id": "why-i-redesigned-my-portfolio",
+    "slug": "why-i-redesigned-my-portfolio",
+    "title": "Why I Redesigned My Portfolio – From Inspiration to Identity",
+    "excerpt": "That old portfolio? Definitely not me. This one lives in Night Owl, like the rest of my brain.",
+    "date": "2026-01-17",
+    "author": "Yassine Bouali",
+    "category": "Ideas",
+    "tags": ["Design", "Personal", "Portfolio"],
+    "readingTime": "3 min read",
+    "featuredImage": "/assets/img/blog/why/home.png",
+    "content": "The old portfolio wasn't really mine.\nIt was someone else's layout I liked enough to borrow.\nNothing wrong with that — but it never felt personal.\n\nSo I started over.\nI wanted something that actually feels like me.\nSomething built from scratch, with my own flow and my own voice.\nNo borrowed pieces this time.\n\nJust clean, honest lines that tell my story.\n\n### The Night Owl Shift\n\nI spend 90% of my time inside an IDE (specifically, with the Night Owl theme). It's calm, it's focused, and the syntax highlighting makes sense.\nI realized my portfolio shouldn't just be a corporate landing page; it should reflect the environment where I do my best work.\n\nSo I brought the editor to the web.\n\n```typescript\nconst me = {\n  role: \"Software Engineer\",\n  focus: [\"Backend\", \"AI/RAG\", \"Industrial IT\"],\n  status: \"Building\",\n};\n```\n\nThis is me now.\nWelcome inside."
+  }
+]

@@ -1,140 +1,81 @@
-import { motion } from 'framer-motion';
-import type { BlogPost } from './ListBlogs';
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+import { useNavigate, useParams } from 'react-router-dom';
+import { getPostBySlug } from '../../data/blog';
 import { Card } from '../../components';
-import { useEffect, useState } from 'react';
+import MarkdownBody from '../../components/MarkdownBody';
+import PageSeo from '../../components/PageSeo';
 
-function BlogDetails({
-    title,
-    date,
-    blurb,
-    whyItMatters,
-    content,
-    tags,
-    imageUrl,
-    codeExample,
-}: BlogPost) {
-    const [currentIndex, setCurrentIndex] = useState(0);
+function BlogDetails() {
+    const { slug } = useParams();
+    const navigate = useNavigate();
+    const post = slug ? getPostBySlug(slug) : undefined;
 
-    useEffect(() => {
-        const imageCount = imageUrl?.length || 0;
+    if (!post) {
+        return (
+            <div className="w-full py-16 text-center">
+                <p className="font-mono text-owl-orange mb-2">
+                    404 — you&apos;re off the beaten path
+                </p>
+                <p className="text-owl-text-muted mb-4">
+                    This brain dump was never written (or the slug is cursed).
+                </p>
+                <button
+                    type="button"
+                    onClick={() => navigate('/blog')}
+                    className="font-mono text-sm text-owl-blue hover:text-owl-cyan cursor-pointer"
+                >
+                    ← latest brain dumps
+                </button>
+            </div>
+        );
+    }
 
-        if (imageCount > 0) {
-            const timer = setInterval(() => {
-                setCurrentIndex((prev) => (prev + 1) % imageCount);
-            }, 3000);
-
-            return () => clearInterval(timer);
-        }
-    }, [imageUrl]);
     return (
         <Card>
-            <motion.article
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
+            <PageSeo
+                title={`${post.title} | Yassine Bouali`}
+                description={post.excerpt}
+                path={`/blog/${post.slug}`}
+            />
+            <button
+                type="button"
+                onClick={() => navigate('/blog')}
+                className="inline-flex items-center gap-2 font-mono text-sm text-owl-text-muted hover:text-owl-cyan mb-6 cursor-pointer"
             >
-                {imageUrl && imageUrl.length > 0 && (
-                    <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-6">
-                        {imageUrl.map((url, index) => (
-                            <motion.img
-                                key={index}
-                                src={url}
-                                alt={`Slide ${index}`}
-                                className="absolute inset-0 w-full h-full object-cover"
-                                initial={{ opacity: 0 }}
-                                animate={{
-                                    opacity: index === currentIndex ? 1 : 0,
-                                }}
-                                transition={{
-                                    duration: 1.8,
-                                    ease: 'easeInOut',
-                                }}
-                            />
-                        ))}
-                    </div>
-                )}
-                <header className="mb-6">
-                    <motion.h1
-                        className="text-2xl md:text-3xl font-bold text-blue-400 leading-tight"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.2, duration: 0.4 }}
-                    >
-                        {title}
-                    </motion.h1>
-                    {date && (
-                        <p className="text-sm text-gray-400 mt-2">
-                            Posted on {date}
-                        </p>
-                    )}
-                </header>
-                <section className="mb-6">
-                    <p className="text-base md:text-lg text-gray-300 italic border-l-4 border-gray-600 pl-4">{blurb}</p>
-                </section>
-                {whyItMatters && (
-                    <section className="mb-6">
-                        <h2 className="text-lg md:text-xl font-semibold text-green-400 mb-2">
-                            Why It Matters
-                        </h2>
-                        <p className="text-base text-gray-200">{whyItMatters}</p>
-                    </section>
-                )}
-                <section className="mb-6">
-                    <div className="border-b border-gray-700 my-4" />
-
-                    <div className="text-base text-gray-100 leading-relaxed space-y-4">
-                        {content.split('\n').map((line, index) => (
-                            <p key={index}>{line}</p>
-                        ))}
-                    </div>
-                    {codeExample && (
-                        <>
-                            <br />
-                            <h2 className="text-xl font-semibold text-purple-400 mb-2">
-                                Code Example
-                            </h2>
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.4, delay: 0.3 }}
-                                className="bg-gray-800 p-1 my-2 rounded-md overflow-x-auto"
-                            >
-                                <pre className="text-sm font-mono text-blue-600 ">
-                                    <code
-                                        dangerouslySetInnerHTML={{
-                                            __html: codeExample
-                                                .join('\n')
-                                                .replace(
-                                                    /\$(.+?)\$/g,
-                                                    '<span class="text-blue-400">$1</span>'
-                                                ),
-                                        }}
-                                    />
-                                </pre>
-                            </motion.div>
-                        </>
-                    )}
-                </section>
-                {tags && tags.length > 0 && (
-                    <footer className="flex flex-wrap gap-2">
-                        <span className="text-sm text-gray-400">Tags:</span>
-                        {tags.map((tag, index) => (
-                            <motion.span
-                                key={index}
-                                className="px-3 py-1 bg-gray-800 text-cyan-300 rounded-full text-sm"
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{
-                                    delay: 0.1 * index,
-                                    duration: 0.3,
-                                }}
-                            >
-                                {tag}
-                            </motion.span>
-                        ))}
-                    </footer>
-                )}
-            </motion.article>
+                <ArrowLeftIcon className="w-4 h-4" />
+                cd ../blog
+            </button>
+            {post.featuredImage && (
+                <img
+                    src={post.featuredImage}
+                    alt={post.title}
+                    className="w-full aspect-video object-cover rounded-lg mb-6 border border-owl-border"
+                />
+            )}
+            <header className="mb-6">
+                <h1 className="text-2xl md:text-3xl font-bold text-owl-blue leading-tight">
+                    {post.title}
+                </h1>
+                <p className="text-sm font-mono text-owl-comment mt-2">
+                    {post.date} · {post.author} · {post.readingTime}
+                </p>
+            </header>
+            <p className="text-base md:text-lg text-owl-text-muted italic border-l-4 border-owl-purple pl-4 mb-6">
+                {post.excerpt}
+            </p>
+            <MarkdownBody content={post.content} />
+            {post.tags.length > 0 && (
+                <footer className="flex flex-wrap gap-2 mt-8">
+                    {post.tags.map((tag) => (
+                        <span
+                            key={tag}
+                            className="px-3 py-1 bg-owl-bg text-owl-cyan rounded-full text-sm font-mono border border-owl-border"
+                        >
+                            #{tag}
+                        </span>
+                    ))}
+                </footer>
+            )}
         </Card>
     );
 }

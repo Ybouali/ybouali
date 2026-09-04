@@ -14,7 +14,7 @@ function Footer() {
                     className="flex items-center gap-1 hover:bg-owl-surface-hover px-1 rounded cursor-pointer transition-colors"
                 >
                     <ShareIcon className="w-3 h-3" />
-                    <span>master*</span>
+                    <span>night-owl</span>
                 </a>
                 <div className="flex items-center gap-1 hover:bg-owl-surface-hover px-1 rounded cursor-pointer transition-colors">
                     <div className="w-3 h-3 rounded-full bg-transparent border border-owl-text-muted flex items-center justify-center">

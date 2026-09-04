@@ -1,3 +1,5 @@
+import certificatesData from './certificates.json';
+
 export interface Certificate {
     id: string;
     courseName: string;
@@ -8,68 +10,4 @@ export interface Certificate {
     yourName: string;
 }
 
-export const certificates: Certificate[] = [
-    {
-        id: '1',
-        courseName: 'IBM Java Developer',
-        platform: 'IBM Coursera',
-        issuedDate: 'November 2025', // Leaving these dates as they were in the original code
-        certificateID: '2ACPQFG8U6E1',
-        verificationURL: 'https://www.coursera.org/verify/professional-cert/2ACPQFG8U6E1',
-        yourName: 'Yassine Bouali', // The prompt specifies Yassine Bouali
-    },
-    {
-        id: '2',
-        courseName: 'Cloud Native, Microservices, Containers, DevOps and Agile',
-        platform: 'IBM Coursera',
-        issuedDate: 'November 2025',
-        certificateID: 'YOQV1DK1RCNC',
-        verificationURL: 'https://www.coursera.org/verify/YOQV1DK1RCNC',
-        yourName: 'Yassine Bouali',
-    },
-    {
-        id: '3',
-        courseName: 'Generative AI for Java and Spring Development',
-        platform: 'SkillUp Coursera',
-        issuedDate: 'November 2025',
-        certificateID: '0JZY5PZN1KT7',
-        verificationURL: 'https://www.coursera.org/verify/0JZY5PZN1KT7',
-        yourName: 'Yassine Bouali',
-    },
-    {
-        id: '4',
-        courseName: 'Generative AI: Elevate your Software Development Career',
-        platform: 'IBM Coursera',
-        issuedDate: 'November 2025',
-        certificateID: 'NWDHD1SFKSB1',
-        verificationURL: 'https://www.coursera.org/verify/NWDHD1SFKSB1',
-        yourName: 'Yassine Bouali',
-    },
-    {
-        id: '5',
-        courseName: 'Introduction to Software Engineering',
-        platform: 'IBM Coursera',
-        issuedDate: 'November 2025',
-        certificateID: 'DGX4H8NU9ELH',
-        verificationURL: 'https://www.coursera.org/verify/DGX4H8NU9ELH',
-        yourName: 'Yassine Bouali',
-    },
-    {
-        id: '6',
-        courseName: 'React Front To Back',
-        platform: 'Udemy',
-        issuedDate: 'February 2024',
-        certificateID: 'UC-aabaad0c-ce40-4154-ae78-689b47e0b69b',
-        verificationURL: 'https://www.udemy.com/certificate/UC-aabaad0c-ce40-4154-ae78-689b47e0b69b/',
-        yourName: 'Yassine Bouali',
-    },
-    {
-        id: '7',
-        courseName: 'Node.js API Masterclass With Express & MongoDB',
-        platform: 'Udemy',
-        issuedDate: 'February 2024',
-        certificateID: 'UC-69d7ba54-5ffe-49f7-9130-323f257a70d2',
-        verificationURL: 'https://www.udemy.com/certificate/UC-69d7ba54-5ffe-49f7-9130-323f257a70d2/',
-        yourName: 'Yassine Bouali',
-    },
-];
+export const certificates: Certificate[] = certificatesData as Certificate[];

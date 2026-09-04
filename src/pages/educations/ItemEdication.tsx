@@ -1,5 +1,5 @@
 import { Card } from '../../components';
-import type { EducationType } from './ListEducations';
+import type { Education } from '../../data/education';
 import {
     CalendarIcon,
     MapPinIcon,
@@ -16,31 +16,34 @@ function ItemEducation({
     location,
     urlSchool,
     urlLogo,
-}: EducationType) {
+}: Education) {
     return (
-        <Card className="flex flex-col md:flex-row items-start gap-4 p-4 md:p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-all">
+        <Card className="flex flex-col md:flex-row items-start gap-4 p-4 md:p-6 rounded-xl hover:border-owl-blue transition-all">
             <img
                 src={urlLogo}
                 alt={school}
-                className="w-12 h-12 rounded-full object-cover bg-gray-800 shrink-0"
+                className="w-12 h-12 rounded-full object-cover bg-owl-bg shrink-0 border border-owl-border"
             />
             <div className="flex-1 w-full">
-                <h3 className="text-lg md:text-xl font-semibold text-white flex flex-wrap items-center gap-2">
-                    <AcademicCapIcon className="h-5 w-5 text-blue-400 shrink-0" />
+                <h3 className="text-lg md:text-xl font-semibold text-owl-text flex flex-wrap items-center gap-2">
+                    <AcademicCapIcon className="h-5 w-5 text-owl-blue shrink-0" />
                     <span>{degree}</span>
                 </h3>
-                <p className="text-base text-gray-300 mt-1">{fieldOfStudy}</p>
-                
+                <p className="text-base text-owl-text-muted mt-1">
+                    {fieldOfStudy}
+                </p>
+
                 <div className="flex flex-col gap-1 mt-2">
                     <a
                         href={urlSchool}
                         target="_blank"
-                        className="text-base md:text-lg font-medium text-blue-400 hover:underline flex items-center gap-1 w-fit"
+                        rel="noreferrer"
+                        className="text-base md:text-lg font-medium text-owl-blue hover:text-owl-cyan hover:underline flex items-center gap-1 w-fit"
                     >
                         <LinkIcon className="h-4 w-4 shrink-0" />
                         <span className="truncate">{school}</span>
                     </a>
-                    <div className="flex flex-wrap gap-4 text-sm text-gray-400">
+                    <div className="flex flex-wrap gap-4 text-sm text-owl-text-muted">
                         <p className="flex items-center gap-1">
                             <MapPinIcon className="h-4 w-4 shrink-0" />
                             {location}
@@ -51,8 +54,8 @@ function ItemEducation({
                         </p>
                     </div>
                 </div>
-                
-                <p className="mt-3 text-sm md:text-base text-gray-200 leading-relaxed">
+
+                <p className="mt-3 text-sm md:text-base text-owl-text leading-relaxed">
                     {description}
                 </p>
             </div>

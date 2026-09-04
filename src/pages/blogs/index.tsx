@@ -1,56 +1,50 @@
-import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import {
     CodeArrayDisplay,
+    DeveloperInfo,
     ExportDefault,
     MainForScreen,
 } from '../../components';
-import ListBlogs, { type BlogPost } from './ListBlogs';
-import { motion } from 'framer-motion';
-import Header from './Header';
+import ListBlogs from './ListBlogs';
 import BlogDetails from './BlogDetails';
+import PageSeo from '../../components/PageSeo';
 
 function Blogs() {
-    const [openBlog, setOpenBlog] = useState<BlogPost | null>(null);
+    const { slug } = useParams();
 
     return (
         <MainForScreen>
+            <PageSeo
+                title="Writing | Yassine Bouali"
+                description="Latest brain dumps — notes from the editor, not a content mill."
+                path={slug ? `/blog/${slug}` : '/blog'}
+            />
             <div className="w-full">
                 <div className="w-full md:w-3/4 lg:w-1/2 mx-auto">
                     <div className="flex flex-col items-start pb-10 gap-4">
-                        <Header openBlog={openBlog} setOpenBlog={setOpenBlog} />
+                        <DeveloperInfo
+                            labelOne="from"
+                            labelTwo="description"
+                            valueOne="blog.json"
+                            valueTwo={
+                                slug
+                                    ? 'One brain dump, fully expanded'
+                                    : 'Latest brain dumps'
+                            }
+                        />
 
-                        {openBlog === null && (
-                            <CodeArrayDisplay variableName={'blogs'} />
-                        )}
-
-                        {openBlog === null ? (
-                            <motion.div
-                                key="live"
-                                initial={{ opacity: 0, x: 50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -50 }}
-                                transition={{
-                                    duration: 0.3,
-                                    ease: 'easeInOut',
-                                }}
-                            >
-                                <ListBlogs setOpenBlog={setOpenBlog} />
-                            </motion.div>
+                        {slug ? (
+                            <BlogDetails />
                         ) : (
-                            <BlogDetails {...openBlog} />
-                        )}
-                        {openBlog === null && (
-                            <span className="text-yellow-600">];</span>
+                            <>
+                                <CodeArrayDisplay variableName="blogs" />
+                                <ListBlogs />
+                                <span className="text-owl-warning">];</span>
+                            </>
                         )}
 
                         <ExportDefault
-                            moduleName={
-                                openBlog !== null
-                                    ? `${openBlog.titleFile
-                                          .split(' ')
-                                          .join('')}`
-                                    : 'Blogs'
-                            }
+                            moduleName={slug ? slug.replace(/-/g, '_') : 'Blogs'}
                         />
                     </div>
                 </div>

@@ -13,7 +13,7 @@ function ContactMe() {
                             labelOne="from"
                             labelTwo="description"
                             valueOne="contact-me.tsx"
-                            valueTwo="Get in touch via email or social media"
+                            valueTwo="Drop a line. I answer faster than my linter."
                         />
                         <ImportDisplay />
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">

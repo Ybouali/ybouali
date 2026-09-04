@@ -32,10 +32,10 @@ function ButtonSocialMediaTwo({
                     window.open(url, '_blank', 'noopener,noreferrer');
                 }
             }}
-            className="group  flex flex-row w-[200px] items-center gap-2.5 justify-start rounded-md bg-[#3c3c3c] px-4 py-2 text-gray-300 transition-all duration-700 hover:bg-[#0A66C2] hover:text-white cursor-pointer "
+            className="group  flex flex-row w-[200px] items-center gap-2.5 justify-start rounded-md bg-owl-bg border border-owl-border px-4 py-2 text-owl-text transition-all duration-500 hover:border-owl-blue hover:text-owl-cyan cursor-pointer "
         >
-            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#3c3c3c] transition-all duration-700 group-hover:bg-[#0A66C2] group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-[#0A66C2]/50">
-                <Icon className="h-7 w-7 text-gray-400 group-hover:text-white" />
+            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-owl-surface transition-all duration-500 group-hover:bg-owl-blue group-hover:scale-110">
+                <Icon className="h-7 w-7 text-owl-text-muted group-hover:text-owl-bg" />
             </div>
 
             <button

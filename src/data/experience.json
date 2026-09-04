@@ -1,0 +1,16 @@
+[
+  {
+    "id": "koolskools",
+    "organization": "Koolskools",
+    "role": "Full Stack Engineer",
+    "startDate": "2023",
+    "endDate": "Present",
+    "technologies": ["FastAPI", "React", "PostgreSQL", "Docker"],
+    "responsibilities": [
+      "Architected and implemented a scalable GMAO SaaS platform for industrial maintenance.",
+      "Developed high-performance backend APIs utilizing FastAPI and PostgreSQL.",
+      "Containerized infrastructure using Docker for seamless deployments."
+    ],
+    "url": "https://koolskools.com"
+  }
+]

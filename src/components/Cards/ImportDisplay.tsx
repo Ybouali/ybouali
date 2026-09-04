@@ -5,22 +5,22 @@ const ImportDisplay = ({
     fromPath = './components',
 }) => {
     return (
-        <pre className="font-mono text-lg text-white">
+        <pre className="font-mono text-lg text-owl-text">
             <code>
-                <span className="text-purple-400">import</span>
-                <span className="text-white"> {'{ '}</span>
+                <span className="text-owl-purple">import</span>
+                <span className="text-owl-text"> {'{ '}</span>
                 {imports.map((imp, index) => (
                     <React.Fragment key={index}>
-                        <span className="text-blue-400">{imp}</span>
+                        <span className="text-owl-blue">{imp}</span>
                         {index < imports.length - 1 && (
-                            <span className="text-white">, </span>
+                            <span className="text-owl-text">, </span>
                         )}
                     </React.Fragment>
                 ))}
-                <span className="text-white">{' } '}</span>
-                <span className="text-purple-400">from</span>
-                <span className="text-green-400"> {`'${fromPath}'`}</span>
-                <span className="text-white">;</span>
+                <span className="text-owl-text">{' } '}</span>
+                <span className="text-owl-purple">from</span>
+                <span className="text-owl-green"> {`'${fromPath}'`}</span>
+                <span className="text-owl-text">;</span>
             </code>
         </pre>
     );

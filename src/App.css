@@ -6,13 +6,19 @@
   --color-owl-surface-hover: #1d3b53;
   --color-owl-border: #1e3851;
   --color-owl-text: #d6deeb;
-  --color-owl-text-muted: #828c9a;
+  --color-owl-text-muted: #637777;
   --color-owl-primary: #82aaff;
+  --color-owl-blue: #82aaff;
+  --color-owl-cyan: #7fdbff;
+  --color-owl-orange: #f78c6c;
+  --color-owl-purple: #c792ea;
+  --color-owl-green: #c3e88d;
   --color-owl-accent: #c792ea;
   --color-owl-keyword: #7fdbca;
-  --color-owl-string: #addb67;
+  --color-owl-string: #c3e88d;
+  --color-owl-comment: #637777;
   --color-owl-error: #ef5350;
-  --color-owl-warning: #ffeb95;
+  --color-owl-warning: #ecc48d;
   --font-sans: 'IBM Plex Sans', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 }

@@ -1,0 +1,27 @@
+{
+  "name": "Yassine Bouali",
+  "role": "Software Engineer · Backend · AI/RAG · Industrial IT",
+  "location": "Casablanca, Morocco",
+  "since": "Developer since 2021",
+  "mantra": "No One → Becoming Someone.",
+  "principle": "Every piece of code deserves a second refactor.",
+  "about": "I am a Software Engineer focused on building practical, scalable systems. My work spans backend architectures, distributed infrastructure, and asynchronous processing pipelines. I enjoy architecting RAG systems for document processing and bridging modern software with Industrial IT (SCADA, PLCs). Whether it is Temporal workflows or Kafka streams, I build systems designed for reliability and scale.",
+  "hero": "I build real software systems. My focus spans Backend Engineering, AI / RAG Pipelines, and Industrial IT. I believe every piece of code deserves a second refactor.",
+  "statusLine": "Available for opportunities (and the occasional late-night refactor).",
+  "email": "yassine.bouali.bo@gmail.com",
+  "photo": "/assets/img/proMe.jpeg",
+  "photoHover": "/assets/img/me.jpeg",
+  "cvUrl": "/assets/cv/yassine_bouali_cv.pdf",
+  "socials": {
+    "github": "https://github.com/Ybouali",
+    "linkedin": "https://www.linkedin.com/in/ybouali/",
+    "instagram": "https://www.instagram.com/yassineboualino/"
+  },
+  "skills": {
+    "backend": ["Python", "FastAPI", "Node.js", "TypeScript", "C++"],
+    "infrastructure": ["Docker", "Kafka", "Temporal", "Nginx"],
+    "databases": ["PostgreSQL", "Redis", "MongoDB"],
+    "aiAndRAG": ["LangChain", "LangGraph", "Vector Databases"],
+    "frontend": ["React", "Tailwind CSS", "Vite"]
+  }
+}

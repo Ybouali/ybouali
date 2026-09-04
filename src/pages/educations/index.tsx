@@ -15,7 +15,7 @@ function Educations() {
                         <DeveloperInfo
                             labelOne="from"
                             labelTwo="description"
-                            valueOne="educations.tsx"
+                            valueOne="education.json"
                             valueTwo="Academic background and degrees"
                         />
 
@@ -23,7 +23,7 @@ function Educations() {
 
                         <ListEducations />
 
-                        <span className="text-yellow-600">];</span>
+                        <span className="text-owl-warning">];</span>
 
                         <ExportDefault moduleName="educations" />
                     </div>

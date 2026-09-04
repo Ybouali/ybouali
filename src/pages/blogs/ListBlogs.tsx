@@ -1,33 +1,11 @@
-import { posts } from '../../data/Blogs';
+import { blogs } from '../../data/blog';
 import BlogItem from './BlogItem';
 
-export interface BlogPost {
-    title: string;
-    titleFile: string;
-    blurb: string;
-    whyItMatters?: string;
-    content: string;
-    date?: string;
-    author?: string;
-    tags?: string[];
-    imageUrl?: string[];
-    avatartUrl?: string;
-    codeExample?: string[];
-}
-
-type ListBlogsProps = {
-    setOpenBlog: (blog: BlogPost) => void;
-};
-
-function ListBlogs({ setOpenBlog }: ListBlogsProps) {
+function ListBlogs() {
     return (
-        <div className="flex flex-col gap-4 w-full ">
-            {posts.map((blog, index) => (
-                <BlogItem
-                    key={index}
-                    blog={blog}
-                    onClick={() => setOpenBlog(blog)}
-                />
+        <div className="flex flex-col gap-4 w-full">
+            {blogs.map((post) => (
+                <BlogItem key={post.id} post={post} />
             ))}
         </div>
     );

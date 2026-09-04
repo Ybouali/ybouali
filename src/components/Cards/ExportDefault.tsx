@@ -4,13 +4,13 @@ type ExportDefaultProps = {
 
 function ExportDefault({ moduleName }: ExportDefaultProps) {
     return (
-        <pre className="font-mono text-lg text-white">
+        <pre className="font-mono text-lg text-owl-text">
             <code>
-                <span className="text-purple-400">export</span>
-                <span className="text-purple-400"> default </span>
+                <span className="text-owl-purple">export</span>
+                <span className="text-owl-purple"> default </span>
 
-                <span className="text-white">{` ${moduleName}`}</span>
-                <span className="text-white">;</span>
+                <span className="text-owl-cyan">{` ${moduleName}`}</span>
+                <span className="text-owl-text">;</span>
             </code>
         </pre>
     );

@@ -20,16 +20,16 @@ function ItemGrid({ page }: ItemGridProps) {
     const IconComponent =
         iconMap[page.icon_name as keyof typeof iconMap] || null;
     return (
-        <Card className="hover:border-gray-400 cursor-pointer duration-500 ">
+        <Card className="hover:border-owl-cyan cursor-pointer duration-500 ">
             <div
                 onClick={onClick}
                 className="flex flex-col items-start justify-center gap-2"
             >
                 <div className="flex flex-row items-start justify-center gap-2">
                     {IconComponent && (
-                        <IconComponent className="h-8 w-8 text-gray-400" />
+                        <IconComponent className="h-8 w-8 text-owl-blue" />
                     )}
-                    <p className="text-gray-300 font-medium">
+                    <p className="text-owl-text font-medium">
                         {page.page_name
                             .substring(0, page.page_name.lastIndexOf('.'))
                             .charAt(0)
@@ -39,7 +39,7 @@ function ItemGrid({ page }: ItemGridProps) {
                                 .slice(1)}
                     </p>
                 </div>
-                <p className="text-sm text-gray-500">{page.description}</p>
+                <p className="text-sm text-owl-text-muted">{page.description}</p>
             </div>
         </Card>
     );

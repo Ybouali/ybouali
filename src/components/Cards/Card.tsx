@@ -7,7 +7,7 @@ type CardProps = {
 function Card({ children, className, onClick }: CardProps) {
     return (
         <div
-            className={`bg-[#242527] border border-[#373739] p-4 rounded-lg shadow-md ${className}`}
+            className={`bg-owl-surface border border-owl-border p-4 rounded-lg shadow-md ${className}`}
             onClick={onClick}
         >
             {children}

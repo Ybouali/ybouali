@@ -64,14 +64,14 @@ function ContactMeForm() {
                 },
                 {
                     style: {
-                        background: '#1e1e1e',
-                        color: '#fff',
-                        border: '1px solid #3730a3', // Indigo border for toast
+                        background: 'var(--color-owl-surface)',
+                        color: 'var(--color-owl-text)',
+                        border: '1px solid var(--color-owl-border)',
                     },
                     success: {
                         iconTheme: {
-                            primary: '#6366f1',
-                            secondary: '#fff',
+                            primary: 'var(--color-owl-green)',
+                            secondary: 'var(--color-owl-bg)',
                         },
                     },
                 }
@@ -91,7 +91,7 @@ function ContactMeForm() {
 
     return (
         <Card className="flex flex-col w-full items-start justify-center gap-3">
-            <p className="text-lg font-semibold text-indigo-400">
+            <p className="text-lg font-semibold text-owl-comment font-mono">
                 {`// Send a message`}
             </p>
 

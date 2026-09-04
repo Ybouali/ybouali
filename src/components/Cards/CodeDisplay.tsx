@@ -5,11 +5,11 @@ const CodeDisplay = ({
 }) => {
     return (
         <div className="flex-1 text-xl">
-            <span className="text-purple-400">{keyword}</span>
-            <span className="text-green-400">{` ${varName} `}</span>
-            <span className="text-white animate-ping ">=</span>
-            <span className="text-purple-400">{` new `}</span>
-            <span className="text-blue-400">{`${className}();`}</span>
+            <span className="text-owl-purple">{keyword}</span>
+            <span className="text-owl-green">{` ${varName} `}</span>
+            <span className="text-owl-text animate-ping ">=</span>
+            <span className="text-owl-purple">{` new `}</span>
+            <span className="text-owl-blue">{`${className}();`}</span>
         </div>
     );
 };

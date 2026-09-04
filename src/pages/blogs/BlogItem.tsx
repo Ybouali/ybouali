@@ -1,75 +1,45 @@
-import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import type { BlogPost } from '../../data/blog';
+import { useAppContext } from '../../context/AppContext';
 import { Card } from '../../components';
-import type { BlogPost } from './ListBlogs';
 
-interface BlogItemProps {
-    blog: BlogPost;
-    onClick: (blog: BlogPost) => void;
-}
-
-const parentVariants = {
-    rest: {
-        transition: { staggerChildren: 0.1 },
-    },
-    hover: {
-        transition: { staggerChildren: 0.1 },
-    },
+type BlogItemProps = {
+    post: BlogPost;
 };
 
-const iconVariants = {
-    rest: { opacity: 0, x: -10 },
-    hover: { opacity: 1, x: 0 },
-};
+function BlogItem({ post }: BlogItemProps) {
+    const navigate = useNavigate();
+    const { pages, addPageToNavbar } = useAppContext();
 
-function BlogItem({ blog, onClick }: BlogItemProps) {
     return (
         <Card
-            onClick={() => onClick(blog)}
-            className="flex items-center cursor-pointer"
+            onClick={() => {
+                const page = pages.find((p) => p.path === '/blog');
+                if (page) addPageToNavbar(page);
+                navigate(`/blog/${post.slug}`);
+            }}
+            className="flex items-center cursor-pointer hover:border-owl-cyan/60 transition-colors"
         >
-            <motion.div
-                variants={parentVariants}
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-            className="group flex items-center gap-4 cursor-pointer transition-colors duration-700 ease-in-out w-full"
-            >
-                {blog.avatartUrl && (
+            <div className="group flex items-center gap-4 w-full">
+                {post.featuredImage && (
                     <img
-                        src={blog.avatartUrl}
-                        alt={blog.title}
-                        className="w-16 h-16 md:w-20 md:h-20 object-cover rounded border border-[#333333] shrink-0"
+                        src={post.featuredImage}
+                        alt={post.title}
+                        className="w-16 h-16 md:w-20 md:h-20 object-cover rounded border border-owl-border shrink-0"
                     />
                 )}
                 <div className="min-w-0 flex-1">
-                    <h3 className="m-0 text-base md:text-lg font-bold text-white truncate">
-                        {blog.title}
+                    <h3 className="m-0 text-base md:text-lg font-bold text-owl-blue truncate group-hover:text-owl-cyan">
+                        {post.title}
                     </h3>
-                    <p className="mt-1 text-sm text-[#a0a0a0] line-clamp-2 md:line-clamp-none">
-                        {blog.blurb}
+                    <p className="mt-1 text-sm text-owl-text-muted line-clamp-2">
+                        {post.excerpt}
+                    </p>
+                    <p className="mt-2 text-xs font-mono text-owl-comment">
+                        {post.date} · {post.category} · {post.readingTime}
                     </p>
                 </div>
-                <motion.div
-                    className="ml-auto"
-                    variants={iconVariants}
-                    transition={{ duration: 0.2, ease: 'easeInOut' }}
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="#d4d4d4"
-                        className="w-6 h-6"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                        />
-                    </svg>
-                </motion.div>
-            </motion.div>
+            </div>
         </Card>
     );
 }
