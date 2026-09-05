@@ -46,6 +46,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
             description: 'Blog posts and articles',
             path: '/blog',
         },
+        {
+            page_name: 'cv.tsx',
+            selected: false,
+            icon_name: 'document-text',
+            description: 'Curriculum Vitae',
+            path: '/cv',
+        },
     ]);
 
     const [pagesInNavbar, setPagesInNavbar] = useState<Page[]>([]);

@@ -62,14 +62,12 @@ export function WhoIAmHero() {
                 <ButtonSocialMediaTwo
                     icon={DownloadIcon}
                     label="Resume"
-                    url={site.cvUrl}
-                    isDownload={false}
+                    onClick={() => handleNavigate(site.cvUrl)}
                 />
                 <ButtonSocialMediaTwo
                     icon={LinkedInIcon}
                     label="LinkedIn"
                     url={site.socials.linkedin}
-                    isDownload={false}
                 />
             </div>
         </div>

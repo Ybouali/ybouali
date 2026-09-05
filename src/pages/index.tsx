@@ -9,6 +9,7 @@ import Main from './Main';
 import Projects from './projects';
 import WhoIAm from './whoIAm';
 import Blogs from './blogs';
+import CvPage from './cv';
 import NotFound from './NotFound';
 import { useAppContext } from '../context/useAppContext';
 
@@ -145,6 +146,14 @@ function Pages() {
                             element={
                                 <PageTransition>
                                     <Blogs />
+                                </PageTransition>
+                            }
+                        />
+                        <Route
+                            path="/cv"
+                            element={
+                                <PageTransition>
+                                    <CvPage />
                                 </PageTransition>
                             }
                         />

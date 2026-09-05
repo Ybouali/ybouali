@@ -1,4 +1,4 @@
-import { site } from '../../data/site';
+
 import type { IconType } from '../../types';
 
 
@@ -6,30 +6,23 @@ import type { IconType } from '../../types';
 type Props = {
     icon: IconType;
     label: string;
-    url: string;
+    url?: string;
     isDownload?: boolean;
+    onClick?: (e: React.MouseEvent) => void;
 };
 function ButtonSocialMediaTwo({
     icon: Icon,
     label,
     url,
-    isDownload = false,
+    onClick,
 }: Props) {
-    const downloadCV = () => {
-        const link = document.createElement('a');
-        link.href = site.cvUrl;
-        link.download = 'Yassine_Bouali_CV.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
 
     return (
         <div
-            onClick={() => {
-                if (isDownload) {
-                    downloadCV();
-                } else {
+            onClick={(e) => {
+                if (onClick) {
+                    onClick(e);
+                } else if (url) {
                     window.open(url, '_blank', 'noopener,noreferrer');
                 }
             }}
@@ -40,10 +33,11 @@ function ButtonSocialMediaTwo({
             </div>
 
             <button
-                onClick={() => {
-                    if (isDownload) {
-                        downloadCV();
-                    } else {
+                onClick={(e) => {
+                    e.stopPropagation();
+                    if (onClick) {
+                        onClick(e);
+                    } else if (url) {
                         window.open(url, '_blank', 'noopener,noreferrer');
                     }
                 }}

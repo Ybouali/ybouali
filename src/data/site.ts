@@ -14,6 +14,7 @@ export interface SiteContent {
     photo: string;
     photoHover: string;
     cvUrl: string;
+    cvPdfUrl: string;
     socials: {
         github: string;
         linkedin: string;
