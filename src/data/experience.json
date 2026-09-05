@@ -1,16 +1,83 @@
+
 [
-  {
-    "id": "koolskools",
-    "organization": "Koolskools",
-    "role": "Full Stack Engineer",
-    "startDate": "2023",
-    "endDate": "Present",
-    "technologies": ["FastAPI", "React", "PostgreSQL", "Docker"],
-    "responsibilities": [
-      "Architected and implemented a scalable GMAO SaaS platform for industrial maintenance.",
-      "Developed high-performance backend APIs utilizing FastAPI and PostgreSQL.",
-      "Containerized infrastructure using Docker for seamless deployments."
-    ],
-    "url": "https://koolskools.com"
-  }
+    {
+        "id": "snce-mzar",
+        "organization": "Société Nouvelle des Conduites d'Eau (SNCE)",
+        "role": "SCADA Supervisor",
+        "startDate": "2026",
+        "endDate": "2026",
+        "technologies": [
+            "SCADA",
+            "GMAO",
+            "OPC UA",
+            "MQTT",
+            "TIA Portal",
+            "Python",
+            "Web Technologies"
+        ],
+        "responsibilities": [
+            "Supervise SCADA and industrial monitoring activities for the M'zar project.",
+            "Coordinate monitoring, maintenance, and troubleshooting activities across industrial equipment and process systems.",
+            "Work at the intersection of industrial automation, SCADA, IT infrastructure, and maintenance operations.",
+            "Analyze equipment operating conditions and maintenance requirements to support reliable plant operation.",
+            "Contribute to the design and improvement of digital tools for equipment tracking, maintenance workflows, and operational visibility.",
+            "Work with industrial communication technologies including OPC UA and MQTT.",
+            "Develop and improve GMAO-oriented tools for equipment, maintenance, suppliers, and operational data management."
+        ],
+        "url": "https://www.snce.ma"
+    },
+    {
+        "id": "koolskools",
+        "organization": "Koolskools",
+        "role": "Full Stack Engineer Intern",
+        "startDate": "2025",
+        "endDate": "2026",
+        "technologies": [
+            "React Native",
+            "Django",
+            "Python",
+            "PostgreSQL",
+            "AWS S3",
+            "Firebase Cloud Messaging",
+            "Redux",
+            "Google Maps",
+            "Docker",
+            "Docker Compose"
+        ],
+        "responsibilities": [
+            "Developed and maintained full-stack features for a production-oriented digital platform.",
+            "Built backend services and APIs using Django and Python.",
+            "Developed cross-platform mobile interfaces with React Native and Redux.",
+            "Designed and integrated PostgreSQL data models and application workflows.",
+            "Implemented file storage and media handling using AWS S3.",
+            "Integrated Firebase Cloud Messaging for application notifications.",
+            "Integrated Google Maps functionality for location-based features.",
+            "Containerized development and application services using Docker and Docker Compose.",
+            "Collaborated across frontend and backend layers to deliver end-to-end features."
+        ],
+        "url": "https://koolskools.com"
+    },
+    {
+        "id": "ormva-tf",
+        "organization": "ORMVA/TF",
+        "role": "Full Stack Developer Intern",
+        "startDate": "2025-01",
+        "endDate": "2025-05",
+        "technologies": [
+            "React",
+            "Python",
+            "Django",
+            "PostgreSQL",
+            "REST API"
+        ],
+        "responsibilities": [
+            "Designed and developed web application features for internal business workflows.",
+            "Implemented frontend interfaces using React.",
+            "Developed backend functionality and REST APIs using Python and Django.",
+            "Designed and integrated PostgreSQL data models.",
+            "Connected frontend components with backend services and database operations.",
+            "Worked across the full application stack from user interface to data persistence."
+        ],
+        "url": ""
+    }
 ]
