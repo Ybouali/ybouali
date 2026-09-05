@@ -2,8 +2,8 @@ import { ButtonSocialMediaTwo, GithubIcon, DownloadIcon, LinkedInIcon } from '..
 import { site } from '../../../data/site';
 import { whoIAm } from '../../../data/who-i-am';
 import { useNavigate } from 'react-router-dom';
-import { useAppContext } from '../../../context/AppContext';
 import { Terminal } from 'lucide-react';
+import { useAppContext } from '../../../context/useAppContext';
 
 export function WhoIAmHero() {
     const navigate = useNavigate();

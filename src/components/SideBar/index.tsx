@@ -1,9 +1,10 @@
+import type { Page } from '../../types';
 import { useState } from 'react';
-import { useAppContext } from '../../context/AppContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import { Cog6ToothIcon, DocumentIcon } from '@heroicons/react/24/outline'; // Activity Bar icons
 import ItemSideBar from './ItemSideBar';
+import { useAppContext } from '../../context/useAppContext';
 
 function SideBar() {
     const [open, setOpen] = useState(true);
@@ -35,7 +36,7 @@ function SideBar() {
         exit: { opacity: 0, x: -10 },
     };
 
-    const handleFileClick = (page: any) => {
+    const handleFileClick = (page: Page) => {
         addPageToNavbar(page);
         // On mobile, close sidebar after selecting a file
         if (window.innerWidth < 768) {

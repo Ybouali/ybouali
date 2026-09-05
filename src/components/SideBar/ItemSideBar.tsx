@@ -1,14 +1,7 @@
 import { motion, type Variants } from 'framer-motion';
 import type { Page } from '../../types';
 import { useNavigate } from 'react-router-dom';
-import {
-    BookOpenIcon,
-    CheckBadgeIcon,
-    DocumentTextIcon,
-    EnvelopeIcon,
-    FolderIcon,
-    UserIcon,
-} from '@heroicons/react/24/solid';
+import { iconMap } from './iconMap';
 
 type ItemSideBarProps = {
     page: Page;
@@ -16,14 +9,6 @@ type ItemSideBarProps = {
     variants?: Variants | undefined;
 };
 
-export const iconMap = {
-    user: UserIcon,
-    folder: FolderIcon,
-    book: BookOpenIcon,
-    certificate: CheckBadgeIcon,
-    envelope: EnvelopeIcon,
-    'document-text': DocumentTextIcon,
-};
 
 const ItemSideBar = ({ page, onClick, variants }: ItemSideBarProps) => {
     const navigate = useNavigate();

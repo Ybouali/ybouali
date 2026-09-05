@@ -1,14 +1,10 @@
 import { type SVGProps } from 'react';
 
-interface DevIconProps extends SVGProps<SVGSVGElement> {
-    hoverColor?: string;
-}
+type DevIconProps = SVGProps<SVGSVGElement>;
 
 function DevIcon({
     width = 28,
     height = 28,
-    color = '#adacac',
-    hoverColor = '#3b82f6',
     className = '',
     ...props
 }: DevIconProps) {

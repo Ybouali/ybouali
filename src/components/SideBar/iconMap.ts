@@ -1,10 +1,10 @@
 import {
     BookOpenIcon,
     CheckBadgeIcon,
-    DocumentTextIcon,
     EnvelopeIcon,
     FolderIcon,
     UserIcon,
+    DocumentTextIcon,
 } from '@heroicons/react/24/solid';
 
 export const iconMap = {

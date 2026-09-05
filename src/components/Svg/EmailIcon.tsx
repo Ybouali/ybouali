@@ -1,14 +1,10 @@
 import { type SVGProps } from 'react';
 
-interface EmailIconProps extends SVGProps<SVGSVGElement> {
-    hoverColor?: string;
-}
+type EmailIconProps = SVGProps<SVGSVGElement>;
 
 function EmailIcon({
     width = 28,
     height = 28,
-    color = '#adacac',
-    hoverColor = '#3b82f6',
     className = '',
     ...props
 }: EmailIconProps) {
