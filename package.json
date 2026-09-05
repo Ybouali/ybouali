@@ -8,7 +8,9 @@
         "dev": "vite",
         "build": "tsc -b && vite build",
         "lint": "eslint .",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "test": "vitest",
+        "test:run": "vitest run"
     },
     "dependencies": {
         "@emailjs/browser": "^4.4.1",
@@ -44,6 +46,7 @@
         "typescript-eslint": "^8.46.4",
         "vite": "^7.2.4",
         "vite-plugin-pages": "^0.33.3",
-        "vite-plugin-sitemap": "^0.8.2"
+        "vite-plugin-sitemap": "^0.8.2",
+        "vitest": "^4.1.11"
     }
 }

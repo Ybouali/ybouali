@@ -1,9 +1,9 @@
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import { iconMap } from '../SideBar/ItemSideBar';
-import { useAppContext } from '../../context/AppContext';
 import type { Page } from '../../types';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { iconMap } from '../SideBar/iconMap';
+import { useAppContext } from '../../context/useAppContext';
 
 type Props = {
     page: Page;

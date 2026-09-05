@@ -1,6 +1,6 @@
 import { Card } from '../../components';
-import { iconMap } from '../../components/SideBar/ItemSideBar';
-import { useAppContext } from '../../context/AppContext';
+import { iconMap } from '../../components/SideBar/iconMap';
+import { useAppContext } from '../../context/useAppContext';
 import type { Page } from '../../types';
 import { useNavigate } from 'react-router-dom';
 

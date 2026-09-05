@@ -1,5 +1,5 @@
 import { CodeDisplay } from '../../components';
-import { useAppContext } from '../../context/AppContext';
+import { useAppContext } from '../../context/useAppContext';
 import ItemGrid from './ItemGrid';
 
 function GridNavigation() {

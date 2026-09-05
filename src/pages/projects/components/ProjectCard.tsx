@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import type { Project } from '../../../data/projects';
-import { useAppContext } from '../../../context/AppContext';
 import StatusBadge from './StatusBadge';
+import { useAppContext } from '../../../context/useAppContext';
 
 type ProjectCardProps = {
     project: Project;

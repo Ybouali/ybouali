@@ -1,6 +1,5 @@
 import { DeveloperInfo, ImportDisplay, MainForScreen } from '../../components';
 import ExportDefault from '../../components/Cards/ExportDefault';
-import ContactMeForm from './ContactMeForm';
 import SocialContactMe from './SocialContactMe';
 
 function ContactMe() {
@@ -17,7 +16,6 @@ function ContactMe() {
                         />
                         <ImportDisplay />
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-                            <ContactMeForm />
                             <SocialContactMe />
                         </div>
                         <ExportDefault moduleName="ContactMe" />

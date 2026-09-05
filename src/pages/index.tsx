@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { PagesNavBar } from '../components';
-import { useAppContext } from '../context/AppContext';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Certificates from './certifitcates';
@@ -11,6 +10,7 @@ import Projects from './projects';
 import WhoIAm from './whoIAm';
 import Blogs from './blogs';
 import NotFound from './NotFound';
+import { useAppContext } from '../context/useAppContext';
 
 const PageTransition = ({ children }: { children: React.ReactNode }) => (
     <motion.div

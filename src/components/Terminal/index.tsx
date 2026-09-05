@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
-import { useAppContext } from '../../context/AppContext';
 import { motion } from 'framer-motion';
+import { useAppContext } from '../../context/useAppContext';
 
 function Terminal() {
     const { setOpenTerminal, addPageToNavbar, pages } = useAppContext();

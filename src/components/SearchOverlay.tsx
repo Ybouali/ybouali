@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { projects } from '../data/projects';
 import { blogs } from '../data/blog';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext } from '../context/useAppContext';
 
 export default function SearchOverlay() {
     const [isOpen, setIsOpen] = useState(false);

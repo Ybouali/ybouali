@@ -5,8 +5,9 @@ import './App.css';
 import { Footer, SideBar } from './components';
 import SearchOverlay from './components/SearchOverlay';
 import Terminal from './components/Terminal';
-import { useAppContext } from './context/AppContext';
+
 import Pages from './pages';
+import { useAppContext } from './context/useAppContext';
 
 ReactGA.initialize('G-JYT6MH1B00');
 

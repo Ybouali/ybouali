@@ -1,4 +1,5 @@
-import { useAppContext } from '../../context/AppContext';
+
+import { useAppContext } from '../../context/useAppContext';
 import ItemNavBar from './ItemNavBar';
 import { Bars3Icon } from '@heroicons/react/24/solid';
 

@@ -5,8 +5,8 @@ import { blogs } from '../../data/blog';
 import { experiences } from '../../data/experience';
 import { site } from '../../data/site';
 import { useNavigate } from 'react-router-dom';
-import { useAppContext } from '../../context/AppContext';
 import PageSeo from '../../components/PageSeo';
+import { useAppContext } from '../../context/useAppContext';
 
 function Main() {
     const navigate = useNavigate();

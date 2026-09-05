@@ -1,5 +1,6 @@
 import { ShareIcon, BellIcon, PlayIcon, XMarkIcon } from '@heroicons/react/24/solid';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext } from '../context/useAppContext';
+
 
 function Footer() {
     const { openTerminal, setOpenTerminal } = useAppContext();

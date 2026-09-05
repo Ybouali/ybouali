@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import type { BlogPost } from '../../data/blog';
-import { useAppContext } from '../../context/AppContext';
 import { Card } from '../../components';
+import { useAppContext } from '../../context/useAppContext';
 
 type BlogItemProps = {
     post: BlogPost;
