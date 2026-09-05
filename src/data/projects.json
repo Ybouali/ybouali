@@ -1,132 +1,218 @@
+
 [
-  {
-    "id": "gmao-saas",
-    "title": "GMAO SaaS Platform",
-    "description": "Industrial maintenance management system built for multi-tenant scale — technicians, machines, and inventory in one API.",
-    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop",
-    "technologies": ["Python", "FastAPI", "PostgreSQL", "Docker", "React"],
-    "tags": ["Backend", "Full Stack", "Industrial IT"],
-    "status": "live",
-    "featured": true,
-    "demoUrl": "",
-    "repoUrl": "https://github.com/ybouali",
-    "caseStudy": "Managing industrial maintenance means coordinating technicians, machine state, and inventory. Existing tools were either too slow or too painful to plug into a modern web stack.\n\nI architected a modular SaaS backend with **FastAPI** and **PostgreSQL**, role-based access, and maintenance scheduling workflows. The whole stack is containerized so deployments stay boring — the good kind of boring.\n\n```python\n# tenants stay isolated; workflows stay explicit\nasync def schedule_work_order(tenant_id: str, asset_id: str) -> WorkOrder:\n    return await work_orders.create(tenant_id, asset_id)\n```\n\n**Role:** Full Stack / Backend Engineer.\n**Lesson:** multi-tenant data models fail first at the edges — permissions and migrations — not at the happy path."
-  },
-  {
-    "id": "rag-pipeline",
-    "title": "Document Processing RAG Pipeline",
-    "description": "Asynchronous document ingestion and retrieval-augmented generation. PDFs go in; grounded answers come out.",
-    "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop",
-    "technologies": ["Python", "LangChain", "Kafka", "Temporal"],
-    "tags": ["AI", "RAG", "Backend"],
-    "status": "live",
-    "featured": true,
-    "demoUrl": "",
-    "repoUrl": "https://github.com/ybouali",
-    "caseStudy": "Dumping huge PDFs into an LLM context window is a great way to hit timeouts, lose pages, and retrieve the wrong paragraph.\n\nI designed a fault-tolerant ingestion pipeline: **Temporal** orchestrates chunking, embedding, and storage; **Kafka** moves work between services; **LangChain** handles semantic chunking before vectors land in the DB.\n\n```ts\nconst pipeline = {\n  ingest: 'temporal-workflow',\n  queue: 'kafka',\n  retrieve: 'vector-search + rerank',\n};\n```\n\n**Role:** Backend Engineer.\n**Lesson:** RAG quality is mostly data plumbing. Fancy prompts cannot save a bad chunker."
-  },
-  {
-    "id": "scada-connector",
-    "title": "SCADA Data Connector",
-    "description": "Real-time telemetry aggregation for industrial PLCs — the bridge between shop-floor hardware and web dashboards.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop",
-    "technologies": ["Python", "Redis", "Kafka"],
-    "tags": ["Infrastructure", "Systems", "Industrial IT"],
-    "status": "live",
-    "featured": false,
-    "demoUrl": "",
-    "repoUrl": "https://github.com/ybouali",
-    "caseStudy": "Legacy industrial equipment does not speak React. This connector aggregates high-throughput sensor data with **Redis streams** and **Kafka**, then hands a clean feed to modern dashboards.\n\nFault-tolerance and automatic reconnection were non-negotiable: a dropped PLC should not take the rest of the plant view with it.\n\n**Role:** Systems Engineer.\n**Lesson:** retries without backoff are just a DDoS against your own hardware."
-  },
-  {
-    "id": "ft-transcendence",
-    "title": "ft_transcendence",
-    "description": "Real-time multiplayer Pong with chat, OAuth2, and 2FA. Yes, Pong. No, it was not simple.",
-    "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop",
-    "technologies": ["NestJS", "Vue.js", "PostgreSQL", "WebSockets", "Docker"],
-    "tags": ["Full Stack", "1337", "Realtime"],
-    "status": "live",
-    "featured": false,
-    "demoUrl": "",
-    "repoUrl": "https://github.com/ybouali/ft_transcendence",
-    "caseStudy": "A complete SPA: **NestJS** backend, **Vue.js** frontend, WebSocket gameplay and chat, OAuth2 + 2FA, all wrapped in Docker.\n\nThe hard part was not drawing a rectangle. It was keeping game state honest when two clients and a chat thread all think they are the source of truth.\n\n**Lesson:** realtime systems fail in the 50ms you did not budget for."
-  },
-  {
-    "id": "developer-portfolio",
-    "title": "This Portfolio (Night Owl Edition)",
-    "description": "A portfolio that pretends to be VS Code. Projects and posts are JSON files. The theme is the one I actually work in.",
-    "image": "/assets/img/projects/protfolio.png",
-    "technologies": ["TypeScript", "React", "TailwindCSS", "Vite"],
-    "tags": ["Frontend", "Design", "Open-Source"],
-    "status": "live",
-    "featured": true,
-    "demoUrl": "https://ybouali.dev",
-    "repoUrl": "https://github.com/ybouali/ybouali",
-    "caseStudy": "I spend most of my waking hours in an editor. A corporate landing page felt like wearing someone else's hoodie.\n\nThis site is a themed workspace: explorer, tabs, status bar, command palette (`Ctrl/Cmd+K`), and a terminal (`Ctrl+``). Content lives in `src/data/*.json` so I never have to hunt through JSX to add a project.\n\n```json\n{ \"id\": \"developer-portfolio\", \"status\": \"live\", \"featured\": true }\n```\n\n**Lesson:** if updating the site hurts, you will not update the site."
-  },
-  {
-    "id": "dining-philosophers",
-    "title": "Dining Philosophers",
-    "description": "Five guys, five forks, zero starvation. I made them behave.",
-    "image": "https://assets.leetcode.com/uploads/2019/09/24/an_illustration_of_the_dining_philosophers_problem.png",
-    "technologies": ["C++", "pthreads"],
-    "tags": ["Systems", "1337", "Concurrency"],
-    "status": "archived",
-    "featured": false,
-    "demoUrl": "",
-    "repoUrl": "https://github.com/Ybouali/Philosopher",
-    "caseStudy": "Classic deadlock playground. One mutex was not enough, so I invented a waiter.\n\nThey eat forever now. No drama. Click the repo if you want to watch them choke first.\n\n**Lesson:** starvation is a product bug, even when the product is five imaginary philosophers."
-  },
-  {
-    "id": "docker-inception",
-    "title": "Docker Inception",
-    "description": "Six containers in one box: WordPress thinks it is alone, Redis thinks it is the boss.",
-    "image": "https://cestoliv.com/projects/imgs/42/inception.webp",
-    "technologies": ["Docker", "Nginx", "MariaDB", "WordPress", "Redis"],
-    "tags": ["Infrastructure", "1337", "DevOps"],
-    "status": "archived",
-    "featured": false,
-    "demoUrl": "",
-    "repoUrl": "https://github.com/Ybouali/Inception",
-    "caseStudy": "A Compose stack where everything talks and nobody crashes. WordPress, Redis, Nginx, MariaDB, FTPS, Adminer — one `make up` and it just… works.\n\nThe Compose file is tiny. Feels like cheating. It is not.\n\n**Lesson:** if you cannot explain the network graph on a napkin, you do not own the stack."
-  },
-  {
-    "id": "stl-from-scratch",
-    "title": "STL from Scratch",
-    "description": "Map, vector, stack — I wrote them. GCC cried.",
-    "image": "https://codedamn-blog.s3.amazonaws.com/wp-content/uploads/2022/11/22002523/STL-in-C.jpg",
-    "technologies": ["C++17"],
-    "tags": ["Systems", "1337", "C++"],
-    "status": "archived",
-    "featured": false,
-    "demoUrl": "",
-    "repoUrl": "https://github.com/ybouali",
-    "caseStudy": "No stolen templates. All original pain. Allocators, iterators, and the quiet horror of `map`.\n\nFaster insert? Sometimes. Memory leak? Nope.\n\n**Lesson:** you do not understand a container until you have implemented `rebalance` at 2am."
-  },
-  {
-    "id": "minishell",
-    "title": "MiniShell",
-    "description": "A shell that survives `cat | wc | grep`. My cat survived too.",
-    "image": "https://builtin.com/sites/www.builtin.com/files/2023-01/terminal-commands.jpg",
-    "technologies": ["C", "POSIX"],
-    "tags": ["Systems", "1337", "Unix"],
-    "status": "archived",
-    "featured": false,
-    "demoUrl": "",
-    "repoUrl": "https://github.com/ybouali",
-    "caseStudy": "Pipes, quotes, job control — a small Bourne-ish shell. `SIGINT` works. `SIGTSTP` too. No segfaults on the paths I actually test (yes, I hear you).\n\nTry: `ping example.com &` then try to kill me.\n\n**Lesson:** shells are just process trees with opinions."
-  },
-  {
-    "id": "ft-webserver",
-    "title": "FT-WebServer",
-    "description": "Built Nginx-adjacent HTTP in C++. Served hundreds of simulated users. Zero leaks. I went to sleep.",
-    "image": "https://webhostinggeeks.com/blog/wp-content/uploads/2023/05/Nginx_server.png",
-    "technologies": ["C++", "epoll", "HTTP"],
-    "tags": ["Systems", "1337", "Networking"],
-    "status": "archived",
-    "featured": false,
-    "demoUrl": "",
-    "repoUrl": "https://github.com/ybouali",
-    "caseStudy": "Event loop. No threads. Then siege. It laughed. Then it answered.\n\nNon-blocking I/O is a lifestyle, not a flag.\n\n**Lesson:** `epoll` will not save you from forgetting to close a socket."
-  }
+    {
+        "id": "rag-pipeline",
+        "title": "Document Processing RAG Pipeline",
+        "description": "Private AI backend for asynchronous document ingestion, parsing, and retrieval-augmented generation. Designed to process large documents reliably and prepare grounded retrieval workflows.",
+        "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop",
+        "technologies": [
+            "Python",
+            "FastAPI",
+            "LangChain",
+            "LangGraph",
+            "Kafka",
+            "Temporal",
+            "PostgreSQL"
+        ],
+        "tags": [
+            "AI",
+            "RAG",
+            "Backend",
+            "Distributed Systems"
+        ],
+        "status": "private",
+        "featured": true,
+        "demoUrl": "",
+        "repoUrl": "",
+        "caseStudy": "A private work-in-progress AI backend focused on reliable document processing and retrieval-augmented generation.\n\nThe system is designed around an asynchronous pipeline where documents are stored, detected, parsed, cleaned, and prepared for retrieval without blocking the main application. **Temporal** provides durable workflow orchestration, while **Kafka** handles asynchronous communication between processing stages. **LangChain** supports document processing and RAG capabilities, with **LangGraph** used for the agentic workflow layer.\n\n```text\nDocument\n   ↓\nStorage\n   ↓\nFile Detection\n   ↓\nAsync Processing\n   ├── Temporal\n   ├── Kafka\n   └── Document Parsing\n   ↓\nText Extraction & Cleaning\n   ↓\nChunking & Embeddings\n   ↓\nVector Retrieval\n   ↓\nGrounded AI Response\n```\n\n**Role:** Backend / AI Engineer.\n**Status:** Private — actively under development.\n**Focus:** Reliable document-processing infrastructure, asynchronous workflows, and production-oriented RAG architecture."
+    },
+    {
+        "id": "api-docs-template",
+        "title": "API Developer Portal Template",
+        "description": "A reusable, API-agnostic developer portal for building professional API documentation with data-driven content, API references, search, theming, and automated validation.",
+        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
+        "technologies": [
+            "React",
+            "TypeScript",
+            "Vite",
+            "Tailwind CSS",
+            "React Router",
+            "Fuse.js",
+            "Vitest"
+        ],
+        "tags": [
+            "Frontend",
+            "Developer Tools",
+            "API",
+            "Documentation",
+            "Open Source"
+        ],
+        "status": "live",
+        "featured": true,
+        "demoUrl": "https://ybouali.github.io/api-docs-template/",
+        "repoUrl": "https://github.com/Ybouali/api-docs-template",
+        "caseStudy": "A reusable developer portal foundation for publishing professional API documentation without coupling the frontend to a specific backend.\n\nThe project separates documentation content, site configuration, API reference data, navigation, branding, and application logic. This makes the portal adaptable to SaaS products, internal platforms, fintech APIs, logistics systems, and other HTTP APIs.\n\n```text\nSite Configuration\n       ↓\nTyped Documentation\n       ↓\nAPI Reference\n       ↓\nSearch Index\n       ↓\nDeveloper Portal\n```\n\nThe template provides responsive documentation navigation, client-side search, light/dark theming, reusable API reference components, typed content structures, and CI validation for linting, type checking, tests, and production builds.\n\n**Role:** Frontend / Full-Stack Engineer.\n**Status:** Live and public.\n**Focus:** Developer experience, reusable frontend architecture, API documentation, and configuration-driven design."
+    },
+    {
+        "id": "ft-transcendence",
+        "title": "ft_transcendence",
+        "description": "A real-time multiplayer Pong and chat platform built as the final 1337 Common Core project, combining a React frontend, NestJS backend, PostgreSQL, Docker, and WebSockets.",
+        "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop",
+        "technologies": [
+            "NestJS",
+            "React",
+            "TypeScript",
+            "PostgreSQL",
+            "Socket.IO",
+            "Docker",
+            "Three.js",
+            "JWT"
+        ],
+        "tags": [
+            "Full Stack",
+            "1337",
+            "Realtime",
+            "WebSockets"
+        ],
+        "status": "archived",
+        "featured": false,
+        "demoUrl": "",
+        "repoUrl": "https://github.com/Ybouali/transcendence",
+        "caseStudy": "The final project of the 1337 Common Core: a full-stack multiplayer platform combining online Pong with a Discord-style chat experience.\n\nThe system uses a **NestJS** backend, **React** frontend, **PostgreSQL**, Docker Compose, JWT authentication, and Socket.IO for real-time communication. The architecture separates the frontend and backend while maintaining synchronized game and communication state.\n\n```text\nReact / Three.js\n       ↓\n   Socket.IO\n       ↓\nNestJS Backend\n       ↓\n   PostgreSQL\n       ↓\nDocker Compose\n```\n\nThe challenging part was not drawing the game. It was coordinating authentication, real-time events, multiplayer state, chat, persistence, and containerized services without letting the clients become the source of truth.\n\n**Role:** Full-Stack Engineer.\n**Status:** Archived — public repository, no live deployment.\n**Focus:** Real-time systems, WebSockets, full-stack architecture, authentication, and containerization."
+    },
+    {
+        "id": "developer-portfolio",
+        "title": "This Portfolio",
+        "description": "A developer portfolio designed as a VS Code-inspired workspace, with configuration-driven projects, technical content, search, and a developer-focused interface.",
+        "image": "/assets/img/projects/protfolio.png",
+        "technologies": [
+            "TypeScript",
+            "React",
+            "Tailwind CSS",
+            "Vite"
+        ],
+        "tags": [
+            "Frontend",
+            "Design",
+            "Developer Experience"
+        ],
+        "status": "live",
+        "featured": true,
+        "demoUrl": "https://ybouali.dev",
+        "repoUrl": "https://github.com/Ybouali/ybouali",
+        "caseStudy": "A personal developer portfolio built around the environment I actually use every day: the code editor.\n\nThe interface takes inspiration from VS Code with an explorer, tabs, status bar, command palette, terminal, and developer-oriented navigation. Project and content data are separated from the UI so new work can be added without modifying JSX components.\n\n```text\nsrc/data/\n├── projects.json\n├── posts.json\n└── site.ts\n\n        ↓\n\nReact UI\n        ↓\n\nProduction Portfolio\n```\n\nThe goal was not to reproduce an editor for the sake of novelty, but to create a portfolio that remains easy to maintain as the body of work grows.\n\n**Role:** Software Engineer / Designer.\n**Status:** Live and actively maintained.\n**Focus:** Developer experience, configuration-driven UI, frontend architecture, and technical personal branding."
+    },
+    {
+        "id": "dining-philosophers",
+        "title": "Dining Philosophers",
+        "description": "A concurrency project exploring threads, mutexes, timing, deadlock prevention, and starvation through the classic Dining Philosophers problem.",
+        "image": "https://assets.leetcode.com/uploads/2019/09/24/an_illustration_of_the_dining_philosophers_problem.png",
+        "technologies": [
+            "C",
+            "pthreads",
+            "Mutexes"
+        ],
+        "tags": [
+            "Systems",
+            "1337",
+            "Concurrency"
+        ],
+        "status": "archived",
+        "featured": false,
+        "demoUrl": "",
+        "repoUrl": "https://github.com/Ybouali/Philosopher",
+        "caseStudy": "A concurrency exercise built around the classic Dining Philosophers problem.\n\nThe project focuses on coordinating multiple threads competing for shared resources while preventing deadlocks and minimizing starvation. Precise timing is critical because the simulation is defined by strict time-to-die, time-to-eat, and time-to-sleep constraints.\n\n**Role:** Systems Programmer.\n**Status:** Archived — public repository.\n**Focus:** Threads, mutexes, synchronization, race conditions, and timing."
+    },
+    {
+        "id": "docker-inception",
+        "title": "Docker Inception",
+        "description": "A containerized WordPress infrastructure built from multiple Docker services, including Nginx, MariaDB, Redis, and supporting infrastructure.",
+        "image": "https://cestoliv.com/projects/imgs/42/inception.webp",
+        "technologies": [
+            "Docker",
+            "Docker Compose",
+            "Nginx",
+            "MariaDB",
+            "WordPress",
+            "Redis"
+        ],
+        "tags": [
+            "Infrastructure",
+            "1337",
+            "DevOps"
+        ],
+        "status": "archived",
+        "featured": false,
+        "demoUrl": "",
+        "repoUrl": "https://github.com/Ybouali/Inception",
+        "caseStudy": "A containerized infrastructure project focused on understanding service isolation, networking, persistent storage, and multi-container orchestration.\n\nThe stack connects Nginx, WordPress, MariaDB, and Redis through Docker networking while separating responsibilities across services.\n\n```text\n          Nginx\n            ↓\n        WordPress\n         ↙     ↘\n    MariaDB    Redis\n            \n        Docker Network\n```\n\n**Role:** Infrastructure / DevOps Engineer.\n**Status:** Archived — public repository.\n**Focus:** Docker, service orchestration, networking, persistence, and infrastructure fundamentals."
+    },
+    {
+        "id": "stl-from-scratch",
+        "title": "STL from Scratch",
+        "description": "A C++ implementation of core STL containers focused on templates, iterators, allocators, data structures, and container behavior.",
+        "image": "https://codedamn-blog.s3.amazonaws.com/wp-content/uploads/2022/11/22002523/STL-in-C.jpg",
+        "technologies": [
+            "C++",
+            "C++98",
+            "Templates",
+            "STL"
+        ],
+        "tags": [
+            "Systems",
+            "1337",
+            "C++"
+        ],
+        "status": "archived",
+        "featured": false,
+        "demoUrl": "",
+        "repoUrl": "https://github.com/Ybouali/ft_containers",
+        "caseStudy": "A 1337 systems project focused on understanding how standard C++ containers work internally by implementing their core behavior from scratch.\n\nThe project explores templates, iterators, memory management, allocators, tree-based structures, and container interfaces rather than relying on the standard library implementations.\n\n**Role:** C++ / Systems Programmer.\n**Status:** Archived — public repository.\n**Focus:** Templates, data structures, memory management, iterators, and STL internals."
+    },
+    {
+        "id": "minishell",
+        "title": "MiniShell",
+        "description": "A Unix shell implemented in C with command parsing, pipes, redirections, environment variables, builtins, signals, and process management.",
+        "image": "https://builtin.com/sites/www.builtin.com/files/2023-01/terminal-commands.jpg",
+        "technologies": [
+            "C",
+            "POSIX",
+            "Unix",
+            "Processes",
+            "Signals"
+        ],
+        "tags": [
+            "Systems",
+            "1337",
+            "Unix"
+        ],
+        "status": "archived",
+        "featured": false,
+        "demoUrl": "",
+        "repoUrl": "https://github.com/Ybouali/minishell",
+        "caseStudy": "A 1337 team project to build a functional Unix shell from scratch.\n\nThe implementation covers command parsing, environment variables, redirections, pipelines, builtin commands, process creation, and signal handling.\n\n```text\nInput\n ↓\nParser\n ↓\nCommand Structure\n ↓\nPipes / Redirections\n ↓\nProcesses\n ↓\nSignals\n```\n\n**Role:** Systems Programmer.\n**Status:** Archived — public repository.\n**Focus:** Unix processes, file descriptors, pipes, signals, parsing, and shell behavior."
+    },
+    {
+        "id": "ft-webserver",
+        "title": "FT-WebServer",
+        "description": "An HTTP server implemented in C++ with non-blocking I/O and epoll, designed to handle concurrent HTTP connections without relying on one thread per client.",
+        "image": "https://webhostinggeeks.com/blog/wp-content/uploads/2023/05/Nginx_server.png",
+        "technologies": [
+            "C++",
+            "HTTP",
+            "epoll",
+            "Sockets",
+            "Non-blocking I/O"
+        ],
+        "tags": [
+            "Systems",
+            "1337",
+            "Networking"
+        ],
+        "status": "archived",
+        "featured": false,
+        "demoUrl": "",
+        "repoUrl": "https://github.com/Ybouali/FT_WEBSERV",
+        "caseStudy": "A low-level HTTP server written in C++ to understand how web servers handle sockets, HTTP requests, connections, and concurrent clients.\n\nThe project uses non-blocking sockets and **epoll** to manage multiple connections through an event-driven architecture rather than creating a dedicated thread for every client.\n\n```text\nClients\n  ↓\nSockets\n  ↓\nepoll\n  ↓\nEvent Loop\n  ↓\nHTTP Parser\n  ↓\nResponse\n```\n\n**Role:** Systems / Networking Engineer.\n**Status:** Archived — public repository.\n**Focus:** HTTP, sockets, event-driven I/O, epoll, concurrency, and networking fundamentals."
+    }
 ]
