@@ -1,6 +1,6 @@
 import type { IconType } from '../../types';
 
-import myCv from '/assets/cv/yassine_bouali_cv.pdf';
+import myCv from '/assets/cv/Yassine_Bouali_CV.pdf';
 
 type Props = {
     icon: IconType;

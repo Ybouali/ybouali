@@ -1,0 +1,119 @@
+{
+    "developer": {
+        "name": "Yassine Bouali",
+        "role": "Software Engineer",
+        "focus": [
+            "Backend Engineering",
+            "AI / RAG",
+            "Full-Stack Development"
+        ],
+        "introduction": "I am a Software Engineer focused on building practical, scalable systems. My work spans backend architectures, distributed infrastructure, and asynchronous processing pipelines. I enjoy architecting RAG systems for document processing and bridging modern software with robust data engineering. Whether it is Temporal workflows or Kafka streams, I build systems designed for reliability and scale."
+    },
+    "philosophy": [
+        "Build it.",
+        "Understand it.",
+        "Break it.",
+        "Refactor it.",
+        "Make it reliable.",
+        "Every piece of code deserves a second refactor.",
+        "No One. Becoming Someone."
+    ],
+    "journey": [
+        {
+            "date": "2016 – 2017",
+            "category": "Foundation",
+            "title": "Scientific Baccalaureate",
+            "organization": "Ibn Tahir High School",
+            "description": "The origin story is a science stream, not a bootcamp ad.",
+            "technologies": ["Math", "Physics", "Chemistry"],
+            "current": false
+        },
+        {
+            "date": "2018 – 2019",
+            "category": "Foundations",
+            "title": "Mathematics & Computer Science",
+            "organization": "Faculty of Sciences, Moulay Ismail University",
+            "description": "First year in Mathematics and Computer Science. Proofs by day, compilers by night.",
+            "technologies": ["Algorithms", "C"],
+            "current": false
+        },
+        {
+            "date": "2019 – 2021",
+            "category": "UI/UX",
+            "title": "Multimedia Development",
+            "organization": "Institut Multihexa",
+            "description": "UI, interaction, and the first time I took pixels personally.",
+            "technologies": ["UI/UX", "JavaScript", "HTML/CSS"],
+            "current": false
+        },
+        {
+            "date": "2021",
+            "category": "Software Engineering",
+            "title": "Peer-to-Peer Engineering",
+            "organization": "École 1337",
+            "description": "Peer-to-peer software engineering training and project-based learning.",
+            "technologies": ["C", "C++", "Unix", "Algorithms"],
+            "current": false
+        },
+        {
+            "date": "2025",
+            "category": "Full-Stack Engineering",
+            "title": "Professional Experience",
+            "organization": "ORMVA/TF & Koolskools",
+            "description": "Building production applications. Developed backend services and cross-platform apps.",
+            "technologies": ["Python", "Django", "React Native", "PostgreSQL"],
+            "current": false
+        },
+        {
+            "date": "Present",
+            "category": "Backend · AI/RAG",
+            "title": "Current Direction",
+            "organization": "Independent & Open Source",
+            "description": "Building backend systems, RAG pipelines and distributed processing systems.",
+            "technologies": ["Python", "FastAPI", "LangChain", "Docker", "Kafka"],
+            "current": true
+        }
+    ],
+    "whatIBuild": [
+        {
+            "category": "Backend Systems",
+            "description": "APIs, services, databases, distributed components, asynchronous processing."
+        },
+        {
+            "category": "AI / RAG",
+            "description": "Document processing, information extraction, embeddings, vector search, retrieval pipelines, LangChain, LangGraph."
+        },
+        {
+            "category": "Full-Stack",
+            "description": "React, React Native, Flutter, API-driven applications and cloud-connected systems."
+        },
+        {
+            "category": "Architecture",
+            "description": "Service boundaries, event-driven systems, messaging, background processing, infrastructure-aware applications."
+        }
+    ],
+    "currentFocus": [
+        "Backend Engineering",
+        "AI / RAG Architecture",
+        "LangChain",
+        "LangGraph",
+        "Document Intelligence",
+        "Distributed Systems",
+        "Cloud Infrastructure",
+        "Developer Tooling"
+    ],
+    "techStack": {
+        "Languages": ["Python", "TypeScript", "JavaScript", "Dart", "C/C++"],
+        "Backend": ["FastAPI", "Django", "Node.js"],
+        "Frontend": ["React", "React Native", "Flutter", "Tailwind CSS"],
+        "Data": ["PostgreSQL", "Redis", "MongoDB", "Vector Databases"],
+        "AI": ["LangChain", "LangGraph", "RAG"],
+        "Infrastructure": ["Docker", "Kafka", "Temporal", "AWS", "Nginx"]
+    },
+    "easterEggs": [
+        "Status: compiling...",
+        "Currently refactoring reality.",
+        "Works on my machine. Now making it work in production.",
+        "sudo become-someone"
+    ]
+}

@@ -85,7 +85,7 @@ function Pages() {
                             }
                         />
                         <Route
-                            path="/about"
+                            path="/who-i-am"
                             element={
                                 <PageTransition>
                                     <WhoIAm />

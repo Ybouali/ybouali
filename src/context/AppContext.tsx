@@ -25,11 +25,11 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export function AppProvider({ children }: { children: ReactNode }) {
     const [pages, setPages] = useState<Page[]>([
         {
-            page_name: 'who-am-i.tsx',
+            page_name: 'who-i-am.tsx',
             selected: false,
             icon_name: 'user',
-            description: 'Personal bio, background, and CV',
-            path: '/about',
+            description: 'Personal bio, background, and the usual origin story',
+            path: '/who-i-am',
         },
         {
             page_name: 'projects.tsx',

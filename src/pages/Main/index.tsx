@@ -141,7 +141,7 @@ function Main() {
                         </h3>
                         <button
                             type="button"
-                            onClick={() => handleNavigate('/about')}
+                            onClick={() => handleNavigate('/who-i-am')}
                             className="text-sm font-mono text-owl-text-muted hover:text-owl-blue cursor-pointer"
                         >
                             About me →
