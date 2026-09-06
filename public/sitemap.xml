@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://ybouali.dev/</loc>
+    </url>
+
+    <url>
+        <loc>https://ybouali.dev/who-i-am</loc>
+    </url>
+
+    <url>
+        <loc>https://ybouali.dev/projects</loc>
+    </url>
+
+    <url>
+        <loc>https://ybouali.dev/education</loc>
+    </url>
+
+    <url>
+        <loc>https://ybouali.dev/certificates</loc>
+    </url>
+
+    <url>
+        <loc>https://ybouali.dev/contact</loc>
+    </url>
+
+    <url>
+        <loc>https://ybouali.dev/blog</loc>
+    </url>
+
+    <url>
+        <loc>https://ybouali.dev/cv</loc>
+    </url>
+</urlset>
