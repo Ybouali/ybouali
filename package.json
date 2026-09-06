@@ -8,9 +8,7 @@
         "dev": "vite",
         "build": "tsc -b && vite build && cp dist/index.html dist/404.html",
         "lint": "eslint .",
-        "preview": "vite preview",
-        "test": "vitest",
-        "test:run": "vitest run"
+        "preview": "vite preview"
     },
     "dependencies": {
         "@heroicons/react": "^2.2.0",
@@ -45,7 +43,10 @@
         "typescript-eslint": "^8.46.4",
         "vite": "^7.2.4",
         "vite-plugin-pages": "^0.33.3",
-        "vite-plugin-sitemap": "^0.8.2",
-        "vitest": "^4.1.11"
+        "vite-plugin-sitemap": "^0.8.2"
+    },
+    "allowScripts": {
+        "esbuild@0.28.2": true,
+        "fsevents@2.3.3": true
     }
 }
