@@ -75,3 +75,19 @@
         scrollbar-width: none;
     }
 }
+
+.article-code code.hljs {
+    background: transparent !important;
+    padding: 0 !important;
+    display: block;
+    overflow: visible;
+}
+
+.article-prose > *:first-child {
+    margin-top: 0;
+}
+
+.article-prose li > p {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}

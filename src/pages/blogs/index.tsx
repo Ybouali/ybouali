@@ -20,7 +20,7 @@ function Blogs() {
                     path="/blog"
                 />
             )}
-            <div className="w-full max-w-6xl mx-auto pb-16 min-w-0 overflow-x-hidden">
+            <div className="w-full max-w-6xl mx-auto pb-16 min-w-0">
                 <div className="flex flex-col items-start gap-8 md:gap-10">
                     <DeveloperInfo
                         className="max-w-full min-w-0"
@@ -33,7 +33,7 @@ function Blogs() {
                     />
 
                     {slug ? (
-                        <div className="w-full max-w-3xl min-w-0">
+                        <div className="w-full min-w-0">
                             <BlogDetails />
                         </div>
                     ) : (

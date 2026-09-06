@@ -1,82 +1,93 @@
+import { useMemo } from 'react';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
-import { useNavigate, useParams } from 'react-router-dom';
-import { getPostBySlug } from '../../data/blog';
-import { Card } from '../../components';
-import MarkdownBody from '../../components/MarkdownBody';
+import { Link, useParams } from 'react-router-dom';
+import {
+    getAdjacentPosts,
+    getPostBySlug,
+    getRelatedPosts,
+} from '../../data/blog';
 import PageSeo from '../../components/PageSeo';
+import { extractHeadings, shouldShowToc } from '../../utils/markdown';
+import ArticleHeader from './components/ArticleHeader';
+import ArticleMeta from './components/ArticleMeta';
+import TableOfContents from './components/TableOfContents';
+import ArticleContent from './components/ArticleContent';
+import ArticleNavigation from './components/ArticleNavigation';
+import RelatedArticles from './components/RelatedArticles';
 
 function BlogDetails() {
     const { slug } = useParams();
-    const navigate = useNavigate();
     const post = slug ? getPostBySlug(slug) : undefined;
+    const headings = useMemo(
+        () => (post ? extractHeadings(post.content) : []),
+        [post]
+    );
 
     if (!post) {
         return (
             <div className="w-full py-16 text-center">
-                <p className="font-mono text-owl-orange mb-2">
+                <p className="mb-2 font-mono text-owl-orange">
                     404 — you&apos;re off the beaten path
                 </p>
-                <p className="text-owl-text-muted mb-4">
-                    This brain dump was never written (or the slug is cursed).
+                <p className="mb-4 text-owl-text-muted">
+                    This note was never written (or the slug is cursed).
                 </p>
-                <button
-                    type="button"
-                    onClick={() => navigate('/blog')}
-                    className="font-mono text-sm text-owl-blue hover:text-owl-cyan cursor-pointer"
+                <Link
+                    to="/blog"
+                    className="font-mono text-sm text-owl-blue transition-colors hover:text-owl-cyan"
                 >
-                    ← latest brain dumps
-                </button>
+                    ← back to blog
+                </Link>
             </div>
         );
     }
 
+    const showToc = shouldShowToc(headings, post.content);
+    const { previous, next } = getAdjacentPosts(post.slug);
+    const related = getRelatedPosts(post);
+
     return (
-        <Card>
+        <div className="w-full min-w-0">
             <PageSeo
                 title={`${post.title} | Yassine Bouali`}
                 description={post.excerpt}
                 path={`/blog/${post.slug}`}
             />
-            <button
-                type="button"
-                onClick={() => navigate('/blog')}
-                className="inline-flex items-center gap-2 font-mono text-sm text-owl-text-muted hover:text-owl-cyan mb-6 cursor-pointer"
+
+            <Link
+                to="/blog"
+                className="mb-8 inline-flex items-center gap-2 font-mono text-sm text-owl-text-muted transition-colors hover:text-owl-cyan"
             >
-                <ArrowLeftIcon className="w-4 h-4" />
+                <ArrowLeftIcon className="h-4 w-4" />
                 cd ../blog
-            </button>
-            {post.featuredImage && (
-                <img
-                    src={post.featuredImage}
-                    alt={post.title}
-                    className="w-full aspect-video object-cover rounded-lg mb-6 border border-owl-border"
-                />
-            )}
-            <header className="mb-6">
-                <h1 className="text-2xl md:text-3xl font-bold text-owl-blue leading-tight">
-                    {post.title}
-                </h1>
-                <p className="text-sm font-mono text-owl-comment mt-2">
-                    {post.date} · {post.author} · {post.readingTime}
-                </p>
-            </header>
-            <p className="text-base md:text-lg text-owl-text-muted italic border-l-4 border-owl-purple pl-4 mb-6">
-                {post.excerpt}
-            </p>
-            <MarkdownBody content={post.content} />
-            {post.tags.length > 0 && (
-                <footer className="flex flex-wrap gap-2 mt-8">
-                    {post.tags.map((tag) => (
-                        <span
-                            key={tag}
-                            className="px-3 py-1 bg-owl-bg text-owl-cyan rounded-full text-sm font-mono border border-owl-border"
-                        >
-                            #{tag}
-                        </span>
-                    ))}
-                </footer>
-            )}
-        </Card>
+            </Link>
+
+            <div className="flex flex-col gap-6">
+                <ArticleHeader post={post} />
+                <ArticleMeta post={post} />
+
+                {post.featuredImage && (
+                    <figure className="max-w-3xl min-w-0">
+                        <img
+                            src={post.featuredImage}
+                            alt={post.title}
+                            className="aspect-video h-auto w-full border border-owl-border object-cover"
+                        />
+                    </figure>
+                )}
+            </div>
+
+            <div className="mt-10 flex min-w-0 flex-col items-start gap-10 xl:flex-row">
+                {showToc && <TableOfContents headings={headings} />}
+
+                <div className="w-full max-w-3xl min-w-0">
+                    <ArticleContent content={post.content} />
+                    <ArticleNavigation previous={previous} next={next} />
+                </div>
+            </div>
+
+            <RelatedArticles posts={related} />
+        </div>
     );
 }
 
