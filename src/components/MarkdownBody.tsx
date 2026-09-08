@@ -1,7 +1,10 @@
+
 import type { Components } from 'react-markdown';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
+import { createLowlight } from 'lowlight';
+import typescript from 'highlight.js/lib/languages/typescript';
 import CodeBlock from './CodeBlock';
 import {
     createHeadingIdFactory,
@@ -15,17 +18,25 @@ type MarkdownBodyProps = {
 
 type CalloutKind = 'note' | 'warning' | 'important' | 'quote';
 
+const lowlight = createLowlight({
+    typescript,
+});
+
 function detectCallout(text: string): CalloutKind {
     const start = text.trimStart().toLowerCase();
+
     if (start.startsWith('warning:') || start.startsWith('caution:')) {
         return 'warning';
     }
+
     if (start.startsWith('important:') || start.startsWith('danger:')) {
         return 'important';
     }
+
     if (start.startsWith('note:') || start.startsWith('tip:')) {
         return 'note';
     }
+
     return 'quote';
 }
 
@@ -73,6 +84,7 @@ function MarkdownBody({ content, className = '' }: MarkdownBodyProps) {
         ),
         a: ({ href, children }) => {
             const external = Boolean(href && /^https?:\/\//.test(href));
+
             return (
                 <a
                     href={href}
@@ -86,15 +98,20 @@ function MarkdownBody({ content, className = '' }: MarkdownBodyProps) {
             );
         },
         strong: ({ children }) => (
-            <strong className="font-semibold text-owl-orange">{children}</strong>
+            <strong className="font-semibold text-owl-orange">
+                {children}
+            </strong>
         ),
-        em: ({ children }) => <em className="text-owl-text">{children}</em>,
+        em: ({ children }) => (
+            <em className="text-owl-text">{children}</em>
+        ),
         code: ({ className: codeClass, children }) => {
             const isBlock = Boolean(
                 codeClass &&
                     (codeClass.includes('hljs') ||
                         codeClass.includes('language-'))
             );
+
             if (isBlock) {
                 return (
                     <code
@@ -104,6 +121,7 @@ function MarkdownBody({ content, className = '' }: MarkdownBodyProps) {
                     </code>
                 );
             }
+
             return (
                 <code className="rounded-sm border border-owl-border bg-owl-bg px-1.5 py-0.5 font-mono text-[0.85em] text-owl-orange">
                     {children}
@@ -121,9 +139,12 @@ function MarkdownBody({ content, className = '' }: MarkdownBodyProps) {
                 {children}
             </ol>
         ),
-        li: ({ children }) => <li className="pl-1 leading-7">{children}</li>,
+        li: ({ children }) => (
+            <li className="pl-1 leading-7">{children}</li>
+        ),
         blockquote: ({ children }) => {
             const kind = detectCallout(reactNodeToText(children));
+
             return (
                 <blockquote
                     className={`my-6 border-l-2 px-4 py-3 text-[0.95rem] leading-7 ${CALLOUT_STYLES[kind]}`}
@@ -174,7 +195,14 @@ function MarkdownBody({ content, className = '' }: MarkdownBodyProps) {
         <div className={`article-prose text-owl-text ${className}`}>
             <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeHighlight]}
+                rehypePlugins={[
+                    [
+                        rehypeHighlight,
+                        {
+                            languages: lowlight,
+                        },
+                    ],
+                ]}
                 components={components}
             >
                 {content}

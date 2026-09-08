@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import ReactGA from 'react-ga4';
 import { Toaster } from 'react-hot-toast';
 import './App.css';
 import { Footer, SideBar } from './components';
@@ -9,15 +8,9 @@ import Terminal from './components/Terminal';
 import Pages from './pages';
 import { useAppContext } from './context/useAppContext';
 
-ReactGA.initialize('G-JYT6MH1B00');
+
 
 function App() {
-    useEffect(() => {
-        ReactGA.send({
-            hitType: 'pageview',
-            page: window.location.pathname + window.location.search,
-        });
-    }, []);
 
     const { openTerminal, setOpenTerminal } = useAppContext();
 
