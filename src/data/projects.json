@@ -27,6 +27,30 @@
         "caseStudy": "A private work-in-progress AI backend focused on reliable document processing and retrieval-augmented generation.\n\nThe system is designed around an asynchronous pipeline where documents are stored, detected, parsed, cleaned, and prepared for retrieval without blocking the main application. **Temporal** provides durable workflow orchestration, while **Kafka** handles asynchronous communication between processing stages. **LangChain** supports document processing and RAG capabilities, with **LangGraph** used for the agentic workflow layer.\n\n```text\nDocument\n   ↓\nStorage\n   ↓\nFile Detection\n   ↓\nAsync Processing\n   ├── Temporal\n   ├── Kafka\n   └── Document Parsing\n   ↓\nText Extraction & Cleaning\n   ↓\nChunking & Embeddings\n   ↓\nVector Retrieval\n   ↓\nGrounded AI Response\n```\n\n**Role:** Backend / AI Engineer.\n**Status:** Private — actively under development.\n**Focus:** Reliable document-processing infrastructure, asynchronous workflows, and production-oriented RAG architecture."
     },
     {
+        "id": "yb-observability",
+        "title": "yb-observability",
+        "description": "Open-source Python library for reusable application configuration and logging infrastructure, published on PyPI.",
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070&auto=format&fit=crop",
+        "technologies": [
+        "Python",
+        "Loguru",
+        "PyYAML",
+        "uv",
+        "Pytest"
+        ],
+        "tags": [
+        "Open Source",
+        "Python",
+        "Developer Tools",
+        "Infrastructure"
+        ],
+        "status": "public",
+        "featured": true,
+        "demoUrl": "",
+        "repoUrl": "https://github.com/Ybouali/yb-observability",
+"caseStudy": "An open-source Python library providing reusable configuration and logging infrastructure for Python applications.\n\nThe library supports YAML configuration, environment variable resolution, validation, and consistent Loguru-based logging with console and file output.\n\nPublished and available on PyPI, making it directly installable and reusable across Python projects.\n\nRole: Python / Backend Engineer.\nStatus: Public — published on PyPI and actively developed."
+},
+    {
         "id": "api-docs-template",
         "title": "API Developer Portal Template",
         "description": "A reusable, API-agnostic developer portal for building professional API documentation with data-driven content, API references, search, theming, and automated validation.",

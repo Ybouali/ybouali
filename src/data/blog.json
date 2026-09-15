@@ -11,5 +11,19 @@
     "readingTime": "3 min read",
     "featuredImage": "/assets/img/blog/why/home.png",
     "content": "The old portfolio wasn't really mine.\nIt was someone else's layout I liked enough to borrow.\nNothing wrong with that — but it never felt personal.\n\nSo I started over.\nI wanted something that actually feels like me.\nSomething built from scratch, with my own flow and my own voice.\nNo borrowed pieces this time.\n\nJust clean, honest lines that tell my story.\n\n### The Night Owl Shift\n\nI spend 90% of my time inside an IDE (specifically, with the Night Owl theme). It's calm, it's focused, and the syntax highlighting makes sense.\nI realized my portfolio shouldn't just be a corporate landing page; it should reflect the environment where I do my best work.\n\nSo I brought the editor to the web.\n\n```typescript\nconst me = {\n  role: \"Software Engineer\",\n  focus: [\"Backend\", \"AI/RAG\", \"Industrial IT\"],\n  status: \"Building\",\n};\n```\n\nThis is me now.\nWelcome inside."
+  },
+  {
+    "id": "yb-observability",
+    "slug": "yb-observability",
+    "title": "I Built and Published My Own Python Library",
+    "excerpt": "I kept repeating the same configuration and logging setup across projects, so I decided to turn it into a reusable Python package.",
+    "date": "2026-09-15",
+    "author": "Yassine Bouali",
+    "category": "Engineering",
+    "tags": ["Python", "Open Source", "PyPI", "Developer Tools"],
+    "readingTime": "3 min read",
+    "featuredImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070&auto=format&fit=crop",
+    "content": "I kept writing the same configuration and logging setup across different Python projects.\n\nAt some point, I thought: why am I rebuilding this every time?\n\nSo I decided to extract it into a proper Python library: **yb-observability**.\n\n### From project code to a package\n\nThe goal was simple: have reusable infrastructure that I could install in different Python applications instead of maintaining another copy of the same code.\n\nThe library currently focuses on two things:\n\n- Configuration loading and environment variable handling\n- Consistent application logging with Loguru\n\n`python\nfrom yb_observability.config import ConfigLoader\n\nconfig = ConfigLoader(\"config/config.yml\").load()\n`\n\nNothing revolutionary. Just infrastructure that should be boring, predictable, and reusable.\n\n### Making it real\n\nI didn't want it to stay as another internal utility sitting inside one of my projects.\n\nSo I packaged it properly, added tests and quality checks, set up CI, and published it to **PyPI**.\n\nNow it can actually be installed and used by other Python projects.\n\n`bash\npip install yb-observability\n`\n\nThat part was probably more satisfying than writing the library itself.\n\n### Why I built it\n\nThis project is also a small step toward treating my own tooling more seriously.\n\nInstead of keeping useful pieces hidden inside application repositories, I want to extract the parts that are genuinely reusable, document them, test them, and make them available as independent packages.\n\n**yb-observability** is the first step in that direction.\n\nIt is small, but it is real: an open-source Python project, published on PyPI, that I can now use across my own applications and continue improving over time."
   }
+
 ]
