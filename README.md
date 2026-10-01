@@ -35,5 +35,6 @@ Currently building a **GMAO SaaS** and its Python-based **AI/RAG infrastructure*
 <div align="center">
 
 `𝘽𝙪𝙞𝙡𝙙 → 𝙏𝙚𝙨𝙩 → 𝙍𝙚𝙛𝙖𝙘𝙩𝙤𝙧 → 𝙍𝙚𝙥𝙚𝙖𝙩`
+𝙎𝙩𝙤𝙥 𝙢𝙚 𝙛𝙧𝙤𝙢 𝙬𝙧𝙞𝙩𝙞𝙣𝙜 𝙘𝙤𝙙𝙚. 𝙂𝙤 𝙖𝙝𝙚𝙖𝙙.
 
 </div>
