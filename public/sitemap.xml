@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Main pages -->
     <url>
         <loc>https://www.ybouali.dev/</loc>
     </url>
@@ -24,4 +26,45 @@
     <url>
         <loc>https://www.ybouali.dev/cv</loc>
     </url>
+
+    <!-- Projects -->
+    <url>
+        <loc>https://www.ybouali.dev/projects/rag-pipeline</loc>
+    </url>
+    <url>
+        <loc>https://www.ybouali.dev/projects/yb-observability</loc>
+    </url>
+    <url>
+        <loc>https://www.ybouali.dev/projects/api-docs-template</loc>
+    </url>
+    <url>
+        <loc>https://www.ybouali.dev/projects/ft-transcendence</loc>
+    </url>
+    <url>
+        <loc>https://www.ybouali.dev/projects/developer-portfolio</loc>
+    </url>
+    <url>
+        <loc>https://www.ybouali.dev/projects/dining-philosophers</loc>
+    </url>
+    <url>
+        <loc>https://www.ybouali.dev/projects/docker-inception</loc>
+    </url>
+    <url>
+        <loc>https://www.ybouali.dev/projects/stl-from-scratch</loc>
+    </url>
+    <url>
+        <loc>https://www.ybouali.dev/projects/minishell</loc>
+    </url>
+    <url>
+        <loc>https://www.ybouali.dev/projects/ft-webserver</loc>
+    </url>
+
+    <!-- Blog articles -->
+    <url>
+        <loc>https://www.ybouali.dev/blog/why-i-redesigned-my-portfolio</loc>
+    </url>
+    <url>
+        <loc>https://www.ybouali.dev/blog/yb-observability</loc>
+    </url>
+
 </urlset>
