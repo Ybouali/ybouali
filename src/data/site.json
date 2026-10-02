@@ -1,14 +1,15 @@
 {
 "@type": "Person",
-"@id": "https://ybouali.dev/#person",
+"@id": "https://www.ybouali.dev/#person",
+
 
 "name": "Yassine Bouali",
-"role": "Software Engineer · Backend · AI/RAG · Industrial IT",
+"role": "Software Engineer · Backend · AI/RAG",
 
-"url": "https://ybouali.dev/",
+"url": "https://www.ybouali.dev/",
 "image": [
-"https://ybouali.dev/assets/img/yassine-bouali.jpeg",
-"https://ybouali.dev/assets/img/proMe.jpeg"
+    "https://www.ybouali.dev/assets/img/yassine-bouali.jpeg",
+    "https://www.ybouali.dev/assets/img/proMe.jpeg"
 ],
 
 "location": "Casablanca, Morocco",
@@ -17,9 +18,9 @@
 "mantra": "No One → Becoming Someone.",
 "principle": "Every piece of code deserves a second refactor.",
 
-"about": "I am a Software Engineer focused on building practical, scalable systems. My work spans backend architectures, distributed infrastructure, and asynchronous processing pipelines. I enjoy architecting RAG systems for document processing and bridging modern software with Industrial IT (SCADA, PLCs). Whether it is Temporal workflows or Kafka streams, I build systems designed for reliability and scale.",
+"about": "I am a Software Engineer focused on building practical, scalable systems. My work spans backend architectures, distributed infrastructure, asynchronous processing, and AI/RAG pipelines. I enjoy architecting systems for document processing and building reliable software with technologies like Python, FastAPI, Kafka, and Temporal.",
 
-"hero": "I build real software systems. My focus spans Backend Engineering, AI / RAG Pipelines, and Industrial IT. I believe every piece of code deserves a second refactor.",
+"hero": "I build real software systems. My focus spans Backend Engineering, AI / RAG Pipelines, and distributed systems. I believe every piece of code deserves a second refactor.",
 
 "statusLine": "Available for opportunities (and the occasional late-night refactor).",
 
@@ -32,76 +33,77 @@
 "cvPdfUrl": "/assets/cv/yassine_bouali_cv.pdf",
 
 "socials": {
-"github": "https://github.com/Ybouali",
-"linkedin": "https://www.linkedin.com/in/ybouali/",
-"instagram": "https://www.instagram.com/yassineboualino/",
-"x": "https://x.com/YassineBouali6"
+    "github": "https://github.com/Ybouali",
+    "linkedin": "https://www.linkedin.com/in/ybouali/",
+    "instagram": "https://www.instagram.com/yassineboualino/",
+    "x": "https://x.com/YassineBouali6"
 },
 
 "sameAs": [
-"https://github.com/Ybouali",
-"https://www.linkedin.com/in/ybouali/",
-"https://www.instagram.com/yassineboualino/",
-"https://x.com/YassineBouali6"
+    "https://github.com/Ybouali",
+    "https://www.linkedin.com/in/ybouali/",
+    "https://www.instagram.com/yassineboualino/",
+    "https://x.com/YassineBouali6"
 ],
 
 "knowsAbout": [
-"Software Engineering",
-"Backend Engineering",
-"Artificial Intelligence",
-"Retrieval-Augmented Generation",
-"Document Processing",
-"Industrial IT",
-"SCADA",
-"PLCs",
-"Python",
-"FastAPI",
-"Node.js",
-"TypeScript",
-"C++",
-"Docker",
-"Apache Kafka",
-"Temporal",
-"Nginx",
-"PostgreSQL",
-"Redis",
-"MongoDB",
-"LangChain",
-"LangGraph",
-"Vector Databases",
-"React",
-"Tailwind CSS",
-"Vite"
+    "Software Engineering",
+    "Backend Engineering",
+    "Artificial Intelligence",
+    "Retrieval-Augmented Generation",
+    "Document Processing",
+    "Distributed Systems",
+    "Asynchronous Processing",
+    "Python",
+    "FastAPI",
+    "Node.js",
+    "TypeScript",
+    "C++",
+    "Docker",
+    "Apache Kafka",
+    "Temporal",
+    "Nginx",
+    "PostgreSQL",
+    "Redis",
+    "MongoDB",
+    "LangChain",
+    "LangGraph",
+    "Vector Databases",
+    "React",
+    "Tailwind CSS",
+    "Vite"
 ],
 
 "skills": {
-"backend": [
-"Python",
-"FastAPI",
-"Node.js",
-"TypeScript",
-"C++"
-],
-"infrastructure": [
-"Docker",
-"Kafka",
-"Temporal",
-"Nginx"
-],
-"databases": [
-"PostgreSQL",
-"Redis",
-"MongoDB"
-],
-"aiAndRAG": [
-"LangChain",
-"LangGraph",
-"Vector Databases"
-],
-"frontend": [
-"React",
-"Tailwind CSS",
-"Vite"
-]
+    "backend": [
+        "Python",
+        "FastAPI",
+        "Node.js",
+        "TypeScript",
+        "C++"
+    ],
+    "infrastructure": [
+        "Docker",
+        "Kafka",
+        "Temporal",
+        "Nginx"
+    ],
+    "databases": [
+        "PostgreSQL",
+        "Redis",
+        "MongoDB"
+    ],
+    "aiAndRAG": [
+        "LangChain",
+        "LangGraph",
+        "Vector Databases"
+    ],
+    "frontend": [
+        "React",
+        "Tailwind CSS",
+        "Vite"
+    ]
 }
+
+
 }
