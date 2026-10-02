@@ -7,7 +7,7 @@ type PageSeoProps = {
 };
 
 function PageSeo({ title, description, path = '/' }: PageSeoProps) {
-    const url = `https://ybouali.dev${path}`;
+    const url = `https://www.ybouali.dev${path}`;
     return (
         <Helmet>
             <title>{title}</title>
