@@ -1,13 +1,15 @@
-import { Helmet } from 'react-helmet-async';
 import { site } from '../../data/site';
 import { DownloadIcon } from '../../components';
+import PageSeo from '../../components/PageSeo';
 
 export default function CvPage() {
     return (
         <>
-            <Helmet>
-                <title>Curriculum Vitae - {site.name}</title>
-            </Helmet>
+            <PageSeo
+                title="CV | Yassine Bouali"
+                description="View Yassine Bouali's professional experience, education, technical skills, and curriculum vitae."
+                path="/cv"
+            />
             <div className="flex flex-col h-full w-full bg-owl-bg overflow-hidden relative">
                 <div className="w-full h-full flex flex-col p-4 md:p-6 lg:p-8 pt-6 md:pt-10">
                     
