@@ -27,3 +27,5 @@ I care about **architecture, systems, and code that survives the second refactor
 ### 🧨 𝙔𝙤𝙪𝙧 𝙤𝙥𝙞𝙣𝙞𝙤𝙣 𝙙𝙤𝙚𝙨𝙣'𝙩 𝙨𝙝𝙞𝙥 𝙘𝙤𝙙𝙚. 𝙈𝙞𝙣𝙚 𝙙𝙤𝙚𝙨. 𝙎𝙤𝙢𝙚𝙩𝙞𝙢𝙚𝙨 𝙞𝙩 𝙖𝙡𝙨𝙤 𝙗𝙧𝙚𝙖𝙠𝙨 𝙥𝙧𝙤𝙙.
 
 </div>
+
+[![My Awesome Stats](https://awesome-github-stats.azurewebsites.net/user-stats/ybouali?cardType=github&theme=gruvbox&fontFamily=Akt&preferLogin=true&Points.Commits=1.2)](https://git.io/awesome-stats-card)
