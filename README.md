@@ -40,6 +40,6 @@ I design and build backend systems with a focus on **architecture, reliability, 
 
 ### 𝗚𝗶𝘁𝗛𝘂𝗯 𝘀𝘁𝗮𝘁𝘀
 
-[![GitHub Stats](https://awesome-github-stats.azurewebsites.net/user-stats/ybouali?cardType=github&theme=gruvbox&fontFamily=Akt&preferLogin=true)](https://git.io/awesome-stats-card)
+![GitHub Stats Card](https://ghstats.dev/api/card?username=ybouali&theme=midnight)
 
 </div>
