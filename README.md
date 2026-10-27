@@ -36,8 +36,6 @@ I design and build backend systems with a focus on **architecture, reliability, 
 
 *Good architecture matters. Working software matters more.*
 
-### 🧨 𝙔𝙤𝙪𝙧 𝙤𝙥𝙞𝙣𝙞𝙤𝙣 𝙙𝙤𝙚𝙨𝙣'𝙩 𝙨𝙝𝙞𝙥 𝙘𝙤𝙙𝙚. 𝙈𝙞𝙣𝙚 𝙙𝙤𝙚𝙨. 𝙎𝙤𝙢𝙚𝙩𝙞𝙢𝙚𝙨 𝙞𝙩 𝙖𝙡𝙨𝙤 𝙗𝙧𝙚𝙖𝙠𝙨 𝙥𝙧𝙤𝙙.
-
 ---
 
 ### 𝗚𝗶𝘁𝗛𝘂𝗯 𝘀𝘁𝗮𝘁𝘀
