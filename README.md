@@ -12,6 +12,10 @@
 
 *Curious by nature. Engineer by choice.*
 
-![GitHub Stats Card](https://ghstats.dev/api/card?username=ybouali&theme=midnight)
+![GitHub Mini Badge](https://ghstats.dev/api/mini?username=ybouali&theme=midnight&style=for-the-badge)
+![GitHub Mini Badge](https://ghstats.dev/api/mini?username=ybouali&theme=midnight&metric=commits&style=for-the-badge)
+![GitHub Mini Badge](https://ghstats.dev/api/mini?username=ybouali&theme=midnight&metric=contributions&style=for-the-badge)
+
+![Top Languages](https://ghstats.dev/api/langs?username=ybouali&theme=midnight&layout=donut)
 
 </div>
