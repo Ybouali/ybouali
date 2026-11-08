@@ -7,7 +7,7 @@ function Certificates() {
     <MainForScreen>
       <PageSeo
         title="Certificates | Yassine Bouali"
-        description="Additional learning, specialization, and professional development alongside the engineering journey."
+        description="Additional learning..."
         path="/certificates"
       />
       <div className="w-full max-w-6xl mx-auto pb-16 min-w-0 overflow-x-hidden">
