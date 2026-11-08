@@ -33,46 +33,46 @@
 
 // export default DeveloperInfo;
 
-import { AnimatedChars } from '../Animations/AnimatedChars';
+import { AnimatedChars } from "../Animations/AnimatedChars";
 
 type DeveloperInfoProps = {
-    labelOne: string;
-    labelTwo: string;
-    valueOne: string;
-    valueTwo: string;
-    className?: string;
+  labelOne: string;
+  labelTwo: string;
+  valueOne: string;
+  valueTwo: string;
+  className?: string;
 };
 
 function DeveloperInfo({
-    labelOne,
-    labelTwo,
-    valueOne,
-    valueTwo,
-    className,
+  labelOne,
+  labelTwo,
+  valueOne,
+  valueTwo,
+  className,
 }: DeveloperInfoProps) {
-    return (
-        <div className={`flex flex-col items-start ${className}`}>
-            <pre className="text-xl text-owl-comment">/**</pre>
+  return (
+    <div className={`flex flex-col items-start ${className}`}>
+      <pre className="text-xl text-owl-comment">/**</pre>
 
-            <pre className="text-xl">
-                <span className="text-owl-blue flex flex-row">
-                    <span className="text-owl-comment">{`*  `}</span>
-                    <span className="text-owl-keyword">{`@${labelOne} `}</span>
-                    <AnimatedChars text={valueOne} animationType="up" />
-                </span>
-            </pre>
+      <pre className="text-xl">
+        <span className="text-owl-blue flex flex-row">
+          <span className="text-owl-comment">{`*  `}</span>
+          <span className="text-owl-keyword">{`@${labelOne} `}</span>
+          <AnimatedChars text={valueOne} animationType="up" />
+        </span>
+      </pre>
 
-            <pre className="text-xl">
-                <span className="text-owl-blue flex flex-row">
-                    <span className="text-owl-comment">{`*  `}</span>
-                    <span className="text-owl-keyword">{`@${labelTwo}  `}</span>
-                    <AnimatedChars text={valueTwo} animationType="fade" />
-                </span>
-            </pre>
+      <pre className="text-xl">
+        <span className="text-owl-blue flex flex-row">
+          <span className="text-owl-comment">{`*  `}</span>
+          <span className="text-owl-keyword">{`@${labelTwo}  `}</span>
+          <AnimatedChars text={valueTwo} animationType="fade" />
+        </span>
+      </pre>
 
-            <pre className="text-xl text-owl-comment ">*/</pre>
-        </div>
-    );
+      <pre className="text-xl text-owl-comment ">*/</pre>
+    </div>
+  );
 }
 
 export default DeveloperInfo;
