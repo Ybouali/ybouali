@@ -84,6 +84,14 @@ function Projects() {
             <ProjectCaseStudy />
           ) : (
             <>
+              <header className="flex flex-col gap-2 w-full max-w-3xl">
+                <span className="font-mono text-sm text-owl-comment uppercase tracking-widest">
+                  {"// projects"}
+                </span>
+                <h1 className="text-3xl md:text-4xl font-bold text-owl-text tracking-tight">
+                  Projects &amp; experiments
+                </h1>
+              </header>
               <div className="w-full flex flex-col gap-4">
                 <p className="text-owl-text-muted max-w-2xl">
                   Every card below is a record in{" "}
