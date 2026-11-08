@@ -2,7 +2,7 @@ import {
   ArrowLeftIcon,
   ArrowTopRightOnSquareIcon,
 } from "@heroicons/react/24/outline";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getProjectById } from "../../../data/projects";
 import MarkdownBody from "../../../components/MarkdownBody";
 import PageSeo from "../../../components/PageSeo";
@@ -11,7 +11,6 @@ import { Card } from "../../../components";
 
 function ProjectCaseStudy() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const project = id ? getProjectById(id) : undefined;
 
   if (!project) {
@@ -28,13 +27,12 @@ function ProjectCaseStudy() {
           <code className="text-owl-green">projects.json</code>. Maybe it was
           never committed.
         </p>
-        <button
-          type="button"
-          onClick={() => navigate("/projects")}
+        <Link
+          to="/projects"
           className="font-mono text-sm text-owl-blue hover:text-owl-cyan cursor-pointer"
         >
           ← back to here-be-projects
-        </button>
+        </Link>
       </div>
     );
   }
@@ -46,14 +44,13 @@ function ProjectCaseStudy() {
         description={project.description}
         path={`/projects/${project.id}`}
       />
-      <button
-        type="button"
-        onClick={() => navigate("/projects")}
+      <Link
+        to="/projects"
         className="inline-flex items-center gap-2 font-mono text-sm text-owl-text-muted hover:text-owl-cyan mb-6 cursor-pointer"
       >
         <ArrowLeftIcon className="w-4 h-4" />
         cd ../projects
-      </button>
+      </Link>
 
       <Card className="overflow-hidden p-0">
         <img

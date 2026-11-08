@@ -6,25 +6,10 @@ import {
 } from "../../../components";
 import { site } from "../../../data/site";
 import { whoIAm } from "../../../data/who-i-am";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Terminal } from "lucide-react";
-import { useAppContext } from "../../../context/useAppContext";
 
 export function WhoIAmHero() {
-  const navigate = useNavigate();
-  const { pages, addPageToNavbar } = useAppContext();
-
-  const handleNavigate = (path: string) => {
-    const page = pages.find(
-      (p) =>
-        p.path === path || (p.path !== "/" && path.startsWith(`${p.path}/`)),
-    );
-    if (page) {
-      addPageToNavbar(page);
-    }
-    navigate(path);
-  };
-
   return (
     <div className="flex flex-col gap-6 md:gap-8 w-full">
       <div className="flex flex-col gap-1">
@@ -54,14 +39,13 @@ export function WhoIAmHero() {
       </p>
 
       <div className="flex flex-row flex-wrap items-center gap-4 mt-2">
-        <button
-          type="button"
-          onClick={() => handleNavigate("/projects")}
+        <Link
+          to="/projects"
           className="flex items-center gap-2 px-5 py-2.5 bg-owl-surface hover:bg-owl-surface-hover border border-owl-border hover:border-owl-blue/50 text-owl-text font-mono text-sm rounded transition-colors cursor-pointer"
         >
           <Terminal className="w-4 h-4" />
           <span>Projects</span>
-        </button>
+        </Link>
         <ButtonSocialMediaTwo
           icon={GithubIcon}
           label="GitHub"
@@ -70,7 +54,7 @@ export function WhoIAmHero() {
         <ButtonSocialMediaTwo
           icon={DownloadIcon}
           label="Resume"
-          onClick={() => handleNavigate(site.cvUrl)}
+          to={site.cvUrl}
         />
         <ButtonSocialMediaTwo
           icon={LinkedInIcon}
