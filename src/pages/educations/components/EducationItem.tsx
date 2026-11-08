@@ -110,7 +110,7 @@ function EducationItem({ education, index, isLast }: EducationItemProps) {
           <a
             href={education.urlSchool}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="text-owl-blue hover:text-owl-cyan transition-colors break-all"
           >
             {education.urlSchool.replace(/^https?:\/\//, "").replace(/\/$/, "")}

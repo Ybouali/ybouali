@@ -15,7 +15,7 @@ function Footer() {
         <a
           href="https://github.com/ybouali/Ybouali"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="flex items-center gap-1 hover:bg-owl-surface-hover px-1 rounded cursor-pointer transition-colors"
         >
           <ShareIcon className="w-3 h-3" />
