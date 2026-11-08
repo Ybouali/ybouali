@@ -1,0 +1,143 @@
+%-------------------------------------------------------------------------------
+% Yassine Bouali — Backend Software Engineer — Python
+% Compile with pdfLaTeX (two passes for hyperref)
+%-------------------------------------------------------------------------------
+\documentclass[10pt,a4paper]{article}
+
+%--- Encoding and font quality (pdfLaTeX only) ---------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage{cmap}
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+%--- Layout --------------------------------------------------------------------
+\usepackage[left=1.9cm,right=1.9cm,top=1.7cm,bottom=1.7cm]{geometry}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+%--- PDF metadata (read by some ATS before body text) --------------------------
+\hypersetup{
+  pdftitle={Yassine Bouali — Backend Software Engineer CV},
+  pdfauthor={Yassine Bouali},
+  pdfsubject={Curriculum Vitae},
+  pdfkeywords={Python, FastAPI, Django, PostgreSQL, Backend Engineer, Software Architecture}
+}
+
+%--- Section styling -----------------------------------------------------------
+\titleformat{\section}
+  {\large\bfseries}
+  {}{0em}{\MakeUppercase}[\vspace{-0.5em}\rule{\textwidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{1.1em}{0.55em}
+
+%--- Semantic commands ---------------------------------------------------------
+\newcommand{\resumeEntry}[3]{%
+  \vspace{0.25em}%
+  \noindent\textbf{#1} \hfill \textbf{#3}\par
+  \noindent\textit{#2}\par\vspace{0.1em}%
+}
+\newcommand{\projectEntry}[3]{%
+  \vspace{0.25em}%
+  \noindent\textbf{#1} \hfill \textit{#3}\par
+  \noindent #2\par\vspace{0.1em}%
+}
+\newenvironment{resumeList}
+  {\begin{itemize}[leftmargin=1.1em,itemsep=0.12em,topsep=0.15em,parsep=0pt]}
+  {\end{itemize}\vspace{0.15em}}
+\newcommand{\resumeItem}[1]{\item #1}
+
+\begin{document}
+\pagestyle{empty}
+
+%-------------------------------------------------------------------------------
+% HEADER
+%-------------------------------------------------------------------------------
+{\LARGE\bfseries Yassine Bouali}\\[0.2em]
+{\large\bfseries Backend Software Engineer — Python}\\[0.45em]
+Morocco \textbullet{} Open to remote and relocation \textbullet{}
+\href{mailto:yassine.bouali.bo@gmail.com}{yassine.bouali.bo@gmail.com} \textbullet{}
+\href{https://www.linkedin.com/in/ybouali/}{linkedin.com/in/ybouali} \textbullet{}
+\href{https://github.com/Ybouali}{github.com/Ybouali} \textbullet{}
+\href{https://www.ybouali.dev}{www.ybouali.dev}
+
+\vspace{0.3em}
+
+%-------------------------------------------------------------------------------
+% SUMMARY
+%-------------------------------------------------------------------------------
+\section*{Summary}
+Backend software engineer with practical experience building services and web applications in Python and Django, and a strong interest in software architecture, database design, and API development. Comfortable across the stack but focused on backend systems: relational data modelling with PostgreSQL, REST API design, containerised deployment with Docker, and multi-tenant application structure. Currently developing a backend-focused SaaS project (FastAPI, async SQLAlchemy, PostgreSQL) while contributing to open-source Python tooling.
+
+%-------------------------------------------------------------------------------
+% EXPERIENCE
+%-------------------------------------------------------------------------------
+\section*{Experience}
+
+\resumeEntry{Full Stack Engineer Intern}{Koolskools}{2025 -- 2026}
+\begin{resumeList}
+  \resumeItem{Developed a cross-platform mobile application in React Native, followed by a companion web application in React.}
+  \resumeItem{Built backend services and REST APIs using Django and Python, with PostgreSQL for relational data modelling and application workflows.}
+  \resumeItem{Implemented real-time team chat and notifications using Socket.IO, and integrated the Google Gemini API into a user feedback platform.}
+  \resumeItem{Containerised development and application services with Docker and Docker Compose; used AWS S3 for file storage and AWS EC2 for service hosting.}
+  \resumeItem{Contributed to a team and task management platform across frontend and backend layers.}
+\end{resumeList}
+
+\resumeEntry{Full Stack Developer Intern}{ORMVA/TF}{Jan 2025 -- May 2025}
+\begin{resumeList}
+  \resumeItem{Developed internal web application features for business workflows using React on the frontend and Django/Python on the backend.}
+  \resumeItem{Designed and integrated PostgreSQL data models; connected frontend components to backend REST APIs and database operations.}
+\end{resumeList}
+
+%-------------------------------------------------------------------------------
+% PROJECTS
+%-------------------------------------------------------------------------------
+\section*{Projects}
+
+\projectEntry{GMAO SaaS}{Backend-focused SaaS application for maintenance management (active development). Multi-tenant architecture with tenant isolation, authentication, permission-based access control, membership invitations, and Docker-based development infrastructure. Implemented with FastAPI, asynchronous SQLAlchemy, PostgreSQL, and Alembic migrations. Planned and in progress: asynchronous background processing and expanded reporting.}{\href{https://github.com/Ybouali}{private repository}}
+
+\projectEntry{yb-observability}{Open-source Python library for reusable configuration and logging infrastructure. Configuration loader supports YAML files with environment-variable substitution and safe handling of values that would otherwise break YAML structure; logging layer built on Loguru with per-service directories and rotation. Published on PyPI with a tested public API.}{PyPI: \href{https://pypi.org/project/yb-observability/}{yb-observability}}
+
+%-------------------------------------------------------------------------------
+% EDUCATION
+%-------------------------------------------------------------------------------
+\section*{Education}
+
+\resumeEntry{Software Engineering Program}{1337 (peer-to-peer engineering school)}{2021 -- 2026}
+\begin{resumeList}
+  \resumeItem{Project-based curriculum covering algorithms, C/C++, systems programming, Unix, networking, and web development.}
+\end{resumeList}
+
+\resumeEntry{Multimedia Development}{Institut Multihexa}{2019 -- 2021}
+\begin{resumeList}
+  \resumeItem{UI/UX, JavaScript, and front-end development foundations.}
+\end{resumeList}
+
+\resumeEntry{Mathematics \& Computer Science}{Faculty of Sciences, Moulay Ismail University}{2018 -- 2019}
+\resumeEntry{Scientific Baccalaureate}{Ibn Tahir High School}{2016 -- 2017}
+
+%-------------------------------------------------------------------------------
+% TECHNICAL SKILLS
+%-------------------------------------------------------------------------------
+\section*{Technical Skills}
+\textbf{Languages:} Python, TypeScript, JavaScript, SQL, C/C++\\
+\textbf{Backend:} FastAPI, Django, REST APIs, SQLAlchemy, Socket.IO\\
+\textbf{Databases:} PostgreSQL, Alembic migrations\\
+\textbf{Infrastructure:} Docker, Docker Compose, AWS (S3, EC2), Git\\
+\textbf{Frontend:} React, React Native, Tailwind CSS\\
+\textbf{AI integration:} Google Gemini API, LangChain, RAG pipelines (integration, not model development)
+
+%-------------------------------------------------------------------------------
+% LANGUAGES
+%-------------------------------------------------------------------------------
+\section*{Languages}
+Arabic (native) \textbullet{} French (fluent) \textbullet{} English (professional working proficiency)
+
+\end{document}
