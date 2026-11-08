@@ -1,37 +1,37 @@
 [
   {
+    "id": "gmao-saas",
+    "title": "GMAO SaaS",
+    "description": "Backend-first SaaS application for industrial maintenance management (GMAO), currently under active development. Multi-tenant architecture with per-tenant data isolation, permission-based access control, and a membership and invitation model. Built with FastAPI, asynchronous SQLAlchemy, PostgreSQL, and Alembic migrations.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+    "technologies": [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Alembic",
+      "Docker",
+      "Docker Compose"
+    ],
+    "tags": ["Backend", "SaaS", "Multi-tenant", "FastAPI"],
+    "status": "dev",
+    "featured": true,
+    "demoUrl": "",
+    "repoUrl": "",
+    "caseStudy": "A backend-first SaaS application for industrial maintenance management (GMAO), currently under active development. The project is an exercise in backend architecture rather than a shipped product: multi-tenant data modelling, authentication and authorisation, and API design.\n\nThe tenant model is the architectural core. Each tenant represents an independent organisation with its own users, permissions, and domain data. Tenant isolation is a first-class requirement, not an afterthought layered on later — the data model and the query layer both reflect it. Membership is managed through an invitation flow rather than open registration, so tenant creation remains controlled.\n\nAuthentication and authorisation are separated. Authentication issues sessions; authorisation is permission-based rather than role-based. A user can hold different roles across different tenants, and access checks resolve through the membership chain rather than against a flat role on the user.\n\nPersistence uses **FastAPI** with **asynchronous SQLAlchemy** on **PostgreSQL**, with **Alembic** migrations. Development infrastructure is containerised with **Docker** and **Docker Compose**.\n\n**Implemented:** tenant model and isolation, authentication, authorisation, permission-based access control, tenant membership and invitation workflows, core domain model with migrations.\n\n**Planned and in progress:** asynchronous background processing for scheduled maintenance tasks, reporting on maintenance history, additional domain modules.\n\n**Role:** Backend Engineer — architecture and implementation.\n**Status:** Private — active development. Not deployed, no public repository.\n**Focus:** Multi-tenant architecture, authentication, authorisation, permission models, API and database design."
+  },
+  {
     "id": "yb-observability",
     "title": "yb-observability",
     "description": "Open-source Python library for reusable application configuration and logging infrastructure, published on PyPI.",
     "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070&auto=format&fit=crop",
-    "technologies": ["Python", "Loguru", "PyYAML", "Pytest", "Pyright"],
+    "technologies": ["Python", "Loguru", "PyYAML", "uv", "pytest"],
     "tags": ["Open Source", "Python", "Developer Tools", "Infrastructure"],
-    "status": "public",
+    "status": "live",
     "featured": true,
     "demoUrl": "",
     "repoUrl": "https://github.com/no-yb-core/yb-observability",
     "caseStudy": "An open-source Python library providing reusable configuration and logging infrastructure for Python applications.\n\nThe configuration loader supports YAML files with environment variable resolution, validation, and safe handling of values that contain characters which would otherwise break the YAML structure (colons, hashes, newlines). This is a small but genuinely useful safety property: the substitution runs after parsing rather than before, so a value like `NAME=\"foo: bar\"` cannot corrupt the document. Logging is built on Loguru with consistent formatting, per-service log directories, and daily rotation with retention.\n\nPublished and available on PyPI, making it directly installable and reusable across Python projects.\n\n```bash\npip install yb-observability\n```\n\n**Role:** Python / Backend Engineer.\n**Status:** Public — published on PyPI, tested, with CI (Ruff, Pyright, Pytest).\n**Focus:** Configuration and logging infrastructure, injection-safe substitution, tested public API."
-  },
-  {
-    "id": "rag-pipeline",
-    "title": "Document Processing RAG Pipeline",
-    "description": "Private backend project exploring asynchronous document processing and retrieval-augmented generation. Currently in design and early implementation — focused on a reliable ingestion pipeline and grounded retrieval.",
-    "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop",
-    "technologies": [
-      "Python",
-      "FastAPI",
-      "LangChain",
-      "LangGraph",
-      "Kafka",
-      "Temporal",
-      "PostgreSQL"
-    ],
-    "tags": ["AI", "RAG", "Backend", "Distributed Systems"],
-    "status": "private",
-    "featured": true,
-    "demoUrl": "",
-    "repoUrl": "",
-    "caseStudy": "A private backend project exploring asynchronous document processing and retrieval-augmented generation. Currently in design and early implementation — not a deployed product.\n\nThe architecture is designed around an asynchronous pipeline where documents are stored, detected, parsed, cleaned, and prepared for retrieval without blocking the main application. The design uses **Temporal** for durable workflow orchestration, **Kafka** for asynchronous communication between processing stages, and **LangChain** for document processing and RAG. **LangGraph** is considered for the agentic workflow layer.\n\nThe diagram below shows the intended architecture. Parts of the pipeline are implemented; others remain design. The technologies listed reflect the design, not necessarily completed implementation.\n\n```text\nDocument\n   ↓\nStorage\n   ↓\nFile Detection\n   ↓\nAsync Processing\n   ├── Temporal\n   ├── Kafka\n   └── Document Parsing\n   ↓\nText Extraction & Cleaning\n   ↓\nChunking & Embeddings\n   ↓\nVector Retrieval\n   ↓\nGrounded AI Response\n```\n\n**Role:** Backend Engineer — design and implementation.\n**Status:** Private — design and active implementation. Not deployed.\n**Focus:** Document-processing architecture, asynchronous workflow design, and RAG systems."
   },
   {
     "id": "ft-transcendence",
@@ -54,6 +54,25 @@
     "demoUrl": "",
     "repoUrl": "https://github.com/Ybouali/transcendence",
     "caseStudy": "The final project of the 1337 Common Core: a full-stack multiplayer platform combining online Pong with a Discord-style chat experience.\n\nThe system uses a **NestJS** backend, **React** frontend, **PostgreSQL**, Docker Compose, JWT authentication, and Socket.IO for real-time communication. The architecture separates the frontend and backend while maintaining synchronized game and communication state.\n\n```text\nReact / Three.js\n       ↓\n   Socket.IO\n       ↓\nNestJS Backend\n       ↓\n   PostgreSQL\n       ↓\nDocker Compose\n```\n\nThe challenging part was not drawing the game. It was coordinating authentication, real-time events, multiplayer state, chat, persistence, and containerized services without letting the clients become the source of truth.\n\n**Role:** Full-Stack Engineer.\n**Status:** Archived — public repository, no live deployment.\n**Focus:** Real-time systems, WebSockets, full-stack architecture, authentication, and containerization."
+  },
+  {
+    "id": "noybstruct",
+    "title": "NoybStruct",
+    "description": "A live software design-patterns learning platform, built with Next.js, TypeScript, Prisma, and PostgreSQL. Publicly accessible at struct.noybcore.com.",
+    "image": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=2070&auto=format&fit=crop",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "Auth.js"
+    ],
+    "tags": ["Full Stack", "Education", "Developer Tools", "PostgreSQL"],
+    "status": "live",
+    "featured": true,
+    "demoUrl": "https://struct.noybcore.com/",
+    "repoUrl": "https://github.com/no-yb-core/NoybStruct",
+    "caseStudy": "A live software design-patterns learning platform. The site presents design patterns with structured explanations and code examples, providing a browsable reference for developers who want to move from concept to code without leaving the page.\n\nThe application is a full-stack **Next.js** project written in **TypeScript**, using **Prisma** as the ORM over **PostgreSQL** and **Auth.js** for session handling. The database schema is defined in Prisma and drives generated types that flow through to the application, so changes at the data layer surface as compile-time errors rather than runtime failures.\n\nThe interesting engineering work was in the data model rather than the UI: keeping pattern definitions, code samples, and per-user state in a schema that remains queryable as the pattern set grows. Prisma's type generation carries the schema through the stack and removes a class of integration bugs.\n\nLive and publicly accessible.\n\n**Role:** Full-Stack Engineer.\n**Status:** Live.\n**Focus:** Full-stack TypeScript, PostgreSQL schema design with Prisma, authentication, developer-facing content delivery."
   },
   {
     "id": "api-docs-template",
@@ -81,6 +100,27 @@
     "demoUrl": "https://ybouali.github.io/api-docs-template/",
     "repoUrl": "https://github.com/Ybouali/api-docs-template",
     "caseStudy": "A reusable developer portal foundation for publishing professional API documentation without coupling the frontend to a specific backend.\n\nThe project separates documentation content, site configuration, API reference data, navigation, branding, and application logic. This makes the portal adaptable to SaaS products, internal platforms, fintech APIs, logistics systems, and other HTTP APIs.\n\n```text\nSite Configuration\n       ↓\nTyped Documentation\n       ↓\nAPI Reference\n       ↓\nSearch Index\n       ↓\nDeveloper Portal\n```\n\nThe template provides responsive documentation navigation, client-side search, light/dark theming, reusable API reference components, typed content structures, and CI validation for linting, type checking, tests, and production builds.\n\n**Role:** Frontend / Full-Stack Engineer.\n**Status:** Live and public.\n**Focus:** Developer experience, reusable frontend architecture, API documentation, and configuration-driven design."
+  },
+  {
+    "id": "rag-pipeline",
+    "title": "Document Processing RAG Pipeline",
+    "description": "Private backend project exploring asynchronous document processing and retrieval-augmented generation. Currently in design and early implementation — focused on a reliable ingestion pipeline and grounded retrieval.",
+    "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop",
+    "technologies": [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "LangGraph",
+      "Kafka",
+      "Temporal",
+      "PostgreSQL"
+    ],
+    "tags": ["AI", "RAG", "Backend", "Distributed Systems"],
+    "status": "dev",
+    "featured": false,
+    "demoUrl": "",
+    "repoUrl": "",
+    "caseStudy": "A private backend project exploring asynchronous document processing and retrieval-augmented generation. Currently in design and early implementation — not a deployed product.\n\nThe architecture is designed around an asynchronous pipeline where documents are stored, detected, parsed, cleaned, and prepared for retrieval without blocking the main application. The design uses **Temporal** for durable workflow orchestration, **Kafka** for asynchronous communication between processing stages, and **LangChain** for document processing and RAG. **LangGraph** is considered for the agentic workflow layer.\n\nThe diagram below shows the intended architecture. Parts of the pipeline are implemented; others remain design. The technologies listed reflect the design, not necessarily completed implementation.\n\n```text\nDocument\n   ↓\nStorage\n   ↓\nFile Detection\n   ↓\nAsync Processing\n   ├── Temporal\n   ├── Kafka\n   └── Document Parsing\n   ↓\nText Extraction & Cleaning\n   ↓\nChunking & Embeddings\n   ↓\nVector Retrieval\n   ↓\nGrounded AI Response\n```\n\n**Role:** Backend Engineer — design and implementation.\n**Status:** Private — design and active implementation. Not deployed.\n**Focus:** Document-processing architecture, asynchronous workflow design, and RAG systems."
   },
   {
     "id": "developer-portfolio",
