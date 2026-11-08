@@ -48,3 +48,13 @@ dist-ssr
 dist
 .vercel
 .env*
+
+# LaTeX build artifacts
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.fls
+cv/*.fdb_latexmk
+cv/*.synctex.gz
+cv/*.pdf
+
