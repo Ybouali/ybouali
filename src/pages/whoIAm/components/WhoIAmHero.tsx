@@ -54,7 +54,7 @@ export function WhoIAmHero() {
         <ButtonSocialMediaTwo
           icon={DownloadIcon}
           label="Resume"
-          to={site.cvUrl}
+          url={site.cvUrl}
         />
         <ButtonSocialMediaTwo
           icon={LinkedInIcon}
