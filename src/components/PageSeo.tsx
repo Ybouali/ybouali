@@ -1,23 +1,36 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
+
+const SITE_URL = "https://www.ybouali.dev";
 
 type PageSeoProps = {
-    title: string;
-    description: string;
-    path?: string;
+  title: string;
+  description: string;
+  path?: string;
 };
 
-function PageSeo({ title, description, path = '/' }: PageSeoProps) {
-    const url = `https://www.ybouali.dev${path}`;
-    return (
-        <Helmet>
-            <title>{title}</title>
-            <meta name="description" content={description} />
-            <link rel="canonical" href={url} />
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
-            <meta property="og:url" content={url} />
-        </Helmet>
-    );
+function normalizePath(path: string): string {
+  if (!path) return "/";
+  const withLeading = path.startsWith("/") ? path : `/${path}`;
+  return withLeading === "/" ? "/" : withLeading.replace(/\/+$/, "");
+}
+
+function PageSeo({ title, description, path }: PageSeoProps) {
+  const location = useLocation();
+  const canonicalPath = normalizePath(path ?? location.pathname);
+  const url = `${SITE_URL}${canonicalPath}`;
+
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <link rel="canonical" href={url} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={url} />
+      <meta property="og:type" content="website" />
+    </Helmet>
+  );
 }
 
 export default PageSeo;
