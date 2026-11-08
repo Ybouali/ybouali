@@ -1,15 +1,16 @@
 %-------------------------------------------------------------------------------
 % Yassine Bouali — Backend Software Engineer — Python
-% Compiles with base LaTeX + geometry + parskip + hyperref
+% One page. Base LaTeX + geometry + hyperref. No parskip package.
 %-------------------------------------------------------------------------------
 \documentclass[10pt,a4paper]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[left=1.7cm,right=1.7cm,top=1.5cm,bottom=1.5cm]{geometry}
-\usepackage{parskip}
+\usepackage[left=1.7cm,right=1.7cm,top=1.3cm,bottom=1.3cm]{geometry}
+
 \setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt plus 1pt}
 
 \ifdefined\pdfgentounicode
   \usepackage{cmap}
@@ -25,99 +26,103 @@
   pdfkeywords={Python, FastAPI, Django, PostgreSQL, Backend Engineer, Software Architecture}
 }
 
+%--- Section header: compact rule, no space above or below excess -----------------
 \newcommand{\cvsection}[1]{%
-  \vspace{0.7em}%
-  \noindent{\large\bfseries\MakeUppercase{#1}}\par
-  \vspace{-0.35em}%
-  \noindent\rule{\textwidth}{0.4pt}\par
-  \vspace{0.3em}%
+  \vspace{0.25em}%
+  \noindent{\normalsize\bfseries\MakeUppercase{#1}}\par
+  \vspace{-0.55em}%
+  \noindent\rule{\textwidth}{0.3pt}\par
+  \vspace{0.05em}%
 }
 
+%--- Compact itemize ------------------------------------------------------------
 \newenvironment{resumeList}{%
   \begin{itemize}%
-    \setlength{\itemsep}{0.06em}%
+    \setlength{\itemsep}{0pt}%
     \setlength{\parsep}{0pt}%
-    \setlength{\topsep}{0.08em}%
+    \setlength{\topsep}{0.1em}%
     \setlength{\partopsep}{0pt}%
-    \setlength{\leftmargin}{1.1em}%
-    \setlength{\labelwidth}{1em}%
-    \setlength{\labelsep}{0.2em}%
+    \setlength{\leftmargin}{1em}%
+    \setlength{\labelwidth}{0.9em}%
+    \setlength{\labelsep}{0.15em}%
 }{%
-  \end{itemize}\vspace{0.02em}%
+  \end{itemize}\vspace{-0.2em}%
 }
 
 \newcommand{\resumeEntry}[3]{%
-  \vspace{0.1em}%
+  \vspace{0.15em}%
   \noindent\textbf{#1} \hfill \textbf{#3}\par
-  \noindent\textit{#2}\par\vspace{0.02em}%
+  \noindent\textit{#2}\par\vspace{-0.15em}%
 }
 \newcommand{\projectEntry}[3]{%
-  \vspace{0.1em}%
+  \vspace{0.15em}%
   \noindent\textbf{#1} \hfill \textit{#3}\par
-  \noindent #2\par\vspace{0.02em}%
+  \noindent #2\par\vspace{-0.15em}%
 }
 \newcommand{\resumeItem}[1]{\item #1}
 
 \begin{document}
 \pagestyle{empty}
 
-{\LARGE\bfseries Yassine Bouali}\\[0.1em]
-{\large\bfseries Backend Software Engineer — Python}\\[0.3em]
-Morocco \textbullet{} Open to remote and relocation \textbullet{}
+%--- Header ---------------------------------------------------------------------
+{\LARGE\bfseries Yassine Bouali}\\[0.05em]
+{\large\bfseries Backend Software Engineer — Python}\\[0.15em]
+Morocco \textbullet{} Open to remote and relocation\\
 \href{mailto:yassine.bouali.bo@gmail.com}{yassine.bouali.bo@gmail.com} \textbullet{}
 \href{https://www.linkedin.com/in/ybouali/}{linkedin.com/in/ybouali} \textbullet{}
 \href{https://github.com/Ybouali}{github.com/Ybouali} \textbullet{}
 \href{https://www.ybouali.dev}{www.ybouali.dev}
 
+%--- Summary --------------------------------------------------------------------
 \cvsection{Summary}
-Backend engineer with practical experience building Python and Django services, REST APIs, and PostgreSQL data models. Focused on software architecture, database design, and containerised deployment. Currently developing a multi-tenant SaaS (FastAPI, async SQLAlchemy) and maintaining an open-source Python library on PyPI.
+Backend engineer building Python and Django services, REST APIs, and PostgreSQL data models, focused on software architecture and containerised deployment. Currently developing a multi-tenant SaaS (FastAPI, async SQLAlchemy) and maintaining an open-source Python library on PyPI.
 
+%--- Experience -----------------------------------------------------------------
 \cvsection{Experience}
 
 \resumeEntry{Full Stack Engineer Intern}{Koolskools}{2025 -- 2026}
 \begin{resumeList}
-  \resumeItem{Built Django and Python backend services and REST APIs, with PostgreSQL for relational data modelling and application workflows.}
-  \resumeItem{Implemented real-time team chat and notifications using Socket.IO; integrated the Google Gemini API into a user feedback platform.}
-  \resumeItem{Containerised development and application services with Docker and Docker Compose; used AWS S3 for storage and AWS EC2 for hosting.}
-  \resumeItem{Developed a cross-platform mobile application in React Native and a companion web application in React.}
+  \resumeItem{Built Django backend services and REST APIs with PostgreSQL; containerised with Docker and Docker Compose; used AWS S3 and AWS EC2.}
+  \resumeItem{Implemented real-time chat and notifications with Socket.IO; integrated the Google Gemini API into a feedback platform; built a React Native app and companion React web app.}
 \end{resumeList}
 
 \resumeEntry{Full Stack Developer Intern}{ORMVA/TF}{Jan 2025 -- May 2025}
 \begin{resumeList}
-  \resumeItem{Built internal web application features for business workflows with React on the frontend and Django/Python on the backend.}
-  \resumeItem{Designed and integrated PostgreSQL data models; connected frontend components to backend REST APIs.}
+  \resumeItem{Built internal web application features with React and Django, including PostgreSQL models and REST API endpoints for business workflows.}
 \end{resumeList}
 
-\cvsection{Projects}
+%--- Projects -------------------------------------------------------------------
+\cvsection{Selected Projects}
 
-\projectEntry{GMAO SaaS}{Backend-first multi-tenant SaaS for industrial maintenance management, under active development. Tenant isolation is a first-class requirement: each organisation has its own users, permissions, and domain data, with membership through an invitation flow. Authentication is session-based; authorisation is permission-based rather than flat roles, and resolves through the membership chain. Implemented with FastAPI, asynchronous SQLAlchemy, PostgreSQL, and Alembic migrations; containerised with Docker Compose. Planned and in progress: asynchronous background processing, maintenance reporting.}{private}
+\projectEntry{GMAO SaaS}{Backend-first multi-tenant SaaS for industrial maintenance management. Tenant isolation is a first-class requirement: each organisation has its own users, permissions, and domain data, with membership through an invitation flow. Authorisation is permission-based and resolves through the membership chain rather than flat roles. Built with FastAPI, async SQLAlchemy, PostgreSQL, and Alembic; containerised with Docker Compose. Background processing is planned.}{In development}
 
-\projectEntry{yb-observability}{Open-source Python library for reusable configuration and logging infrastructure. The configuration loader performs environment-variable substitution after YAML parsing, so values containing colons, hashes, or newlines cannot corrupt the document structure. Logging built on Loguru with per-service directories and daily rotation. Published on PyPI with a tested public API and CI (Ruff, Pyright, Pytest).}{PyPI: \href{https://pypi.org/project/yb-observability/}{yb-observability}}
+\projectEntry{yb-observability}{Open-source Python library for reusable configuration and logging infrastructure. The configuration loader substitutes environment variables after YAML parsing, so values containing colons or hashes cannot corrupt the document structure. Logging built on Loguru with per-service rotation. Published on PyPI with a tested public API.}{PyPI: \href{https://pypi.org/project/yb-observability/}{yb-observability}}
 
-\projectEntry{NoybStruct}{Live software design-patterns learning platform. Structured pattern explanations and code examples, with content modelled in PostgreSQL via Prisma and sessions handled by Auth.js. The engineering focus is the data model: keeping pattern definitions, code samples, and per-user state queryable as the pattern set grows.}{Live: \href{https://struct.noybcore.com/}{struct.noybcore.com}}
+\projectEntry{NoybStruct}{Live software design-patterns learning platform with structured explanations and code examples. Content modelled in PostgreSQL via Prisma; sessions handled by Auth.js.}{Live: \href{https://struct.noybcore.com/}{struct.noybcore.com}}
 
+%--- Education ------------------------------------------------------------------
 \cvsection{Education}
 
 \resumeEntry{Software Engineering Program}{1337 (peer-to-peer engineering school)}{2021 -- 2026}
 \begin{resumeList}
-  \resumeItem{Project-based curriculum covering algorithms, C/C++, systems programming, Unix, networking, and web development.}
+  \resumeItem{Project-based curriculum: algorithms, C/C++, systems programming, Unix, networking, web development.}
 \end{resumeList}
 
-\resumeEntry{Multimedia Development}{Institut Multihexa}{2019 -- 2021}
-
+%--- Certifications -------------------------------------------------------------
 \cvsection{Certifications}
 Cloud Native, Microservices, Containers, DevOps and Agile — IBM/Coursera (2025)\\
 IBM Java Developer Professional Certificate — Coursera (2025)
 
+%--- Skills ---------------------------------------------------------------------
 \cvsection{Technical Skills}
-\textbf{Languages:} Python, TypeScript, JavaScript, SQL, C/C++\\
-\textbf{Backend:} FastAPI, Django, SQLAlchemy, REST APIs, Socket.IO\\
+\textbf{Languages:} Python, TypeScript, JavaScript, C/C++\\
+\textbf{Backend:} FastAPI, Django, SQLAlchemy, REST APIs, Socket.IO, multi-tenancy, authentication, authorisation\\
 \textbf{Databases:} PostgreSQL, SQL\\
 \textbf{Infrastructure:} Docker, Docker Compose, AWS (S3, EC2), Git, Linux\\
 \textbf{Frontend:} React, React Native, Next.js, Tailwind CSS\\
-\textbf{Architecture:} Multi-tenancy, authentication, authorisation, permission models, software design patterns\\
 \textbf{AI integration:} Google Gemini API, RAG system design
 
+%--- Languages ------------------------------------------------------------------
 \cvsection{Languages}
 Arabic (native) \textbullet{} French (conversational) \textbullet{} English (professional working proficiency)
 
