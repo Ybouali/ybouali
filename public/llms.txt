@@ -1,0 +1,28 @@
+# Yassine Bouali — Backend Software Engineer
+
+> Backend Software Engineer focused on Python, FastAPI, Django, PostgreSQL, SQLAlchemy, and software architecture.
+
+Yassine Bouali is a backend software engineer based in Casablanca, Morocco, open to remote and relocation opportunities. The portfolio covers backend engineering, software architecture, API design, relational data modelling, containerised deployment with Docker, and retrieval-augmented generation as a complementary capability. The strongest verifiable evidence is yb-observability, an open-source Python library published on PyPI with tests and a typed public API.
+
+## Core Pages
+
+- [Home](https://www.ybouali.dev/): Professional positioning, featured projects, and recent writing.
+- [Projects](https://www.ybouali.dev/projects): Backend and full-stack projects with case studies.
+- [About](https://www.ybouali.dev/who-i-am): Background, engineering journey, technical stack, and current focus.
+- [Blog](https://www.ybouali.dev/blog): Engineering notes and project write-ups.
+- [Certificates](https://www.ybouali.dev/certificates): Professional development and specialisation credentials.
+- [CV](https://www.ybouali.dev/cv): Curriculum vitae and PDF download.
+- [Contact](https://www.ybouali.dev/contact): Contact details and availability.
+
+## Featured Projects
+
+- [yb-observability](https://www.ybouali.dev/projects/yb-observability): Open-source Python library for configuration and logging, published on PyPI with a tested public API.
+- [Document Processing RAG Pipeline](https://www.ybouali.dev/projects/rag-pipeline): Private backend project exploring asynchronous document ingestion and retrieval-augmented generation.
+- [ft_transcendence](https://www.ybouali.dev/projects/ft-transcendence): Real-time multiplayer platform built with NestJS, PostgreSQL, Socket.IO, and JWT.
+- [API Developer Portal Template](https://www.ybouali.dev/projects/api-docs-template): Reusable, API-agnostic developer portal for publishing professional API documentation.
+
+## Optional
+
+- [GitHub](https://github.com/Ybouali): Source code and open-source work.
+- [LinkedIn](https://www.linkedin.com/in/ybouali/): Professional profile.
+

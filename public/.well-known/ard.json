@@ -1,0 +1,40 @@
+{
+  "specVersion": "0.91",
+  "name": "ybouali.dev Agentic Resource Discovery Catalog",
+  "description": "Agentic discovery manifest for the backend engineering portfolio of Yassine Bouali. Lists the site's knowledge index and public project references.",
+  "updatedAt": "2026-11-08T00:00:00Z",
+  "publisher": {
+    "name": "Yassine Bouali",
+    "displayName": "Yassine Bouali — Backend Software Engineer",
+    "identifier": "did:web:www.ybouali.dev",
+    "url": "https://www.ybouali.dev",
+    "contact": "yassine.bouali.bo@gmail.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:www.ybouali.dev:knowledge:llms-txt",
+      "displayName": "Portfolio knowledge index (llms.txt)",
+      "type": "text/plain",
+      "url": "https://www.ybouali.dev/llms.txt",
+      "description": "Curated Markdown index of the portfolio's core pages, featured projects, and professional profile, formatted for language model consumption.",
+      "representativeQueries": [
+        "who is Yassine Bouali",
+        "what backend projects has Yassine Bouali built",
+        "what technologies does Yassine Bouali work with"
+      ]
+    },
+    {
+      "identifier": "urn:air:www.ybouali.dev:reference:yb-observability",
+      "displayName": "yb-observability Python library",
+      "type": "application/json",
+      "url": "https://pypi.org/pypi/yb-observability/json",
+      "documentation": "https://www.ybouali.dev/projects/yb-observability",
+      "description": "Open-source Python library for reusable configuration and logging infrastructure, published on PyPI with tests and a typed public API.",
+      "representativeQueries": [
+        "Python configuration and logging library",
+        "open-source Python package for environment variable substitution"
+      ]
+    }
+  ]
+}
+
