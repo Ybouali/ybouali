@@ -1,10 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MainForScreen } from "../components";
 import PageSeo from "../components/PageSeo";
 
 function NotFound() {
-  const navigate = useNavigate();
-
   return (
     <MainForScreen>
       <PageSeo
@@ -30,20 +28,18 @@ function NotFound() {
           </span>
         </pre>
         <div className="flex flex-wrap gap-3 mt-8">
-          <button
-            type="button"
-            onClick={() => navigate("/")}
+          <Link
+            to="/"
             className="px-4 py-2 bg-owl-surface border border-owl-border font-mono text-sm rounded hover:border-owl-cyan cursor-pointer"
           >
             cd ~
-          </button>
-          <button
-            type="button"
-            onClick={() => navigate("/projects")}
+          </Link>
+          <Link
+            to="/projects"
             className="px-4 py-2 bg-transparent border border-owl-blue/40 text-owl-blue font-mono text-sm rounded hover:border-owl-cyan cursor-pointer"
           >
             open projects.tsx
-          </button>
+          </Link>
         </div>
       </div>
     </MainForScreen>

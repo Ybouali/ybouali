@@ -1,25 +1,15 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import type { Project } from "../../../data/projects";
 import StatusBadge from "./StatusBadge";
-import { useAppContext } from "../../../context/useAppContext";
 
 type ProjectCardProps = {
   project: Project;
 };
 
 function ProjectCard({ project }: ProjectCardProps) {
-  const navigate = useNavigate();
-  const { pages, addPageToNavbar } = useAppContext();
-
-  const openProject = () => {
-    const page = pages.find((p) => p.path === "/projects");
-    if (page) addPageToNavbar(page);
-    navigate(`/projects/${project.id}`);
-  };
-
   return (
-    <article
-      onClick={openProject}
+    <Link
+      to={`/projects/${project.id}`}
       className="group cursor-pointer bg-owl-surface border border-owl-border rounded-lg overflow-hidden hover:border-owl-cyan/60 transition-colors flex flex-col h-full"
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-owl-bg">
@@ -57,7 +47,7 @@ function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
 
