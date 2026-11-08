@@ -1,109 +1,72 @@
 {
-"@type": "Person",
-"@id": "https://www.ybouali.dev/#person",
+  "@type": "Person",
+  "@id": "https://www.ybouali.dev/#person",
 
+  "name": "Yassine Bouali",
+  "role": "Backend Software Engineer · Python · Software Architecture",
 
-"name": "Yassine Bouali",
-"role": "Software Engineer · Backend · AI/RAG",
-
-"url": "https://www.ybouali.dev/",
-"image": [
+  "url": "https://www.ybouali.dev/",
+  "image": [
     "https://www.ybouali.dev/assets/img/yassine-bouali.jpeg",
     "https://www.ybouali.dev/assets/img/proMe.jpeg"
-],
+  ],
 
-"location": "Casablanca, Morocco",
-"since": "Developer since 2021",
+  "location": "Casablanca, Morocco",
+  "since": "Developer since 2021",
 
-"mantra": "No One → Becoming Someone.",
-"principle": "Every piece of code deserves a second refactor.",
+  "mantra": "No One → Becoming Someone.",
+  "principle": "Every piece of code deserves a second refactor.",
 
-"about": "I am a Software Engineer focused on building practical, scalable systems. My work spans backend architectures, distributed infrastructure, asynchronous processing, and AI/RAG pipelines. I enjoy architecting systems for document processing and building reliable software with technologies like Python, FastAPI, Kafka, and Temporal.",
+  "about": "I build backend systems in Python, with a focus on software architecture and data modelling. My work covers API design with FastAPI and Django, relational data with PostgreSQL and SQLAlchemy, and containerised deployment with Docker. I integrate AI capabilities — including retrieval-augmented generation — as a complementary layer where it serves the product.",
 
-"hero": "I build real software systems. My focus spans Backend Engineering, AI / RAG Pipelines, and distributed systems. I believe every piece of code deserves a second refactor.",
+  "hero": "I build backend systems in Python, focused on software architecture and data modelling.",
 
-"statusLine": "Available for opportunities (and the occasional late-night refactor).",
+  "statusLine": "Open to remote and relocation opportunities for backend engineering roles.",
 
-"email": "yassine.bouali.bo@gmail.com",
+  "email": "yassine.bouali.bo@gmail.com",
 
-"photo": "/assets/img/proMe.jpeg",
-"photoHover": "/assets/img/yassine-bouali.jpeg",
+  "photo": "/assets/img/proMe.jpeg",
+  "photoHover": "/assets/img/yassine-bouali.jpeg",
 
-"cvUrl": "/cv",
-"cvPdfUrl": "/assets/cv/yassine_bouali_cv.pdf",
+  "cvUrl": "/cv",
+  "cvPdfUrl": "/assets/cv/yassine_bouali_cv.pdf",
 
-"socials": {
+  "socials": {
     "github": "https://github.com/Ybouali",
     "linkedin": "https://www.linkedin.com/in/ybouali/",
     "instagram": "https://www.instagram.com/yassineboualino/",
     "x": "https://x.com/YassineBouali6"
-},
+  },
 
-"sameAs": [
+  "sameAs": [
     "https://github.com/Ybouali",
     "https://www.linkedin.com/in/ybouali/",
     "https://www.instagram.com/yassineboualino/",
     "https://x.com/YassineBouali6"
-],
+  ],
 
-"knowsAbout": [
+  "knowsAbout": [
     "Software Engineering",
     "Backend Engineering",
-    "Artificial Intelligence",
-    "Retrieval-Augmented Generation",
-    "Document Processing",
-    "Distributed Systems",
-    "Asynchronous Processing",
+    "Software Architecture",
     "Python",
     "FastAPI",
-    "Node.js",
-    "TypeScript",
-    "C++",
-    "Docker",
-    "Apache Kafka",
-    "Temporal",
-    "Nginx",
+    "Django",
     "PostgreSQL",
-    "Redis",
-    "MongoDB",
-    "LangChain",
-    "LangGraph",
-    "Vector Databases",
+    "SQLAlchemy",
+    "Docker",
+    "REST APIs",
+    "Retrieval-Augmented Generation",
     "React",
-    "Tailwind CSS",
-    "Vite"
-],
+    "TypeScript",
+    "Tailwind CSS"
+  ],
 
-"skills": {
-    "backend": [
-        "Python",
-        "FastAPI",
-        "Node.js",
-        "TypeScript",
-        "C++"
-    ],
-    "infrastructure": [
-        "Docker",
-        "Kafka",
-        "Temporal",
-        "Nginx"
-    ],
-    "databases": [
-        "PostgreSQL",
-        "Redis",
-        "MongoDB"
-    ],
-    "aiAndRAG": [
-        "LangChain",
-        "LangGraph",
-        "Vector Databases"
-    ],
-    "frontend": [
-        "React",
-        "Tailwind CSS",
-        "Vite"
-    ]
-}
-
-
+  "skills": {
+    "backend": ["Python", "FastAPI", "Django", "SQLAlchemy"],
+    "infrastructure": ["Docker", "Docker Compose", "AWS"],
+    "databases": ["PostgreSQL"],
+    "aiAndRAG": ["LangChain", "RAG", "Vector Databases"],
+    "frontend": ["React", "TypeScript", "Tailwind CSS", "Vite"]
+  }
 }
