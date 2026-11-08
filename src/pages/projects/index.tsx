@@ -61,7 +61,7 @@ function Projects() {
       {!id && (
         <PageSeo
           title="Projects | Yassine Bouali"
-          description="Here be projects — a Night Owl catalogue of systems, experiments, and 1337-era spells."
+          description="Here be projects..."
           path="/projects"
         />
       )}
