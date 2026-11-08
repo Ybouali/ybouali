@@ -1,18 +1,19 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { PagesNavBar } from "../components";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 
-import ContactMe from "./contactMe";
-import Educations from "./educations";
 import Main from "./Main";
-import Projects from "./projects";
-import WhoIAm from "./whoIAm";
-import Blogs from "./blogs";
-import CvPage from "./cv";
 import NotFound from "./NotFound";
 import { useAppContext } from "../context/useAppContext";
-import Certificates from "./certificates";
+
+const ContactMe = lazy(() => import("./contactMe"));
+const Educations = lazy(() => import("./educations"));
+const Projects = lazy(() => import("./projects"));
+const WhoIAm = lazy(() => import("./whoIAm"));
+const Blogs = lazy(() => import("./blogs"));
+const CvPage = lazy(() => import("./cv"));
+const Certificates = lazy(() => import("./certificates"));
 
 const PageTransition = ({ children }: { children: React.ReactNode }) => (
   <motion.div
@@ -36,6 +37,12 @@ const HomeTransition = ({ children }: { children: React.ReactNode }) => (
   >
     {children}
   </motion.div>
+);
+
+const PageFallback = () => (
+  <div className="flex items-center justify-center h-full font-mono text-sm text-owl-text-muted">
+    <span className="animate-pulse">{"// loading..."}</span>
+  </div>
 );
 
 function Pages() {
@@ -72,98 +79,100 @@ function Pages() {
       {pagesInNavbar.length > 0 && <PagesNavBar />}
 
       <div className="flex-1 overflow-y-auto custom-scrollbar p-0 relative">
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route
-              path="/"
-              element={
-                <HomeTransition>
-                  <Main />
-                </HomeTransition>
-              }
-            />
-            <Route
-              path="/who-i-am"
-              element={
-                <PageTransition>
-                  <WhoIAm />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/projects"
-              element={
-                <PageTransition>
-                  <Projects />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/projects/:id"
-              element={
-                <PageTransition>
-                  <Projects />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/education"
-              element={
-                <PageTransition>
-                  <Educations />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/certificates"
-              element={
-                <PageTransition>
-                  <Certificates />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/contact"
-              element={
-                <PageTransition>
-                  <ContactMe />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/blog"
-              element={
-                <PageTransition>
-                  <Blogs />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/blog/:slug"
-              element={
-                <PageTransition>
-                  <Blogs />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/cv"
-              element={
-                <PageTransition>
-                  <CvPage />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="*"
-              element={
-                <PageTransition>
-                  <NotFound />
-                </PageTransition>
-              }
-            />
-          </Routes>
-        </AnimatePresence>
+        <Suspense fallback={<PageFallback />}>
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route
+                path="/"
+                element={
+                  <HomeTransition>
+                    <Main />
+                  </HomeTransition>
+                }
+              />
+              <Route
+                path="/who-i-am"
+                element={
+                  <PageTransition>
+                    <WhoIAm />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="/projects"
+                element={
+                  <PageTransition>
+                    <Projects />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="/projects/:id"
+                element={
+                  <PageTransition>
+                    <Projects />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="/education"
+                element={
+                  <PageTransition>
+                    <Educations />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="/certificates"
+                element={
+                  <PageTransition>
+                    <Certificates />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="/contact"
+                element={
+                  <PageTransition>
+                    <ContactMe />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="/blog"
+                element={
+                  <PageTransition>
+                    <Blogs />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="/blog/:slug"
+                element={
+                  <PageTransition>
+                    <Blogs />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="/cv"
+                element={
+                  <PageTransition>
+                    <CvPage />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <PageTransition>
+                    <NotFound />
+                  </PageTransition>
+                }
+              />
+            </Routes>
+          </AnimatePresence>
+        </Suspense>
       </div>
     </main>
   );
