@@ -1,13 +1,16 @@
 %-------------------------------------------------------------------------------
 % Yassine Bouali — Backend Software Engineer — Python
-% One page. Base LaTeX + geometry + hyperref. No parskip package.
+% One page. pdfLaTeX. Packages: tgheroes (TeX Gyre Heros), xcolor, geometry, hyperref.
+% If tgheroes is missing on your machine, swap it for \usepackage{helvet}.
 %-------------------------------------------------------------------------------
 \documentclass[10pt,a4paper]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage[left=1.7cm,right=1.7cm,top=1.3cm,bottom=1.3cm]{geometry}
+\usepackage{tgheroes}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[left=1.6cm,right=1.6cm,top=1.2cm,bottom=1.2cm]{geometry}
+\usepackage{xcolor}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2pt plus 1pt}
@@ -18,7 +21,13 @@
   \pdfgentounicode=1
 \fi
 
-\usepackage[hidelinks]{hyperref}
+%--- Palette (matches the web preview) ------------------------------------------
+\definecolor{accent}{HTML}{2F4B8A}
+\definecolor{ink}{HTML}{1B1F27}
+\definecolor{muted}{HTML}{4A5160}
+\definecolor{rule}{HTML}{B9C3DA}
+
+\usepackage[colorlinks=true,urlcolor=accent,linkcolor=accent]{hyperref}
 \hypersetup{
   pdftitle={Yassine Bouali — Backend Software Engineer CV},
   pdfauthor={Yassine Bouali},
@@ -26,48 +35,63 @@
   pdfkeywords={Python, FastAPI, Django, PostgreSQL, Backend Engineer, Software Architecture}
 }
 
-%--- Section header: compact rule, no space above or below excess -----------------
+\AtBeginDocument{\color{ink}\fontsize{9.6}{12.2}\selectfont}
+
+%--- One-argument helpers (the web preview's parser unwraps these) ---------------
+\newcommand{\muted}[1]{{\color{muted}#1}}
+\newcommand{\cvname}[1]{{\fontsize{25}{27}\selectfont\bfseries\color{ink}#1}}
+\newcommand{\cvrole}[1]{{\large\bfseries\color{accent}#1}}
+
+%--- Section header: accent title over a pale rule ------------------------------
 \newcommand{\cvsection}[1]{%
-  \vspace{0.25em}%
-  \noindent{\normalsize\bfseries\MakeUppercase{#1}}\par
-  \vspace{-0.55em}%
-  \noindent\rule{\textwidth}{0.3pt}\par
-  \vspace{0.05em}%
+  \vspace{0.55em}%
+  \noindent{\small\bfseries\color{accent}\MakeUppercase{#1}}\par
+  \vspace{-0.5em}%
+  \noindent{\color{rule}\rule{\textwidth}{0.6pt}}\par
+  \vspace{0.15em}%
 }
 
-%--- Compact itemize ------------------------------------------------------------
+%--- Bullets --------------------------------------------------------------------
+\renewcommand{\labelitemi}{\textcolor{accent}{\footnotesize\textbullet}}
 \newenvironment{resumeList}{%
   \begin{itemize}%
     \setlength{\itemsep}{0pt}%
     \setlength{\parsep}{0pt}%
     \setlength{\topsep}{0.1em}%
     \setlength{\partopsep}{0pt}%
-    \setlength{\leftmargin}{1em}%
+    \setlength{\leftmargin}{1.1em}%
     \setlength{\labelwidth}{0.9em}%
-    \setlength{\labelsep}{0.15em}%
+    \setlength{\labelsep}{0.3em}%
 }{%
   \end{itemize}\vspace{-0.2em}%
 }
+\newcommand{\resumeItem}[1]{\item #1}
 
+%--- Entries --------------------------------------------------------------------
 \newcommand{\resumeEntry}[3]{%
-  \vspace{0.15em}%
-  \noindent\textbf{#1} \hfill \textbf{#3}\par
-  \noindent\textit{#2}\par\vspace{-0.15em}%
+  \vspace{0.3em}%
+  \noindent{\bfseries #1}\hfill{\small\color{muted}#3}\par
+  \noindent{\itshape\color{accent}#2}\par\vspace{-0.1em}%
 }
 \newcommand{\projectEntry}[3]{%
-  \vspace{0.15em}%
-  \noindent\textbf{#1} \hfill \textit{#3}\par
-  \noindent #2\par\vspace{-0.15em}%
+  \vspace{0.3em}%
+  \noindent{\bfseries #1}\hfill{\small\itshape\color{muted}#3}\par
+  \noindent #2\par\vspace{-0.1em}%
 }
-\newcommand{\resumeItem}[1]{\item #1}
+
+%--- Skills: label column with hanging indent -----------------------------------
+\newcommand{\skillrow}[2]{%
+  \noindent\hangindent=2.8cm\hangafter=1
+  \makebox[2.8cm][l]{\bfseries #1}#2\par
+}
 
 \begin{document}
 \pagestyle{empty}
 
 %--- Header ---------------------------------------------------------------------
-{\LARGE\bfseries Yassine Bouali}\\[0.05em]
-{\large\bfseries Backend Software Engineer — Python}\\[0.15em]
-Morocco \textbullet{} Open to remote and relocation\\
+\cvname{Yassine Bouali}\\[0.35em]
+\cvrole{Backend Software Engineer — Python}\\[0.35em]
+\muted{Morocco \textbullet{} Open to remote and relocation}\\[0.1em]
 \href{mailto:yassine.bouali.bo@gmail.com}{yassine.bouali.bo@gmail.com} \textbullet{}
 \href{https://www.linkedin.com/in/ybouali/}{linkedin.com/in/ybouali} \textbullet{}
 \href{https://github.com/Ybouali}{github.com/Ybouali} \textbullet{}
@@ -115,12 +139,12 @@ IBM Java Developer Professional Certificate — Coursera (2025)
 
 %--- Skills ---------------------------------------------------------------------
 \cvsection{Technical Skills}
-\textbf{Languages:} Python, TypeScript, JavaScript, C/C++\\
-\textbf{Backend:} FastAPI, Django, SQLAlchemy, REST APIs, Socket.IO, multi-tenancy, authentication, authorisation\\
-\textbf{Databases:} PostgreSQL, SQL\\
-\textbf{Infrastructure:} Docker, Docker Compose, AWS (S3, EC2), Git, Linux\\
-\textbf{Frontend:} React, React Native, Next.js, Tailwind CSS\\
-\textbf{AI integration:} Google Gemini API, RAG system design
+\skillrow{Languages}{Python, TypeScript, JavaScript, C/C++}
+\skillrow{Backend}{FastAPI, Django, SQLAlchemy, REST APIs, Socket.IO, multi-tenancy, authentication, authorisation}
+\skillrow{Databases}{PostgreSQL, SQL}
+\skillrow{Infrastructure}{Docker, Docker Compose, AWS (S3, EC2), Git, Linux}
+\skillrow{Frontend}{React, React Native, Next.js, Tailwind CSS}
+\skillrow{AI integration}{Google Gemini API, RAG system design}
 
 %--- Languages ------------------------------------------------------------------
 \cvsection{Languages}
