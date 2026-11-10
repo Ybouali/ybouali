@@ -60,8 +60,8 @@ function Projects() {
     <MainForScreen>
       {!id && (
         <PageSeo
-          title="Projects | Yassine Bouali"
-          description="Here be projects..."
+          title="Projects — Yassine Bouali | Backend & Distributed Systems"
+          description="Selected engineering projects by Yassine Bouali — production RAG pipelines, Python/FastAPI backends, real-time systems, and full-stack web applications."
           path="/projects"
         />
       )}

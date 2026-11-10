@@ -1,9 +1,9 @@
 // scripts/prerender.mjs
 import { preview } from "vite";
-import puppeteer from "puppeteer-core";
-import chromium from "@sparticuz/chromium";
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { existsSync, readdirSync } from "node:fs";
+import { homedir } from "node:os";
 
 const DIST = "dist";
 const ORIGIN = "http://localhost:4173";
@@ -15,6 +15,104 @@ const EXCLUDE = [
 ];
 
 const normalize = (href) => href.split(/[?#]/)[0].replace(/\/+$/, "") || "/";
+
+/** Locate a Chrome binary in the local puppeteer cache (macOS / Windows). */
+function findCachedChrome() {
+  const cacheDir = join(homedir(), ".cache", "puppeteer", "chrome");
+  if (!existsSync(cacheDir)) {
+    throw new Error(
+      `Chrome cache not found at ${cacheDir}. Run: npx puppeteer browsers install chrome`,
+    );
+  }
+  const versions = readdirSync(cacheDir).filter((v) => !v.startsWith("."));
+  if (versions.length === 0) {
+    throw new Error(
+      "Chrome cache empty. Run: npx puppeteer browsers install chrome",
+    );
+  }
+  const latest = versions.sort((a, b) => {
+    const av = a.split(".").map(Number);
+    const bv = b.split(".").map(Number);
+    for (let i = 0; i < Math.max(av.length, bv.length); i++) {
+      const diff = (bv[i] || 0) - (av[i] || 0);
+      if (diff !== 0) return diff;
+    }
+    return 0;
+  })[0];
+  const versionDir = join(cacheDir, latest);
+  const subdirs = readdirSync(versionDir).filter((d) =>
+    d.startsWith("chrome-"),
+  );
+  if (subdirs.length === 0) {
+    throw new Error(`No chrome-* subdir inside ${versionDir}`);
+  }
+  const sub = subdirs[0];
+  let exe;
+  if (sub.startsWith("chrome-mac")) {
+    exe = join(
+      versionDir,
+      sub,
+      "Google Chrome for Testing.app",
+      "Contents",
+      "MacOS",
+      "Google Chrome for Testing",
+    );
+  } else if (sub === "chrome-win64" || sub === "chrome-win32") {
+    exe = join(versionDir, sub, "chrome.exe");
+  } else {
+    throw new Error(`Unsupported chrome subdir: ${sub}`);
+  }
+  if (!existsSync(exe)) {
+    throw new Error(
+      `Chrome binary missing at ${exe}. Run: npx puppeteer browsers install chrome`,
+    );
+  }
+  return exe;
+}
+
+async function getBrowserLauncher() {
+  const puppeteer = (await import("puppeteer-core")).default;
+
+  if (process.platform === "linux") {
+    const chromium = (await import("@sparticuz/chromium")).default;
+    return {
+      puppeteer,
+      launch: {
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath(),
+        headless: chromium.headless,
+      },
+    };
+  }
+
+  return {
+    puppeteer,
+    launch: {
+      executablePath: findCachedChrome(),
+      headless: "new",
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    },
+  };
+}
+
+/** Keep only one <title> and one <meta name="description">. */
+function dedupeHead(html) {
+  const titles = [...html.matchAll(/<title[^>]*>[\s\S]*?<\/title>/gi)];
+  if (titles.length > 1) {
+    // Keep the LAST one — that's the React-rendered title from PageSeo.
+    for (let i = 0; i < titles.length - 1; i++) {
+      html = html.replace(titles[i][0], "");
+    }
+  }
+  const descs = [...html.matchAll(/<meta\s+name="description"[^>]*>/gi)];
+  if (descs.length > 1) {
+    for (let i = 0; i < descs.length - 1; i++) {
+      html = html.replace(descs[i][0], "");
+    }
+  }
+  return html;
+}
 
 async function discoverRoutes(page) {
   const seen = new Set(SEED_ROUTES.map(normalize));
@@ -49,16 +147,13 @@ async function discoverRoutes(page) {
 }
 
 async function main() {
+  console.log(`[prerender] platform=${process.platform} arch=${process.arch}`);
   console.log("[prerender] starting vite preview…");
   const server = await preview({ preview: { port: 4173, strictPort: true } });
 
-  console.log("[prerender] launching chromium (serverless build)…");
-  const browser = await puppeteer.launch({
-    args: chromium.args,
-    defaultViewport: chromium.defaultViewport,
-    executablePath: await chromium.executablePath(),
-    headless: chromium.headless,
-  });
+  console.log("[prerender] launching chrome…");
+  const { puppeteer, launch } = await getBrowserLauncher();
+  const browser = await puppeteer.launch(launch);
 
   try {
     const page = await browser.newPage();
@@ -80,7 +175,9 @@ async function main() {
         });
         await new Promise((r) => setTimeout(r, 250));
 
-        const html = await page.content();
+        let html = await page.content();
+        html = dedupeHead(html);
+
         const outDir = route === "/" ? DIST : join(DIST, route);
         await mkdir(outDir, { recursive: true });
         await writeFile(join(outDir, "index.html"), html, "utf8");
@@ -94,20 +191,23 @@ async function main() {
     }
 
     console.log(`\n[prerender] done — ${written} written, ${failed} failed`);
+    if (failed > 0 && !process.env.VERCEL && !process.env.CI) {
+      process.exit(1);
+    }
   } finally {
     await browser.close();
     await new Promise((resolve) => server.httpServer.close(resolve));
   }
 }
 
-main()
-  .then(() => process.exit(0))
-  .catch((err) => {
-    // Never fail the deploy because prerender failed.
-    // The site falls back to the normal SPA, which is what it was before.
-    console.warn(
-      "[prerender] skipped — build continues as normal SPA:",
-      err.message,
-    );
+main().catch((err) => {
+  console.error("[prerender] fatal:", err.message);
+  console.error(err.stack);
+  // Vercel / CI: fall back to SPA instead of failing the deploy.
+  if (process.env.VERCEL || process.env.CI) {
+    console.warn("[prerender] continuing with SPA-only build");
     process.exit(0);
-  });
+  }
+  // Local: fail loudly so we see the error.
+  process.exit(1);
+});

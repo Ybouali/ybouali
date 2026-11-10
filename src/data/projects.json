@@ -104,7 +104,7 @@
   {
     "id": "rag-pipeline",
     "title": "Document Processing RAG Pipeline",
-    "description": "Private backend project exploring asynchronous document processing and retrieval-augmented generation. Currently in design and early implementation — focused on a reliable ingestion pipeline and grounded retrieval.",
+    "description": "Private backend project in active design and early implementation — asynchronous document processing, RAG architecture, and grounded retrieval.",
     "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop",
     "technologies": [
       "Python",

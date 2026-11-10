@@ -47,7 +47,7 @@ function DetailLine({ line }: { line: string }) {
         const href = hrefFor(p);
         return (
           <span key={i}>
-            {i > 0 && <span className="mx-2 text-[#a3a9b8]">•</span>}
+            {i > 0 && <span className="mx-2 text-[#525c6b]">•</span>}
             {href ? (
               <a
                 href={href}

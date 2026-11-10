@@ -35,7 +35,7 @@ function EducationItem({ education, index, isLast }: EducationItemProps) {
         {!isLast && (
           <span
             aria-hidden
-            className="absolute left-1/2 top-7 bottom-[-1.5rem] w-px -translate-x-1/2 bg-owl-border"
+            className="absolute left-1/2 top-7 -bottom-6 w-px -translate-x-1/2 bg-owl-border"
           />
         )}
         <span
@@ -81,7 +81,7 @@ function EducationItem({ education, index, isLast }: EducationItemProps) {
         <div className="flex items-start gap-4">
           <img
             src={education.urlLogo}
-            alt=""
+            alt={`${education.school} logo`}
             className="h-10 w-10 shrink-0 rounded-md object-cover bg-owl-bg border border-owl-border"
           />
           <div className="min-w-0 flex-1">
