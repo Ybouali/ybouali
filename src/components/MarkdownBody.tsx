@@ -2,8 +2,10 @@ import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
-import { createLowlight } from "lowlight";
 import typescript from "highlight.js/lib/languages/typescript";
+import bash from "highlight.js/lib/languages/bash";
+import python from "highlight.js/lib/languages/python";
+import json from "highlight.js/lib/languages/json";
 import CodeBlock from "./CodeBlock";
 import { createHeadingIdFactory, reactNodeToText } from "../utils/markdown";
 
@@ -13,10 +15,6 @@ type MarkdownBodyProps = {
 };
 
 type CalloutKind = "note" | "warning" | "important" | "quote";
-
-const lowlight = createLowlight({
-  typescript,
-});
 
 function detectCallout(text: string): CalloutKind {
   const start = text.trimStart().toLowerCase();
@@ -160,7 +158,7 @@ function MarkdownBody({ content, className = "" }: MarkdownBodyProps) {
     hr: () => <hr className="my-10 border-owl-border" />,
     table: ({ children }) => (
       <div className="custom-scrollbar my-6 min-w-0 overflow-x-auto border border-owl-border">
-        <table className="w-full min-w-[28rem] border-collapse text-left text-sm">
+        <table className="w-full min-w-md border-collapse text-left text-sm">
           {children}
         </table>
       </div>
@@ -188,7 +186,7 @@ function MarkdownBody({ content, className = "" }: MarkdownBodyProps) {
           [
             rehypeHighlight,
             {
-              languages: lowlight,
+              languages: { typescript, bash, python, json },
             },
           ],
         ]}

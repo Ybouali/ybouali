@@ -12,7 +12,7 @@ function ProjectCard({ project }: ProjectCardProps) {
       to={`/projects/${project.id}`}
       className="group cursor-pointer bg-owl-surface border border-owl-border rounded-lg overflow-hidden hover:border-owl-cyan/60 transition-colors flex flex-col h-full"
     >
-      <div className="relative aspect-[16/9] overflow-hidden bg-owl-bg">
+      <div className="relative aspect-video overflow-hidden bg-owl-bg">
         <img
           src={project.image}
           alt={project.title}
