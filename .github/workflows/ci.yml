@@ -29,6 +29,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Cache Puppeteer browser
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-puppeteer-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-puppeteer-
+
+      - name: Install Puppeteer Chrome
+        run: npx puppeteer browsers install chrome
+
       - name: Lint
         run: npm run lint --if-present
 
