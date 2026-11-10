@@ -20,6 +20,9 @@ function ContactMe() {
         description="Get in touch with Yassine Bouali through email, GitHub, LinkedIn, or Instagram."
         path="/contact"
       />
+
+      <h1 className="sr-only">Contact Yassine Bouali</h1>
+
       <div className="w-full">
         <div className="w-full md:w-5/6 lg:w-[800px] mx-auto">
           <div className="flex flex-col items-start pb-16 gap-6 md:gap-8">

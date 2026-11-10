@@ -1,52 +1,58 @@
 {
-    "name": "noone",
-    "version": "0.2.0",
-    "private": true,
-    "homepage": "https://ybouali.dev",
-    "type": "module",
-    "scripts": {
-        "dev": "vite",
-        "build": "tsc -b && vite build && cp dist/index.html dist/404.html",
-        "lint": "eslint .",
-        "preview": "vite preview"
-    },
-    "dependencies": {
-        "@heroicons/react": "^2.2.0",
-        "@tailwindcss/vite": "^4.1.17",
-        "framer-motion": "^12.23.24",
-        "highlight.js": "^11.12.0",
-        "lowlight": "^3.3.0",
-        "lucide-react": "^0.555.0",
-        "react": "^19.2.0",
-        "react-dom": "^19.2.0",
-        "react-helmet-async": "^3.0.0",
-        "react-hot-toast": "^2.6.0",
-        "react-markdown": "^10.1.0",
-        "react-router-dom": "^7.18.3",
-        "rehype-highlight": "^7.0.2",
-        "remark-gfm": "^4.0.1",
-        "tailwindcss": "^4.1.17"
-    },
-    "devDependencies": {
-        "@eslint/js": "^9.39.1",
-        "@types/node": "^24.10.1",
-        "@types/react": "^19.2.5",
-        "@types/react-dom": "^19.2.3",
-        "@types/react-syntax-highlighter": "^15.5.13",
-        "@vitejs/plugin-react": "^5.1.2",
-        "baseline-browser-mapping": "^2.11.21",
-        "eslint": "^9.39.1",
-        "eslint-plugin-react-hooks": "^7.0.1",
-        "eslint-plugin-react-refresh": "^0.4.24",
-        "globals": "^16.5.0",
-        "rollup-plugin-visualizer": "^7.1.1",
-        "typescript": "~5.9.3",
-        "typescript-eslint": "^8.46.4",
-        "vite": "^7.3.7",
-        "vite-plugin-pages": "^0.33.3"
-    },
-    "allowScripts": {
-        "esbuild@0.28.2": true,
-        "fsevents@2.3.3": true
-    }
+  "name": "noone",
+  "version": "0.2.0",
+  "private": true,
+  "homepage": "https://ybouali.dev",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build && cp dist/index.html dist/404.html && node scripts/prerender.mjs",
+    "build:spa": "tsc -b && vite build && cp dist/index.html dist/404.html",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@tailwindcss/vite": "^4.1.17",
+    "framer-motion": "^12.23.24",
+    "highlight.js": "^11.12.0",
+    "lowlight": "^3.3.0",
+    "lucide-react": "^0.555.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-helmet-async": "^3.0.0",
+    "react-hot-toast": "^2.6.0",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.18.3",
+    "rehype-highlight": "^7.0.2",
+    "remark-gfm": "^4.0.1",
+    "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@sparticuz/chromium": "^153.0.0",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "@vitejs/plugin-react": "^5.1.2",
+    "baseline-browser-mapping": "^2.11.21",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "happy-dom": "^21.0.4",
+    "puppeteer-core": "^25.16.0",
+    "rollup-plugin-visualizer": "^7.1.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.3.7",
+    "vite-plugin-pages": "^0.33.3"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": true,
+    "puppeteer@25.16.0": true,
+    "puppeteer@24.43.1": true
+  }
 }
