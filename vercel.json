@@ -1,16 +1,24 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://www.ybouali.dev"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
         {
           "key": "Referrer-Policy",
           "value": "strict-origin-when-cross-origin"
@@ -18,21 +26,7 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=()"
-        },
-        {
-          "key": "Strict-Transport-Security",
-          "value": "max-age=63072000; includeSubDomains; preload"
         }
-      ]
-    },
-    {
-      "source": "/.well-known/ard.json",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/json; charset=utf-8"
-        },
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
       ]
     }
   ]
