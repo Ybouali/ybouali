@@ -1,16 +1,13 @@
 // scripts/prerender.mjs
 import { preview } from "vite";
-import puppeteer from "puppeteer";
-import { mkdir, writeFile, readFile, access } from "node:fs/promises";
-import { join, dirname } from "node:path";
+import puppeteer from "puppeteer-core";
+import chromium from "@sparticuz/chromium";
+import { mkdir, writeFile } from "node:fs/promises";
+import { join } from "node:path";
 
 const DIST = "dist";
 const ORIGIN = "http://localhost:4173";
-
-// Seed routes ensure /cv is always included, even if the crawl misses it
 const SEED_ROUTES = ["/", "/cv"];
-
-// Skip static assets, PDFs, and internal Vite paths
 const EXCLUDE = [
   /^\/assets\//,
   /^\/_/,
@@ -34,19 +31,17 @@ async function discoverRoutes(page) {
       console.warn(`  ! crawl skip ${route}: ${err.message}`);
       continue;
     }
-
     const links = await page.$$eval("a[href]", (anchors) =>
       anchors
         .map((a) => a.getAttribute("href"))
         .filter((h) => h && h.startsWith("/")),
     );
-
     for (const href of links) {
-      const route = normalize(href);
-      if (EXCLUDE.some((re) => re.test(route))) continue;
-      if (!seen.has(route)) {
-        seen.add(route);
-        queue.push(route);
+      const r = normalize(href);
+      if (EXCLUDE.some((re) => re.test(r))) continue;
+      if (!seen.has(r)) {
+        seen.add(r);
+        queue.push(r);
       }
     }
   }
@@ -57,10 +52,12 @@ async function main() {
   console.log("[prerender] starting vite preview…");
   const server = await preview({ preview: { port: 4173, strictPort: true } });
 
-  console.log("[prerender] launching puppeteer…");
+  console.log("[prerender] launching chromium (serverless build)…");
   const browser = await puppeteer.launch({
-    headless: "new",
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath(),
+    headless: chromium.headless,
   });
 
   try {
@@ -85,10 +82,9 @@ async function main() {
 
         const html = await page.content();
         const outDir = route === "/" ? DIST : join(DIST, route);
-        const outFile = join(outDir, "index.html");
-
         await mkdir(outDir, { recursive: true });
-        await writeFile(outFile, html, "utf8");
+        await writeFile(join(outDir, "index.html"), html, "utf8");
+
         written++;
         console.log(`ok (${(html.length / 1024).toFixed(1)} kB)`);
       } catch (err) {
@@ -98,14 +94,20 @@ async function main() {
     }
 
     console.log(`\n[prerender] done — ${written} written, ${failed} failed`);
-    if (failed > 0) process.exitCode = 1;
   } finally {
     await browser.close();
     await new Promise((resolve) => server.httpServer.close(resolve));
   }
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    // Never fail the deploy because prerender failed.
+    // The site falls back to the normal SPA, which is what it was before.
+    console.warn(
+      "[prerender] skipped — build continues as normal SPA:",
+      err.message,
+    );
+    process.exit(0);
+  });
