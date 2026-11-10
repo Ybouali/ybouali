@@ -6,8 +6,8 @@ function Certificates() {
   return (
     <MainForScreen>
       <PageSeo
-        title="Certificates | Yassine Bouali"
-        description="Additional learning..."
+        title="Certificates — Yassine Bouali | Professional Credentials"
+        description="Professional certifications and continuous learning by Yassine Bouali — IBM Coursera credentials in Java, cloud-native architecture, microservices, and DevOps."
         path="/certificates"
       />
       <div className="w-full max-w-6xl mx-auto pb-16 min-w-0 overflow-x-hidden">
